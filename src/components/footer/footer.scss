@@ -1,0 +1,48 @@
+.footer {
+  display:flex;
+  justify-content: space-between;
+  background-color: white;
+}
+.footer__inner {
+  position: relative;
+
+  display: flex;
+  padding: 15px 0;
+}
+
+.footer__column {
+  display:flex;
+  align-items: baseline;
+  flex-direction: column;
+  flex:1;
+
+  padding: 10px;
+
+  color: rgb(31, 32, 65);
+}
+
+.footer__column_wide{
+  flex:2;
+}
+
+.footer__title {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  
+  text-transform: uppercase;
+
+  padding: 10px 15px;
+}
+
+.footer__content {
+  padding: 10px 15px;
+}
+
+.footer__content_no-indent {
+  padding: 10px 15px;
+  padding-left: 0;
+  margin-right: 30px;
+}

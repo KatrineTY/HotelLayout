@@ -1,17 +1,24 @@
 include ../button/button.pug
 include ../nav/nav.pug
 include ../logo/logo.pug
+include ../container/container.pug
 
-header.header
-  .container
-    .header__inner
-      +logo(true)
-      +nav
-        +nav__item('Home','#','bold')
-        +nav__item('About us','#')
-        +nav__item('Services','#','multiple')
-        +nav__item('Creers','#')
-        +nav__item('News','#')
-        +nav__item('Documentation','#')
-        +button('Login','button','hollow')
-        +button('Register','button')
+
+mixin header(logged)
+  header.header
+    +container
+      .header__inner
+        +logo(true)
+        +nav
+          +nav__item('Home','#','bold')
+          +nav__item('About us','#')
+          +nav__item('Services','#','multiple')
+          +nav__item('Creers','#')
+          +nav__item('News','#')
+          +nav__item('Documentation','#')
+          - if(logged)
+          +nav__item('Cosmin Negoita','#','logged-in')
+          - else {
+          +button('Login','button','hollow')
+          +button('Register','button')
+          - }

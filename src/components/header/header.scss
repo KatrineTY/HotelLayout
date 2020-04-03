@@ -1,38 +1,6 @@
-body {
-  margin: 0;
-  font-family: Montserrat;
-  -webkit-font-smoothing: antialiased;
-  background-color: black;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
-
-/* Container
-===================*/
-.container {
-  width: 100%;
-  max-width: 1160px;
-  margin: 0 auto;
-  padding: 0 15px;
-
-}
-
-
-/* Header
-===================*/
-
 .header {
   width: 100%;
   height: 70px;
-
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1000;
 
   background-color: white;
 }
@@ -48,4 +16,5 @@ body {
 
 .header__inner .button_hollow {
   margin-right: 20px;
+  margin-left: 15px;
 }

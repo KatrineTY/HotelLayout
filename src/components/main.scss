@@ -3,3 +3,16 @@
 @import "nav/nav";
 @import "button/button";
 @import "logo/logo";
+@import "container/container";
+@import "../pages/layout/ui-kit";
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
