@@ -30,6 +30,10 @@
   transition: opacity .1s linear;
 }
 
+.nav_vertical .nav__item {
+  padding-left: 0;
+}
+
 .nav__item_bold {
   opacity: .75;
   font-weight: bold;
