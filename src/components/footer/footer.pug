@@ -1,33 +1,49 @@
 include ../nav/nav.pug
 include ../logo/logo.pug
 include ../container/container.pug
+include ../socials/socials.pug
 
-footer.footer
-  +container
-    .footer__inner
-      .footer__column.footer__column_wide
+mixin footer(withoutNavigation)
+  - if(withoutNavigation) {
+  footer.footer
+    +container
+      .footer__inner.footer__inner_no-navigation
         +logo(true)
-        .footer__content_no-indent Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis. 
-      .footer__column
-        .footer__title navigation
-        +nav('vertical')
-          +nav__item('About us','#')
-          +nav__item('News','#')
-          +nav__item('Support','#')
-          +nav__item('Products','#')
-      .footer__column
-        .footer__title about us
-        +nav('vertical')
-          +nav__item('Who we are','#')
-          +nav__item('Our team','#')
-          +nav__item('Careers','#')
-          +nav__item('Investors','#')
-      .footer__column
-        .footer__title support
-        +nav('vertical')
-          +nav__item('Documentation','#')
-          +nav__item('Community','#')
-          +nav__item('Get in Touch','#')
-      .footer__column.footer__column_wide
-        .footer__title subscribe to our newsletter
-        .footer__content Receive our latest news and promotions in your inbox!
+        p Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
+        +socials
+          +social__item('twitter')
+          +social__item('facebook')
+          +social__item('instagram')
+  
+  - }else {
+  footer.footer
+    +container
+      .footer__inner
+        .footer__column.footer__column_wide
+          +logo(true)
+          p Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis. 
+        .footer__column
+          .footer__title navigation
+          +nav('vertical')
+            +nav__item('About us','#')
+            +nav__item('News','#')
+            +nav__item('Support','#')
+            +nav__item('Products','#')
+        .footer__column
+          .footer__title about us
+          +nav('vertical')
+            +nav__item('Who we are','#')
+            +nav__item('Our team','#')
+            +nav__item('Careers','#')
+            +nav__item('Investors','#')
+        .footer__column
+          .footer__title support
+          +nav('vertical')
+            +nav__item('Documentation','#')
+            +nav__item('Community','#')
+            +nav__item('Get in Touch','#')
+        .footer__column.footer__column_wide
+          .footer__title subscribe to our newsletter
+          .footer__content Receive our latest news and promotions in your inbox!
+    include ../copyright/copyright.pug 
+  - } 

@@ -54,6 +54,12 @@ module.exports = {
         name: '[name].[ext]'
       }
     }, {
+      test: /\.(woff(2)?|ttf|eot|svg|otf)(\?v=\d+\.\d+\.\d+)?$/,
+      loader: 'file-loader',
+      options: {
+        name: '[name].[ext]'
+      }
+    }, {
       test: /\.css$/,
       use: [
         'style-loader',

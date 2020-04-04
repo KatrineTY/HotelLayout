@@ -1,10 +1,10 @@
-mixin container()
+mixin container(mods)
   -
     var allMods = '';
     if(typeof(mods) !== 'undefined' && mods) {
       var modsList = mods.split(',');
       for (var i = 0; i < modsList.length; i++) {
-        allMods = allMods + ' nav_' + modsList[i].trim();
+        allMods = allMods + ' container_' + modsList[i].trim();
       }
     }
   .container(class=allMods)

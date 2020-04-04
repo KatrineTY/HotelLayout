@@ -1,6 +1,12 @@
 extends ./layout/ui-kit.pug
 include ../components/header/header.pug
+include ../components/footer/footer.pug
 
 block content
   +header(false)
+  br
   +header(true)
+  br
+  +footer
+  br
+  +footer(true)
