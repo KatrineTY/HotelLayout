@@ -1,4 +1,4 @@
-mixin input(labelText, typ, placeholder, mods)
+mixin input(title, typ, placeholder, mods)
   -
     var allMods = '';
     if(typeof(mods) !== 'undefined' && mods) {
@@ -7,8 +7,8 @@ mixin input(labelText, typ, placeholder, mods)
         allMods = allMods + ' nav_' + modsList[i].trim();
       }
     }
-    if(labelText)
-  h3!=labelText
+    if(title)
+  h3!=title
   .input
     case typ
       when 'date'
@@ -19,5 +19,11 @@ mixin input(labelText, typ, placeholder, mods)
           use(xlink:href='#arrow-right')
       default
         input.input__field(type=typ placeholder=placeholder class=allMods) 
+
+mixin input-checkbox(label)
+  label.input-checkbox!= label
+    input(type='checkbox')
+    +icon('checkmark').checkmark
+
 
     

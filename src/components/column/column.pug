@@ -2,6 +2,8 @@ mixin column()
   .column 
     block
 
-mixin column__item()
+mixin column__item(title)
   .column__item 
+    - if(title)
+    h3!=title
     block

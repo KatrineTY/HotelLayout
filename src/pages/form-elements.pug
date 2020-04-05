@@ -5,7 +5,7 @@ include ../components/column/column.pug
 include ../components/container/container.pug
 
 br
-+container('flex')
++container('flex-baselined')
   +column
     +column__item
       +input('text field', 'text','Email')
@@ -13,11 +13,10 @@ br
     +column__item 
       +input('subscription text field', 'email','Email') 
   +column
-    +column__item
-      +input('text field', 'text','Email')
-      +input('masked text field', 'date','ДД.ММ.ГГГГ')
-    +column__item
-      +input('subscription text field', 'email','Email') 
+    +column__item('checkbox items')
+      +input-checkbox('Можно курить')
+      +input-checkbox('Можно с питомцами')
+      +input-checkbox('Можно пригласить гостей \n (до 10 человек)')
   +column
     +column__item
       +input('text field', 'text','Email')

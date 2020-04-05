@@ -37,3 +37,81 @@
 
   fill: url(#primary-gradient);
 }
+
+
+/*
+ Checkbox
+*/
+.input-checkbox {
+  display: block;
+
+  position: relative;
+  padding-left: 27px;
+  cursor: pointer;
+
+  user-select: none;
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+
+  color: rgba(31, 32, 65, 0.5);
+}
+
+.input-checkbox {
+  white-space: pre-wrap;
+  padding-top:10px;
+}
+
+.input-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.input-checkbox .checkmark {
+  background: #FFFFFF;
+
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 4px;
+
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.input-checkbox:hover .checkmark {
+  border-color: #BC9CFF;
+}
+
+.input-checkbox input:checked ~ .checkmark {
+  border-color: #BC9CFF;
+}
+
+.checkmark use {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.input-checkbox input:checked ~ .checkmark use {
+  display: block;
+}
+
+.input-checkbox .checkmark use {
+
+  width: 5px;
+  height: 5px;
+  fill: url('#primary-gradient');
+}
+
+
+
+/*
+ Radio button
+*/
