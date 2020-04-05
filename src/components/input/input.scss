@@ -1,3 +1,4 @@
+// TODO: refactor!
 .input {
   position: relative;
   width: 100%;
@@ -156,4 +157,53 @@
 
 .input-button input:checked ~ .checkmark-radio:before {
   display: block;
+}
+
+/*
+ Toggle button
+*/
+
+.input-button_toggle {
+  color: rgba(31, 32, 65, 0.75);
+  padding-left:47px
+}
+
+.input-button .checkmark-toggle {
+  background: #FFFFFF;
+
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 10px;
+
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 40px;
+  height: 20px;
+}
+
+.input-button:hover .checkmark-toggle,
+.input-button input:checked ~ .checkmark-toggle {
+  border-color: #BC9CFF;
+}
+
+.input-button .checkmark-toggle:before {
+  content: "";
+  position: absolute;
+  display: block;
+
+  top:50%;
+  left: 50%;
+  transform: translate(-125%, -50%);
+
+  width: 12px;
+  height: 12px;
+  border-radius: 10px;
+  background: rgba(31, 32, 65, 0.25);
+
+  transition: transform .2s linear;
+}
+
+.input-button input:checked ~ .checkmark-toggle:before {
+  transform: translate(25%, -50%);
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
 }

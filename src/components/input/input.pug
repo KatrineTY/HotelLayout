@@ -32,5 +32,12 @@ mixin input-radio(label, name)
     span.checkmark-radio
     label(for=name + '-' + label.replace(/ /g,'-'))!= label
 
+mixin input-toggle(label)
+  .input-button.input-button_toggle
+    label!= label
+      input(type='checkbox')
+      span.checkmark-toggle
+
+
 
     
