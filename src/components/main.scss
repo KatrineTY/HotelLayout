@@ -8,6 +8,7 @@
 @import "copyright/copyright";
 @import "input/input";
 @import "icons/icons";
+@import "column/column";
 @import "../assets/fonts/fonts";
 
 body {
@@ -20,6 +21,19 @@ body {
 *:before,
 *:after {
   box-sizing: border-box;
+}
+
+h3 {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+
+  text-transform: uppercase;
+
+  margin-bottom: 5px;
+  margin-top: 20px;
 }
 
 

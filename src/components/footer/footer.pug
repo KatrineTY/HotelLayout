@@ -2,7 +2,8 @@ include ../nav/nav.pug
 include ../logo/logo.pug
 include ../container/container.pug
 include ../socials/socials.pug
-
+include ../input/input.pug
+          
 mixin footer(withoutNavigation)
   - if(withoutNavigation) {
   footer.footer
@@ -45,6 +46,6 @@ mixin footer(withoutNavigation)
         .footer__column.footer__column_wide
           .footer__title subscribe to our newsletter
           p Receive our latest news and promotions in your inbox!
-          include ../input/input.pug
+          +input('','email','Your email address')
     include ../copyright/copyright.pug 
   - } 

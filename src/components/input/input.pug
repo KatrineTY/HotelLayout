@@ -1,4 +1,23 @@
-.input
-  input.input__field(type='email' placeholder='Your email address') 
-  svg.input__arrow-right
-      use(xlink:href='#arrow-right')
+mixin input(labelText, typ, placeholder, mods)
+  -
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' nav_' + modsList[i].trim();
+      }
+    }
+    if(labelText)
+  h3!=labelText
+  .input
+    case typ
+      when 'date'
+        input.input__field(type='text' placeholder=placeholder class=allMods pattern='(30|31|0[1-9]|[1-2][0-9]).(0[1-9]|1[0-2]).\\d\\d\\d\\d') 
+      when 'email'
+        input.input__field(type=typ placeholder=placeholder class=allMods ) 
+        svg.input_subscription
+          use(xlink:href='#arrow-right')
+      default
+        input.input__field(type=typ placeholder=placeholder class=allMods) 
+
+    

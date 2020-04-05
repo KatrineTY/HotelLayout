@@ -11,17 +11,26 @@
   line-height: 24px;
   color: rgba(31, 32, 65, 0.25);
 
-  width: 100%;
+  width: 320px;
   height: 44px;
 }
 
-.input__arrow-right {
+.input__field[type='email'] {
+  width: 260px;
+}
+
+.input__field[type='text']:hover {
+  color: rgba(31, 32, 65, 0.5);
+  border-color: rgba(31, 32, 65, 0.5);
+}
+
+.input_subscription {
   height: 24px;
   width: 24px;
 
   position: absolute;
   top: 50%;
-  right:12px;
+  right:72px;
   transform: translate(0, -50%);
 
   cursor: pointer;

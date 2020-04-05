@@ -1,0 +1,9 @@
+.column {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.column__item {
+  padding-top: 40px;
+}

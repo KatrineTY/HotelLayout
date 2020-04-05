@@ -1,0 +1,26 @@
+
+include ../components/icons/icons.pug
+include ../components/input/input.pug
+include ../components/column/column.pug
+include ../components/container/container.pug
+
+br
++container('flex')
+  +column
+    +column__item
+      +input('text field', 'text','Email')
+      +input('masked text field', 'date','ДД.ММ.ГГГГ')
+    +column__item 
+      +input('subscription text field', 'email','Email') 
+  +column
+    +column__item
+      +input('text field', 'text','Email')
+      +input('masked text field', 'date','ДД.ММ.ГГГГ')
+    +column__item
+      +input('subscription text field', 'email','Email') 
+  +column
+    +column__item
+      +input('text field', 'text','Email')
+      +input('masked text field', 'date','ДД.ММ.ГГГГ')
+    +column__item
+      +input('subscription text field', 'email','Email')
