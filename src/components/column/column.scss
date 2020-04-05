@@ -10,3 +10,13 @@
 .column .column__item:first-child {
   padding-top:0;
 }
+
+.column__item_radio > *:not(h3){
+  display: inline-block;
+  padding-right: 20px;
+}
+
+.column__item_radio > *:not(h3):last-child{
+  display: inline-block;
+  padding-right: 0px;
+}

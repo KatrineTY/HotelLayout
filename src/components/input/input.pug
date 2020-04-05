@@ -4,7 +4,7 @@ mixin input(title, typ, placeholder, mods)
     if(typeof(mods) !== 'undefined' && mods) {
       var modsList = mods.split(',');
       for (var i = 0; i < modsList.length; i++) {
-        allMods = allMods + ' nav_' + modsList[i].trim();
+        allMods = allMods + ' input_' + modsList[i].trim();
       }
     }
     if(title)
@@ -21,9 +21,16 @@ mixin input(title, typ, placeholder, mods)
         input.input__field(type=typ placeholder=placeholder class=allMods) 
 
 mixin input-checkbox(label)
-  label.input-checkbox!= label
-    input(type='checkbox')
-    +icon('checkmark').checkmark
+  .input-button
+    input(type='checkbox' id=label.replace(/ /g,'-'))
+    +icon('checkmark').checkmark-checkbox
+    label(for=label.replace(/ /g,'-'))!= label
+
+mixin input-radio(label, name)
+  .input-button
+    input(type="radio" name=name id=name + '-' + label.replace(/ /g,'-'))
+    span.checkmark-radio
+    label(for=name + '-' + label.replace(/ /g,'-'))!= label
 
 
     

@@ -13,10 +13,13 @@ br
     +column__item 
       +input('subscription text field', 'email','Email') 
   +column
-    +column__item('checkbox items')
+    +column__item('checkbox buttons')
       +input-checkbox('Можно курить')
       +input-checkbox('Можно с питомцами')
       +input-checkbox('Можно пригласить гостей \n (до 10 человек)')
+    +column__item('radio buttons', 'radio')
+      +input-radio('Мужчина', 'gender')
+      +input-radio('Женщина', 'gender')
   +column
     +column__item
       +input('text field', 'text','Email')

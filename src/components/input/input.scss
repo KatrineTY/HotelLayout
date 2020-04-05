@@ -38,11 +38,8 @@
   fill: url(#primary-gradient);
 }
 
-
-/*
- Checkbox
-*/
-.input-checkbox {
+// Buttons
+.input-button {
   display: block;
 
   position: relative;
@@ -57,14 +54,17 @@
   line-height: 18px;
 
   color: rgba(31, 32, 65, 0.5);
-}
 
-.input-checkbox {
   white-space: pre-wrap;
   padding-top:10px;
 }
 
-.input-checkbox input {
+.input-button:hover,
+.input-button :checked ~ label {
+  color: rgba(31, 32, 65, 0.75);
+}
+
+.input-button input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
@@ -72,7 +72,15 @@
   width: 0;
 }
 
-.input-checkbox .checkmark {
+.input-button label {
+  cursor: pointer;
+}
+
+/*
+ Checkbox
+*/
+
+.input-button .checkmark-checkbox {
   background: #FFFFFF;
 
   border: 1px solid rgba(31, 32, 65, 0.25);
@@ -85,25 +93,23 @@
   height: 20px;
 }
 
-.input-checkbox:hover .checkmark {
+.input-button:hover .checkmark-checkbox,
+.input-button input:checked ~ .checkmark-checkbox {
   border-color: #BC9CFF;
+
 }
 
-.input-checkbox input:checked ~ .checkmark {
-  border-color: #BC9CFF;
-}
-
-.checkmark use {
+.checkmark-checkbox use {
   content: "";
   position: absolute;
   display: none;
 }
 
-.input-checkbox input:checked ~ .checkmark use {
+.input-button input:checked ~ .checkmark-checkbox use {
   display: block;
 }
 
-.input-checkbox .checkmark use {
+.input-button .checkmark-checkbox use {
 
   width: 5px;
   height: 5px;
@@ -115,3 +121,39 @@
 /*
  Radio button
 */
+.input-button .checkmark-radio {
+  background: #FFFFFF;
+
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 10px;
+
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 20px;
+  height: 20px
+}
+
+.input-button:hover .checkmark-radio,
+.input-button input:checked ~ .checkmark-radio {
+  border-color: #BC9CFF;
+}
+
+.input-button .checkmark-radio:before {
+  content: "";
+  position: absolute;
+  display: none;
+
+  top:50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+
+  width: 12px;
+  height: 12px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+}
+
+.input-button input:checked ~ .checkmark-radio:before {
+  display: block;
+}
