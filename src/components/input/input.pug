@@ -38,6 +38,18 @@ mixin input-toggle(label)
       input(type='checkbox')
       span.checkmark-toggle
 
+mixin input-like(count, id, isFull)
+  .input-button
+    - if(isFull)
+      input(type='checkbox' checked id=id)
+      +icon('like-full').checkmark-like
+      label(for=id)!= count
+    - else
+      input(type='checkbox' id=id)
+      +icon('like-empty').checkmark-like
+      label(for=id)!= count
 
 
-    
+
+
+  

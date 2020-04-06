@@ -20,3 +20,13 @@
   display: inline-block;
   padding-right: 0px;
 }
+
+.column__item_like > *:not(h3){
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.column__item_like > *:not(h3):last-child{
+  display: inline-block;
+  margin-right: 0px;
+}
