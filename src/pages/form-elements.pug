@@ -25,7 +25,10 @@ br
       +input-toggle('Получать спецпредложения')
     +column__item('like button', 'like')
       +input-like('2', 'empty-heart')
-      +input-like('12', 'filled-heart', true)
+      +input-like('12', 'filled-heart')
+    +column__item('rate button', 'radio')
+      +input-stars(4, 5)
+      +input-stars(5, 5)
   +column
     +column__item
       +input('text field', 'text','Email')

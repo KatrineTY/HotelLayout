@@ -38,16 +38,24 @@ mixin input-toggle(label)
       input(type='checkbox')
       span.checkmark-toggle
 
-mixin input-like(count, id, isFull)
+mixin input-like(count, id)
   .input-button
-    - if(isFull)
-      input(type='checkbox' checked id=id)
-      +icon('like-full').checkmark-like
-      label(for=id)!= count
-    - else
-      input(type='checkbox' id=id)
-      +icon('like-empty').checkmark-like
-      label(for=id)!= count
+    input(type='checkbox' checked id=id)
+    +icon('like').checkmark-like
+    label(for=id)!= count
+
+mixin input-stars(countOfFilled, countOfStars)
+  .input-button
+    - for(var i = 0; i < countOfFilled; i++) { 
+      label.label-star
+        input(type='checkbox' checked)
+        +icon('star').checkmark-star
+    - }
+    - for(countOfFilled; countOfFilled < countOfStars; countOfFilled++) {
+      label.label-star
+        input(type='checkbox')
+        +icon('star').checkmark-star
+      - }
 
 
 

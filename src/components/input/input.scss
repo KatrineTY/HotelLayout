@@ -106,7 +106,6 @@
 }
 
 .checkmark-checkbox use {
-  content: "";
   position: absolute;
   display: none;
 }
@@ -150,8 +149,8 @@
   position: absolute;
   display: none;
 
-  top:50%;
-  right: 50%;
+  top:49%;
+  right: 51%;
   transform: translate(50%, -50%);
 
   width: 12px;
@@ -198,7 +197,7 @@
   position: absolute;
   display: block;
 
-  top:50%;
+  top:49%;
   left: 50%;
   transform: translate(-125%, -50%);
 
@@ -218,12 +217,12 @@
 /*
  Like button
 */
-.checkmark-like {
+.input-button .checkmark-like {
   width: 20px;
   height: 20px;
 }
 
-.checkmark-like ~ label {
+.input-button .checkmark-like ~ label {
   position: absolute;
   top: 49%;
   left: 0;
@@ -232,16 +231,19 @@
   padding:0;
 
   width:100%;
+  height: 20px;
 
-  display: block;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   padding-left: 7px;
   font-size: 10px;
   line-height: 12px;
   color: rgba(31, 32, 65, 0.25);
 }
 
-input:checked ~ .checkmark-like ~ label {
+.input-button input:checked ~ .checkmark-like ~ label {
   color: #BC9CFF;
 }
 
@@ -263,16 +265,35 @@ input:checked ~ .checkmark-like ~ label {
   border-color: #BC9CFF;
 }
 
-.checkmark-like use {
-  content: "";
+.input-button .checkmark-like use {
   position: absolute;
   display: block;
 
   left:0;
 
-  fill: rgba(31, 32, 65, 0.25);
+  fill: white;
+  stroke: rgba(31, 32, 65, 0.25);
+  stroke-width: 2px;
 }
 
 .input-button input:checked ~ .checkmark-like use {
+  fill: url('#primary-gradient');
+  stroke: url('#primary-gradient');
+}
+
+/*
+ Star button
+*/
+.input-button .label-star {
+  padding: 0;
+}
+
+.input-button .checkmark-star use {
+  fill: white;
+  stroke: url('#primary-gradient');
+  stroke-width: 2px;
+}
+
+.input-button input:checked ~ .checkmark-star use {
   fill: url('#primary-gradient');
 }
