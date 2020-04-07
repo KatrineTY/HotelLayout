@@ -7,6 +7,11 @@
   padding-top: 40px;
 }
 
+.column__item > h3:not(:first-child){
+  padding-top: 20px;
+}
+
+
 .column .column__item:first-child {
   padding-top:0;
 }

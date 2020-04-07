@@ -2,6 +2,7 @@
 include ../components/icons/icons.pug
 include ../components/input/input.pug
 include ../components/column/column.pug
+include ../components/button/button.pug
 include ../components/container/container.pug
 
 br
@@ -30,8 +31,8 @@ br
       +input-stars(4, 5)
       +input-stars(5, 5)
   +column
-    +column__item
-      +input('text field', 'text','Email')
-      +input('masked text field', 'date','ДД.ММ.ГГГГ')
+    +column__item('buttons', 'radio')
+      +button('click me', 'button')
+      +button('click me', 'button', 'inactive')
     +column__item
       +input('subscription text field', 'email','Email')

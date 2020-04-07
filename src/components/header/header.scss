@@ -3,6 +3,9 @@
   height: 70px;
 
   background-color: white;
+
+  display: flex;
+  align-items: center;
 }
 
 .header__inner {
@@ -11,7 +14,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 0;
 }
 
 .header__inner .button_hollow {

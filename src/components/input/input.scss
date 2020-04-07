@@ -1,8 +1,13 @@
 // TODO: refactor!
 .input {
-  position: relative;
   width: 100%;
 }
+
+.input_arrowed {
+  position: relative;
+  display: inline;  
+}
+
 .input__field {
   border: 1px solid rgba(31, 32, 65, 0.25);
   border-radius: 4px;
@@ -25,13 +30,14 @@
   border-color: rgba(31, 32, 65, 0.5);
 }
 
-.input_subscription {
+
+.input_arrow {
   height: 24px;
   width: 24px;
 
   position: absolute;
   top: 50%;
-  right:72px;
+  right:10px;
   transform: translate(0, -50%);
 
   cursor: pointer;

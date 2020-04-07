@@ -7,16 +7,17 @@ mixin input(title, typ, placeholder, mods)
         allMods = allMods + ' input_' + modsList[i].trim();
       }
     }
-    if(title)
-  h3!=title
+  - if(title)
+    h3!=title
   .input
     case typ
       when 'date'
         input.input__field(type='text' placeholder=placeholder class=allMods pattern='(30|31|0[1-9]|[1-2][0-9]).(0[1-9]|1[0-2]).\\d\\d\\d\\d') 
       when 'email'
-        input.input__field(type=typ placeholder=placeholder class=allMods ) 
-        svg.input_subscription
-          use(xlink:href='#arrow-right')
+        .input_arrowed
+          input.input__field(type=typ placeholder=placeholder class=allMods ) 
+          svg.input_arrow
+            use(xlink:href='#arrow-right')
       default
         input.input__field(type=typ placeholder=placeholder class=allMods) 
 
@@ -45,7 +46,7 @@ mixin input-like(count, id)
     label(for=id)!= count
 
 mixin input-stars(countOfFilled, countOfStars)
-  .input-button
+  .input-button.input-button_star
     - for(var i = 0; i < countOfFilled; i++) { 
       label.label-star
         input(type='checkbox' checked)
