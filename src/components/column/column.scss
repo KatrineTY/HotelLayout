@@ -33,3 +33,17 @@
 .column__item_like > *:not(h3):last-child{
   margin-right: 0px;
 }
+
+.column__item_headerless {
+  padding-top: 20px;
+}
+
+.column__item_h3>h3:first-child {
+  color:#BC9CFF;
+  display: inline;
+  padding-right: 20px;
+}
+.column__item_h3>h3:last-child {
+  color: rgba(31, 32, 65, 0.5);
+  display: inline;
+}

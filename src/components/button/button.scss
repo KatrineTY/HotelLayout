@@ -5,7 +5,8 @@
   font-weight: bold;
   font-size: 12px;
   line-height: 15px;
-
+  text-align: center;
+  
   border-radius: 22px;
   border: 2px solid transparent;
 
@@ -34,4 +35,34 @@
 .button_hollow {
   background: white;
   color: #BC9CFF;
+}
+
+.button_inactive {
+  opacity: 0.5;
+}
+
+.button_inactive.button_hollow {
+  opacity: 1;
+}
+
+.button_inactive.button_hollow:before {
+  opacity: .5;
+}
+
+a.button {
+  width: 320px;
+  display: block;
+}
+
+.button_arrow {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 50%;
+  right:10px;
+  transform: translate(0, -50%);
+
+  cursor: pointer;
+
+  fill: white;
 }
