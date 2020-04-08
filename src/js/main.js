@@ -1,2 +1,1 @@
-let add = (a,b) => a+b;
-console.log(add(2,6));
+require('../components/datepicker/datepicker.js')
