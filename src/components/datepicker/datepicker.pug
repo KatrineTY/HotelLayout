@@ -1,0 +1,15 @@
+mixin datepicker(id, title, mods)
+  -
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' dropdown_' + modsList[i].trim();
+      }
+    }
+  .dropdown(class=allMods)
+    h3!=title
+    input(type="button" id=id value='ДД.ММ.ГГГГ' class='datepicker')
+    svg.dropdown_arrow
+      use(xlink:href='#expansion')
+      

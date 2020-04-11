@@ -9,12 +9,14 @@
 @import "input/input";
 @import "icons/icons";
 @import "column/column";
+@import "datepicker/datepicker";
 @import "../assets/fonts/fonts";
 
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   font-family: Montserrat;
+  overflow: overlay;
 }
 
 *,
