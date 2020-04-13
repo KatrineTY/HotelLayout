@@ -1,0 +1,35 @@
+mixin dropdown-container(type, title, mods)
+  -
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' dropdown_' + modsList[i].trim();
+      }
+      if(mods.includes('ranged')) {
+        id='ranged-' + id;
+      }
+    }
+
+  .dropdown(class=allMods)
+    h3!=title
+    - 
+    if type === 'datepicker'
+      block
+    else 
+      input(type='checkbox' class='dropdown__input' value='сколько гостей')
+      svg.dropdown__arrow
+        use(xlink:href='#expansion')
+      .dropdown__inner
+        block
+        if(allMods.includes('dropdown_extended'))
+          .dropdown__buttons
+            span.dropdown__button(data-action='clear') очистить
+            span.dropdown__button(data-action='apply') применить
+        
+
+mixin dropdown-item(title)
+  .dropdown__item
+    h3!=title
+    +input-number()
+

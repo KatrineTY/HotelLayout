@@ -58,6 +58,13 @@ mixin input-stars(countOfFilled, countOfStars)
         +icon('star').checkmark-star
       - }
 
+mixin input-number()
+  .input-number
+    button(onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="input-number_left") -
+    input.quantity(min='0' value='1' type='number')
+    button.plus(onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="input-number_right") +
+
+
 
 
 

@@ -11,10 +11,10 @@ $('input[id*="datepicker"').datepicker({
   prevHtml: '<svg><use xlink:href="#arrow-right"></use></svg>',
   nextHtml: '<svg><use xlink:href="#arrow-right"></use></svg>',
   onHide: function(inst, animationCompleted) {
-    $(inst.el).removeClass('dropdown_opened');
+    $(inst.el.parentNode).removeClass('dropdown_opened');
   },
   onShow: function(inst, animationCompleted) {
-    $(inst.el).addClass('dropdown_opened');
+    $(inst.el.parentNode).addClass('dropdown_opened');
   },
 });
 

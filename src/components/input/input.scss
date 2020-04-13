@@ -303,3 +303,31 @@
 .input-button input:checked ~ .checkmark-star use {
   fill: url('#primary-gradient');
 }
+
+/*
+  Number button
+*/
+
+.input-number {
+  font-size: 12px;
+  line-height: 15px;
+  display: inline-flex;
+}
+
+.input-number input {
+  appearance: textfield;
+  text-align: center;
+  width: 30px;
+  border:none;
+}
+.input-number button {
+  width: 30px;
+  height: 30px;
+
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 50%;
+
+  background: white;
+
+  color: rgba(31, 32, 65, 0.5);
+}

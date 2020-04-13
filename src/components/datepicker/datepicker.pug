@@ -1,20 +1,5 @@
-mixin datepicker(id, title, mods)
-  -
-    var allMods = '';
-    if(typeof(mods) !== 'undefined' && mods) {
-      var modsList = mods.split(',');
-      for (var i = 0; i < modsList.length; i++) {
-        allMods = allMods + ' dropdown_' + modsList[i].trim();
-      }
-      if(mods.includes('ranged')) {
-        id='ranged-' + id;
-      }
-    }
-
-  .dropdown(class=allMods)
-    h3!=title
-    .dropdown__inner
-      input(type='button' id=id value='ДД.ММ.ГГГГ' class='datepicker-here' data-position="bottom left")
-      svg.dropdown__arrow
-        use(xlink:href='#expansion')
-      
+mixin datepicker(id)
+  input(type='button' id=id class='datepicker-here' data-position="bottom left")
+  svg.dropdown__arrow
+    use(xlink:href='#expansion')
+  
