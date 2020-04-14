@@ -324,10 +324,20 @@
   width: 30px;
   height: 30px;
 
-  border: 1px solid rgba(31, 32, 65, 0.25);
+  border: 1px solid rgba(31, 32, 65, 0.5);
   border-radius: 50%;
 
   background: white;
 
   color: rgba(31, 32, 65, 0.5);
+}
+
+.input-number .input-number_left_disabled {
+  border-color: rgba(31, 32, 65, 0.25);
+  color: rgba(31, 32, 65, 0.25);
+}
+
+.dropdown__button[data-action="clear"].dropdown__button_disabled {
+  color: white;
+  pointer-events: none;
 }

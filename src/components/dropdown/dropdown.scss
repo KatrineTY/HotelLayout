@@ -49,10 +49,10 @@
   fill: rgba(31, 32, 65, 0.25);
 }
 
-.dropdown_opened input{
+.dropdown_open input{
   border-color: rgba(31, 32, 65, 0.5);
 }
-.dropdown_opened svg{
+.dropdown_open svg{
   fill: rgba(31, 32, 65, 0.5);
   transform: rotate(180deg);
 }
@@ -76,19 +76,19 @@
   border-radius: 4px 4px 0 0;
 }
 
-.dropdown__input:checked {
+.dropdown .dropdown__input_open {
   border-bottom: none;
   border-color: rgba(31, 32, 65, 0.5);
 }
 
-.dropdown__input:checked ~ .dropdown__inner{
+.dropdown .dropdown__input_open ~ .dropdown__inner{
   display:block;
   border: 1px solid rgba(31, 32, 65, 0.5);
   border-radius: 0 0 4px 4px;
 }
 
 
-.dropdown__input:checked ~ svg{
+.dropdown .dropdown__input_open ~ svg{
   transform: rotate(180deg);
   fill: rgba(31, 32, 65, 0.5);
 }

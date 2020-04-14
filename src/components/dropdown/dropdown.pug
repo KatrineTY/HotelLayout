@@ -11,13 +11,13 @@ mixin dropdown-container(type, title, mods)
       }
     }
 
-  .dropdown(class=allMods)
+  .dropdown(class=allMods data-type=type)
     h3!=title
     - 
     if type === 'datepicker'
       block
     else 
-      input(type='checkbox' class='dropdown__input' value='сколько гостей')
+      input(type='button' class='dropdown__input')
       svg.dropdown__arrow
         use(xlink:href='#expansion')
       .dropdown__inner

@@ -60,9 +60,9 @@ mixin input-stars(countOfFilled, countOfStars)
 
 mixin input-number()
   .input-number
-    button(onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="input-number_left") -
-    input.quantity(min='0' value='1' type='number')
-    button.plus(onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="input-number_right") +
+    button(class="input-number_left" data-action='decrease') -
+    input(min='0' value='1' type='number')
+    button(class="input-number_right" data-action='increase') +
 
 
 

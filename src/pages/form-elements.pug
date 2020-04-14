@@ -13,7 +13,11 @@ br
     +column__item
       +input('text field', 'text','Email')     
       +input('text field', 'text','Email')
-      +dropdown-container('','dropdown','extended')
+      +dropdown-container('appartament','dropdown','extended')
+        +dropdown-item('спальни')
+        +dropdown-item('кровати')
+        +dropdown-item('ванные комнаты')
+      +dropdown-container('guests','dropdown','extended')
         +dropdown-item('спальни')
         +dropdown-item('кровати')
         +dropdown-item('ванные комнаты')
@@ -58,8 +62,7 @@ br
     +column__item('', 'headerless')
       +button('перейти к оплате','a')
 +container('flex-baselined')
-  +column
-    +input-number()
+
 
 br
 br
