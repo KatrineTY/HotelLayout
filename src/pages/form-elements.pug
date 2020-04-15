@@ -8,6 +8,7 @@ include ../components/datepicker/datepicker.pug
 include ../components/container/container.pug
 include ../components/list/list.pug
 include ../components/comment/comment.pug
+include ../components/profit/profit.pug
 
 br
 
@@ -115,6 +116,11 @@ br
         +list-item('Без вечеринок и мероприятий')
         +list-item('Время прибытия — после 13:00, \n а выезд до 12:00')
 +container('flex-baselined')
+  +column
+    +column-item
+      +profits  
+        +profit('Комфорт', 'Шумопоглощающие стены', 'smile')
+        +profit('Удобство', 'Окно в каждой из спален', 'building')
   +column
     +column-item
       +comment('Мурад Сарафанов','Великолепный матрас на кровати в основной \
