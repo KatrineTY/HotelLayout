@@ -1,0 +1,43 @@
+.list {
+  margin: 0;
+  padding: 0;
+  margin-top:15px;
+}
+
+.list li {
+  list-style-type: none;
+  margin-left: 20px;
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+
+  color: rgba(31, 32, 65, 0.75);
+
+  margin-bottom: 10px;
+
+  white-space: pre;
+
+  position: relative;
+}
+
+.list li:before {
+  position: absolute;
+  content: '';
+
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+
+  background: rgba(31, 32, 65, 0.25);
+
+  top: 50%;
+  left: -20px;
+  transform: translate(0,-50%);
+}
+
+.list li:last-child {
+  margin-bottom: 0;
+}

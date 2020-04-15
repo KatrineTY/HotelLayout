@@ -6,11 +6,12 @@ include ../components/button/button.pug
 include ../components/dropdown/dropdown.pug
 include ../components/datepicker/datepicker.pug
 include ../components/container/container.pug
+include ../components/list/list.pug
 
 br
 +container
   +column
-    +column__item
+    +column-item
       +input('text field', 'text','Email')     
       +input('text field', 'text','Email')
       +dropdown-container('guests','dropdown','Сколько гостей','extended')
@@ -18,48 +19,48 @@ br
         +dropdown-item('кровати')
         +dropdown-item('ванные комнаты')
       +input('masked text field', 'date','ДД.ММ.ГГГГ')
-    +column__item('','date')
+    +column-item('','date')
       +dropdown-container('datepicker', 'date dropdown', 'small')
         +datepicker('datepicker1')
       +dropdown-container('datepicker', 'date dropdown', 'small')
         +datepicker('datepicker2')
-    +column__item 
+    +column-item 
       +dropdown-container('datepicker', 'filter date dropdown', 'middle,ranged')
         +datepicker('datepicker3') 
-    +column__item 
+    +column-item 
       +input('subscription text field', 'email','Email') 
   +column
-    +column__item('checkbox buttons')
+    +column-item('checkbox buttons')
       +input-checkbox('Можно курить')
       +input-checkbox('Можно с питомцами')
       +input-checkbox('Можно пригласить гостей \n (до 10 человек)')
-    +column__item('radio buttons', 'radio')
+    +column-item('radio buttons', 'radio')
       +input-radio('Мужчина', 'gender')
       +input-radio('Женщина', 'gender')
-    +column__item('toggle')
+    +column-item('toggle')
       +input-toggle('Получать спецпредложения')
       +input-toggle('Получать спецпредложения')
-    +column__item('like button', 'like')
+    +column-item('like button', 'like')
       +input-like('2', 'empty-heart')
       +input-like('12', 'filled-heart')
-    +column__item('rate button', 'radio')
+    +column-item('rate button', 'radio')
       +input-stars(4, 5)
       +input-stars(5, 5)
   +column
-    +column__item('buttons', 'radio')
+    +column-item('buttons', 'radio')
       +button('click me', 'button')
       +button('click me', 'button', 'inactive')
-    +column__item('', 'radio,headerless')
+    +column-item('', 'radio,headerless')
       +button('click me', 'button', 'hollow')
       +button('click me', 'button', 'inactive,hollow')
-    +column__item('', 'headerless,h3')
+    +column-item('', 'headerless,h3')
       h3 click me
       h3 click me
-    +column__item('', 'headerless')
+    +column-item('', 'headerless')
       +button('перейти к оплате','a')
 +container('flex-baselined')
   +column
-    +column__item
+    +column-item
       +dropdown-container('appartament','dropdown','Какие аппартаменты','middle')
         +dropdown-item('спальни')
         +dropdown-item('кровати')
@@ -68,30 +69,49 @@ br
         +dropdown-item('спальни')
         +dropdown-item('кровати')
         +dropdown-item('ванные комнаты')
-      +dropdown-container('checkbox','','expandable checkbox list','middle,checkbox')
-        +input-checkbox('Завтрак')
-        +input-checkbox('Письменный стол')
-        +input-checkbox('Стул для кормления')
-        +input-checkbox('Кроватка')
-        +input-checkbox('Телевизор')
-        +input-checkbox('Шампунь')
-        +input-checkbox('Телевизор')
-        +input-checkbox('Шампунь')
-      +dropdown-container('checkbox','','expandable checkbox list','middle,checkbox')
-        +input-checkbox('Завтрак')
-        +input-checkbox('Письменный стол')
-        +input-checkbox('Стул для кормления')
-        +input-checkbox('Кроватка')
-        +input-checkbox('Телевизор')
-        +input-checkbox('Шампунь')
-        +input-checkbox('Телевизор')
-        +input-checkbox('Шампунь')
+  +column('big')
+    +column-item
+      +dropdown-container('guests','dropdown','Сколько гостей','extended')
+        +dropdown-item('спальни')
+        +dropdown-item('кровати')
+        +dropdown-item('ванные комнаты')
+  +column('big')
+    +column-item
+      +dropdown-container('guests','dropdown','Сколько гостей','extended')
+        +dropdown-item('спальни')
+        +dropdown-item('кровати')
+        +dropdown-item('ванные комнаты')
++container('flex-baselined')
   +column
-    +column__item 
-      +column__item('Rich Checkbox Buttons')
-        +input-checkbox('Ширина коридоров в номере не менее 91 см.','Широкий коридор')
-        +input-checkbox('На 1 этаже вас встретит специалист и проводит до номера.','Помощник для инвалидов')
-
+    +column-item
+      +dropdown-container('checkbox','','expandable checkbox list','middle,checkbox')
+        +input-checkbox('Завтрак')
+        +input-checkbox('Письменный стол')
+        +input-checkbox('Стул для кормления')
+        +input-checkbox('Кроватка')
+        +input-checkbox('Телевизор')
+        +input-checkbox('Шампунь')
+        +input-checkbox('Телевизор')
+        +input-checkbox('Шампунь')
+      +dropdown-container('checkbox','','expandable checkbox list','middle,checkbox')
+        +input-checkbox('Завтрак')
+        +input-checkbox('Письменный стол')
+        +input-checkbox('Стул для кормления')
+        +input-checkbox('Кроватка')
+        +input-checkbox('Телевизор')
+        +input-checkbox('Шампунь')
+        +input-checkbox('Телевизор')
+        +input-checkbox('Шампунь')
+  +column('middle')
+    +column-item('Rich Checkbox Buttons')
+      +input-checkbox('Ширина коридоров в номере \n не менее 91 см.','Широкий коридор')
+      +input-checkbox('На 1 этаже вас встретит специалист \n и проводит до номера.','Помощник для инвалидов')
+  +column
+    +column-item('bullet list')
+      +list-container
+        +list-item('Нельзя с питомцами')
+        +list-item('Без вечеринок и мероприятий')
+        +list-item('Время прибытия — после 13:00, \n а выезд до 12:00')
 br
 br
 br
