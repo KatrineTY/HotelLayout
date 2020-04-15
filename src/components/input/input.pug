@@ -21,8 +21,10 @@ mixin input(title, typ, placeholder, mods)
       default
         input.input__field(type=typ placeholder=placeholder class=allMods) 
 
-mixin input-checkbox(label)
+mixin input-checkbox(label, tittle)
   .input-button
+    - if (tittle)
+    h2.tittle-checkbox!=tittle
     input(type='checkbox' id=label.replace(/ /g,'-'))
     +icon('checkmark').checkmark-checkbox
     label(for=label.replace(/ /g,'-'))!= label

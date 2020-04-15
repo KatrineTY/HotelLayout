@@ -13,7 +13,7 @@ br
     +column__item
       +input('text field', 'text','Email')     
       +input('text field', 'text','Email')
-      +dropdown-container('guests','dropdown','extended')
+      +dropdown-container('guests','dropdown','Сколько гостей','extended')
         +dropdown-item('спальни')
         +dropdown-item('кровати')
         +dropdown-item('ванные комнаты')
@@ -60,14 +60,37 @@ br
 +container('flex-baselined')
   +column
     +column__item
-      +dropdown-container('appartament','dropdown','middle')
+      +dropdown-container('appartament','dropdown','Какие аппартаменты','middle')
         +dropdown-item('спальни')
         +dropdown-item('кровати')
         +dropdown-item('ванные комнаты')
-      +dropdown-container('appartament','dropdown','middle')
+      +dropdown-container('appartament','dropdown','Какие аппартаменты','middle')
         +dropdown-item('спальни')
         +dropdown-item('кровати')
         +dropdown-item('ванные комнаты')
+      +dropdown-container('checkbox','','expandable checkbox list','middle,checkbox')
+        +input-checkbox('Завтрак')
+        +input-checkbox('Письменный стол')
+        +input-checkbox('Стул для кормления')
+        +input-checkbox('Кроватка')
+        +input-checkbox('Телевизор')
+        +input-checkbox('Шампунь')
+        +input-checkbox('Телевизор')
+        +input-checkbox('Шампунь')
+      +dropdown-container('checkbox','','expandable checkbox list','middle,checkbox')
+        +input-checkbox('Завтрак')
+        +input-checkbox('Письменный стол')
+        +input-checkbox('Стул для кормления')
+        +input-checkbox('Кроватка')
+        +input-checkbox('Телевизор')
+        +input-checkbox('Шампунь')
+        +input-checkbox('Телевизор')
+        +input-checkbox('Шампунь')
+  +column
+    +column__item 
+      +column__item('Rich Checkbox Buttons')
+        +input-checkbox('Ширина коридоров в номере не менее 91 см.','Широкий коридор')
+        +input-checkbox('На 1 этаже вас встретит специалист и проводит до номера.','Помощник для инвалидов')
 
 br
 br

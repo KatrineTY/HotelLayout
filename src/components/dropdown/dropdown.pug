@@ -1,4 +1,4 @@
-mixin dropdown-container(type, title, mods)
+mixin dropdown-container(type, title, value, mods)
   -
     var allMods = '';
     if(typeof(mods) !== 'undefined' && mods) {
@@ -17,7 +17,7 @@ mixin dropdown-container(type, title, mods)
     if type === 'datepicker'
       block
     else 
-      input(type='button' class='dropdown__input')
+      input(type='button' class='dropdown__input' value=value)
       svg.dropdown__arrow
         use(xlink:href='#expansion')
       .dropdown__inner

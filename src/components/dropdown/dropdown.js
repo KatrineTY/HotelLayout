@@ -121,15 +121,7 @@ function updateDisableButton(dropdown) {
 }
 
 function setOriginMessage(dropdown) {
-  var type = $(dropdown).data('type');
-  switch (type) {
-    case 'guests':
-      dropdown.querySelector('.dropdown__input').setAttribute('value','Сколько гостей');
-      break;
-    case 'appartament':
-      dropdown.querySelector('.dropdown__input').setAttribute('value','Какие аппартаменты');
-      break;
-  }
+  dropdown.querySelector('.dropdown__input').value = dropdown.querySelector('.dropdown__input').getAttribute('value');  
 }
 
 $('.dropdown__button[data-action="apply"]').on('click', e => {
@@ -146,9 +138,6 @@ $(document).ready(function () {
   })
   $('.dropdown_extended').each(function () {
     updateDisableButton(this);
-  })
-  $('.dropdown').each(function () {
-    setOriginMessage(this);
   })
 });
 

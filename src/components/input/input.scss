@@ -99,7 +99,7 @@
   border-radius: 4px;
 
   position: absolute;
-  top: 0;
+  top: -1px;
   left: 0;
   width: 20px;
   height: 20px;
@@ -127,6 +127,24 @@
   fill: url('#primary-gradient');
 }
 
+.tittle-checkbox {
+  margin:0;
+  margin-left: 27px;
+  
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 18px;
+  color: rgba(31, 32, 65, 0.75);
+}
+
+.tittle-checkbox ~ label {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+}
+
 
 
 /*
@@ -139,7 +157,7 @@
   border-radius: 10px;
 
   position: absolute;
-  top: 0;
+  top:0;
   left: 0;
   width: 20px;
   height: 20px
