@@ -8,15 +8,11 @@ include ../components/datepicker/datepicker.pug
 include ../components/container/container.pug
 
 br
-+container('flex-baselined')
++container
   +column
     +column__item
       +input('text field', 'text','Email')     
       +input('text field', 'text','Email')
-      +dropdown-container('appartament','dropdown','extended')
-        +dropdown-item('спальни')
-        +dropdown-item('кровати')
-        +dropdown-item('ванные комнаты')
       +dropdown-container('guests','dropdown','extended')
         +dropdown-item('спальни')
         +dropdown-item('кровати')
@@ -62,7 +58,16 @@ br
     +column__item('', 'headerless')
       +button('перейти к оплате','a')
 +container('flex-baselined')
-
+  +column
+    +column__item
+      +dropdown-container('appartament','dropdown','middle')
+        +dropdown-item('спальни')
+        +dropdown-item('кровати')
+        +dropdown-item('ванные комнаты')
+      +dropdown-container('appartament','dropdown','middle')
+        +dropdown-item('спальни')
+        +dropdown-item('кровати')
+        +dropdown-item('ванные комнаты')
 
 br
 br

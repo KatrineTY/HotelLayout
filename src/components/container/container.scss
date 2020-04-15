@@ -3,19 +3,22 @@
   max-width: 1160px;
   margin: 0 auto;
   padding: 0 15px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .container_flex-centralized {
-  display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
 .container_flex-baselined {
-  display: flex;
-  justify-content: space-between;
   align-items: baseline;
 }
+
+.container_flex-baselined {
+  margin-top: 100px;;
+}
+
 
 /*
 UI-KIT containers
