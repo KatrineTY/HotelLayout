@@ -127,7 +127,7 @@
   fill: url('#primary-gradient');
 }
 
-.tittle-checkbox {
+.title-checkbox {
   margin:0;
   margin-left: 27px;
   padding-bottom: 5px;
@@ -139,7 +139,7 @@
   color: rgba(31, 32, 65, 0.75);
 }
 
-.tittle-checkbox ~ label {
+.title-checkbox ~ label {
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
@@ -242,6 +242,10 @@
 /*
  Like button
 */
+.input__like {
+  position: relative;
+  display: inline-flex;
+}
 .input-button .checkmark-like {
   width: 20px;
   height: 20px;

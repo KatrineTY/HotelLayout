@@ -7,8 +7,10 @@ include ../components/dropdown/dropdown.pug
 include ../components/datepicker/datepicker.pug
 include ../components/container/container.pug
 include ../components/list/list.pug
+include ../components/comment/comment.pug
 
 br
+
 +container
   +column
     +column-item
@@ -112,6 +114,14 @@ br
         +list-item('Нельзя с питомцами')
         +list-item('Без вечеринок и мероприятий')
         +list-item('Время прибытия — после 13:00, \n а выезд до 12:00')
++container('flex-baselined')
+  +column
+    +column-item
+      +comment('Мурад Сарафанов','Великолепный матрас на кровати в основной \
+      спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. \
+      Выкрикивал комплименты повару — никто не жаловался из соседей.','5 дней назад')
+br
+br
 br
 br
 br

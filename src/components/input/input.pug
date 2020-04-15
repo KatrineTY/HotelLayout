@@ -21,10 +21,10 @@ mixin input(title, typ, placeholder, mods)
       default
         input.input__field(type=typ placeholder=placeholder class=allMods) 
 
-mixin input-checkbox(label, tittle)
+mixin input-checkbox(label, title)
   .input-button
-    - if (tittle)
-    h2.tittle-checkbox!=tittle
+    - if (title)
+    h2.title-checkbox!=title
     input(type='checkbox' id=label.replace(/ /g,'-'))
     +icon('checkmark').checkmark-checkbox
     label(for=label.replace(/ /g,'-'))!= label
@@ -43,9 +43,10 @@ mixin input-toggle(label)
 
 mixin input-like(count, id)
   .input-button
-    input(type='checkbox' checked id=id)
-    +icon('like').checkmark-like
-    label(for=id)!= count
+    .input__like
+      input(type='checkbox' checked id=id)
+      +icon('like').checkmark-like
+      label(for=id)!= count
 
 mixin input-stars(countOfFilled, countOfStars)
   .input-button.input-button_star

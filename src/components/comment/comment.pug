@@ -1,0 +1,11 @@
+mixin comment(title, text, date, picture)
+  - var id=title.replace(' ','-');
+  .comment
+    .comment__content
+      .comment__header
+        .comment__title!=title
+        .comment__date!=date
+      .comment__text!=text
+    .comment__picture
+      img(src='../../assets/img/image.png')
+      +input-like('12', id)
