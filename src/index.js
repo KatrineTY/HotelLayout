@@ -1,3 +1,3 @@
-import './components/main.js'
-import './components/main.css'
-import './components/main.scss'
+import './main.js'
+import './main.css'
+import './main.scss'
