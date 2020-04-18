@@ -1,84 +1,90 @@
 .nav {
-  display: flex;
   align-items: baseline;
-
-  font-size: 13px;
-  font-weight: 700;
-
-  position: relative; 
-  z-index: 10;
-}
-
-.nav_vertical {
-  flex-direction: column;
+  display: flex;
 }
 
 .nav__item {
-  padding:10px 15px;
-
-  color: rgb(31, 32, 65);
-  text-decoration: none;
-  opacity: .5;
-
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 17px;
-
+  color: $color-main50;
   cursor: pointer;
+  padding: 10px 15px;
+  transition: color 0.2s linear;
 
-  transition: opacity .1s linear;
+  &:hover {
+    color: $color-main75;
+  }
 }
 
-.nav_vertical .nav__item {
-  padding-left: 0;
+.nav__item--multiple {
+  padding-right: 30px;
 }
 
-.nav__item_bold {
-  opacity: .75;
+.nav--vertical {
+  flex-direction: column;
+
+  .nav__item {
+    padding-left: 0;
+  }
+}
+
+.nav__list {
+  background: white;
+  content: '';
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+
+.nav__item--bold {
+  color: $color-main75;
   font-weight: bold;
 }
 
-.nav__item:hover {
-  opacity: .75;
+.nav__item--logged-in {
+  margin-right: 0;
+  padding-left: 45px;
+  position: relative;
+
+  &::before {
+    background: $color-main10;
+    content: '';
+    height: 2.2em;
+    left: 15px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: 1px;
+  }
 }
 
-.nav__item_logged-in {
-  padding-left: 45px;
-  margin-right: 0;
-
+.nav__container {
   position: relative;
 }
 
-.nav__item_logged-in:before {
-  content: '';
-  height: 30px;
-  width: 1px;
-
-  background: rgb(31, 32, 65);
-  opacity: .1;
-
+.nav__arrow {
+  cursor: pointer;
+  fill: $color-main50;
+  height: 24px;
+  pointer-events: none;
   position: absolute;
-  left: 15px;
+  right: 0;
   top: 50%;
   transform: translate(0, -50%);
+  width: 24px;
 }
 
-.nav__item_multiple {
-  position: relative;
-}
+.nav__container--opened {
+  .nav__item {
+    color: $color-main75;
+  }
 
-.nav__item_multiple:after {
-  content: '';
-  position: absolute;
-  top: 15px;
-  right: 5px;
+  .nav__arrow {
+    fill: $color-main75;
+    transform: translate(0, -50%) rotate(180deg);
+  }
 
-
-  border: solid rgb(31, 32, 65);
-  border-width: 0 1.5px 1.5px 0;
-
-  padding: 2.5px;
-
-  transform: rotate(45deg);
+  .nav__list {
+    display: flex;
+  }
 }

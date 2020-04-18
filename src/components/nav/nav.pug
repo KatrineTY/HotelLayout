@@ -4,10 +4,10 @@ mixin nav(mods)
     if(typeof(mods) !== 'undefined' && mods) {
       var modsList = mods.split(',');
       for (var i = 0; i < modsList.length; i++) {
-        allMods = allMods + ' nav_' + modsList[i].trim();
+        allMods = allMods + ' nav--' + modsList[i].trim();
       }
     }
-  .nav(class=allMods, role='navigation')&attributes(attributes)
+  .nav(class=allMods, role='navigation')
     block
 
 
@@ -17,8 +17,17 @@ mixin nav__item(text, href, mods)
     if(typeof(mods) !== 'undefined' && mods) {
       var modsList = mods.split(',');
       for (var i = 0; i < modsList.length; i++) {
-        allMods = allMods + ' nav__item_' + modsList[i].trim();
+        allMods = allMods + ' nav__item--' + modsList[i].trim();
       }
     }
-  .nav__item(class=allMods,href=href)&attributes(attributes)!= text
+  - if (allMods.includes('multiple')) {
+  .nav__container(class='js-nav__container')
+    input.nav__item(type='button' class=allMods value=text)
+    svg.nav__arrow
+      use(xlink:href='#expansion')
+    .nav__list
+      block
+  - }
+  - else
+  a.nav__item(class=allMods, href=href)!= text
 
