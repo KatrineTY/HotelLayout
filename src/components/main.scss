@@ -1,3 +1,4 @@
+@import "common/reset";
 @import "header/header";
 @import "footer/footer";
 @import "nav/nav";
@@ -14,33 +15,9 @@
 @import "list/list";
 @import "comment/comment";
 @import "profit/profit";
+@import "common/variables";
+@import "common/base";
+@import "common/placeholders";
 @import "../assets/fonts/fonts";
-
-body {
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-  font-family: Montserrat;
-  overflow: overlay;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
-
-h3 {
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 15px;
-
-  text-transform: uppercase;
-
-  margin:0;
-  padding-bottom: 5px;
-  
-}
 
 
