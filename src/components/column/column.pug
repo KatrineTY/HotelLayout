@@ -1,10 +1,10 @@
-mixin column(mods)
+mixin column(mods = 'L')
   -
     var allMods = '';
     if(typeof(mods) !== 'undefined' && mods) {
       var modsList = mods.split(',');
       for (var i = 0; i < modsList.length; i++) {
-        allMods = allMods + ' column_' + modsList[i].trim();
+        allMods = allMods + ' column--' + modsList[i].trim();
       }
     }
   .column(class=allMods)
@@ -16,10 +16,10 @@ mixin column-item(title, mods)
     if(typeof(mods) !== 'undefined' && mods) {
       var modsList = mods.split(',');
       for (var i = 0; i < modsList.length; i++) {
-        allMods = allMods + ' column__item_' + modsList[i].trim();
+        allMods = allMods + ' column__item--' + modsList[i].trim();
       }
     }
   .column__item(class=allMods)
-    - if(title)
-    h3!=title
+    if(title)
+    h3.columnn__subtitle!=title
     block

@@ -14,24 +14,28 @@ br
 
 +container
   +column
-    +column-item
-      +input('text field', 'text','Email')     
-      +input('text field', 'text','Email')
-      +dropdown-container('guests','dropdown','Сколько гостей','extended')
+    +column-item('text field')
+      +input('', 'text','Email')     
+    +column-item('text field')
+      +input('', 'text','Email')
+    +column-item('dropdown')
+      +dropdown-container('guests','','Сколько гостей','extended')
         +dropdown-item('спальни')
         +dropdown-item('кровати')
         +dropdown-item('ванные комнаты')
-      +input('masked text field', 'date','ДД.ММ.ГГГГ')
-    +column-item('','date')
-      +dropdown-container('datepicker', 'date dropdown', 'small')
+    +column-item('masked text field')
+      +input('', 'date','ДД.ММ.ГГГГ')
+    +column-item('date dropdown','date,S')
+      +dropdown-container('datepicker', '', 'small')
         +datepicker('datepicker1')
-      +dropdown-container('datepicker', 'date dropdown', 'small')
+    +column-item('date dropdown','date,S')
+      +dropdown-container('datepicker', '', 'small')
         +datepicker('datepicker2')
-    +column-item 
-      +dropdown-container('datepicker', 'filter date dropdown', 'middle,ranged')
+    +column-item('filter date dropdown')
+      +dropdown-container('datepicker', '', 'middle,ranged')
         +datepicker('datepicker3') 
-    +column-item 
-      +input('subscription text field', 'email','Email') 
+    +column-item('subscription text field')
+      +input('', 'email','Email') 
   +column
     +column-item('checkbox buttons')
       +input-checkbox('Можно курить')
@@ -56,10 +60,10 @@ br
     +column-item('', 'radio,headerless')
       +button('click me', 'button', 'hollow')
       +button('click me', 'button', 'inactive,hollow')
-    +column-item('', 'headerless,h3')
+    +column-item('', 'h3')
       h3 click me
       h3 click me
-    +column-item('', 'headerless')
+    +column-item
       +button('перейти к оплате','a')
 +container('flex-baselined')
   +column
@@ -72,13 +76,13 @@ br
         +dropdown-item('спальни')
         +dropdown-item('кровати')
         +dropdown-item('ванные комнаты')
-  +column('big')
+  +column('L')
     +column-item
       +dropdown-container('guests','dropdown','Сколько гостей','extended')
         +dropdown-item('спальни')
         +dropdown-item('кровати')
         +dropdown-item('ванные комнаты')
-  +column('big')
+  +column('L')
     +column-item
       +dropdown-container('guests','dropdown','Сколько гостей','extended')
         +dropdown-item('спальни')
@@ -105,7 +109,7 @@ br
         +input-checkbox('Шампунь')
         +input-checkbox('Телевизор')
         +input-checkbox('Шампунь')
-  +column('middle')
+  +column('M')
     +column-item('Rich Checkbox Buttons')
       +input-checkbox('Ширина коридоров в номере \n не менее 91 см.','Широкий коридор')
       +input-checkbox('На 1 этаже вас встретит специалист \n и проводит до номера.','Помощник для инвалидов')
@@ -121,7 +125,7 @@ br
       +profits  
         +profit('Комфорт', 'Шумопоглощающие стены', 'smile')
         +profit('Удобство', 'Окно в каждой из спален', 'building')
-  +column
+  +column('XXL')
     +column-item
       +comment('Мурад Сарафанов','Великолепный матрас на кровати в основной \
       спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. \
