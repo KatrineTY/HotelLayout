@@ -1,9 +1,10 @@
 .social {
   display: flex;
 }
+
 .social__item {
+  fill: $gradient-purple;
   padding-left: 20px;
-  fill: url(#primary-gradient);
 }
 
 .social__item:first-child {
