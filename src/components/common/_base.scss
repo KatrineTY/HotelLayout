@@ -33,5 +33,6 @@ h2 {
 h3 {
   @extend %title;
   font-size: .75rem;
+  line-height: 15px;
   text-transform: uppercase;
 }

@@ -3,49 +3,50 @@ include ../logo/logo.pug
 include ../container/container.pug
 include ../socials/socials.pug
 include ../input/input.pug
+include ../copyright/copyright.pug 
+
           
-mixin footer(withoutNavigation)
-  - if(withoutNavigation) {
+mixin footer(isNavigation)
+  - if(!isNavigation) {
   footer.footer
-    +container
-      .footer__inner.footer__inner_no-navigation
-        +logo(true)
-        p Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
-        +socials
-          +social__item('twitter')
-          +social__item('facebook')
-          +social__item('instagram')
+    .footer__inner.footer__inner--no-navigation
+      +logo(true)
+      p.footer__text Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
+      +socials
+        +social__item('twitter')
+        +social__item('facebook')
+        +social__item('instagram')
   
   - }else {
   footer.footer
     +container
       .footer__inner
-        .footer__column.footer__column_wide
+        .footer__column.footer__column--wide
           +logo(true)
-          p Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis. 
+          p.footer__text Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis. 
         .footer__column
-          .footer__title navigation
+          h3.footer__title navigation
           +nav('vertical')
             +nav__item('About us','#')
             +nav__item('News','#')
             +nav__item('Support','#')
             +nav__item('Products','#')
         .footer__column
-          .footer__title about us
+          h3.footer__title about us
           +nav('vertical')
             +nav__item('Who we are','#')
             +nav__item('Our team','#')
             +nav__item('Careers','#')
             +nav__item('Investors','#')
         .footer__column
-          .footer__title support
+          h3.footer__title support
           +nav('vertical')
             +nav__item('Documentation','#')
             +nav__item('Community','#')
             +nav__item('Get in Touch','#')
-        .footer__column.footer__column_wide
-          .footer__title subscribe to our newsletter
-          p Receive our latest news and promotions in your inbox!
+        .footer__column.footer__column--wide
+          h3.footer__title subscribe to our newsletter
+          p.footer__text Receive our latest news and promotions in your inbox!
           +input('','email','Your email address')
-    include ../copyright/copyright.pug 
+    +copyright 
   - } 
