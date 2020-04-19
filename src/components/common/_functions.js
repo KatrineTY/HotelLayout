@@ -1,3 +1,3 @@
-export default function toggleClass(e, eClass) {
-  e.currentTarget.classList.toggle(eClass);
+export default function toggleClass(element, eClass) {
+  element.classList.toggle(eClass);
 }

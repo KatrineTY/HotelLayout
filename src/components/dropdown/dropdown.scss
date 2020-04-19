@@ -1,3 +1,6 @@
+.dropdown > h3 {
+  padding-top: 20px;
+}
 .dropdown{
   position: relative;
   width: 100%;
@@ -46,10 +49,10 @@
   fill: rgba(31, 32, 65, 0.25);
 }
 
-.dropdown_open input{
+.dropdown_open:not([data-type="datepicker"]) input{
   border-color: rgba(31, 32, 65, 0.5);
 }
-.dropdown_open svg{
+.dropdown_open:not([data-type="datepicker"]) svg{
   fill: rgba(31, 32, 65, 0.5);
   transform: rotate(180deg);
 }
@@ -73,19 +76,19 @@
   border-radius: 4px 4px 0 0;
 }
 
-.dropdown .dropdown__input_open {
+.dropdown:not([data-type="datepicker"]) .dropdown__input_open {
   border-bottom: none;
   border-color: rgba(31, 32, 65, 0.5);
 }
 
-.dropdown .dropdown__input_open ~ .dropdown__inner{
+.dropdown:not([data-type="datepicker"]) .dropdown__input_open ~ .dropdown__inner{
   display:block;
   border: 1px solid rgba(31, 32, 65, 0.5);
   border-radius: 0 0 4px 4px;
 }
 
 
-.dropdown .dropdown__input_open ~ svg{
+.dropdown:not([data-type="datepicker"]) .dropdown__input_open ~ svg{
   transform: rotate(180deg);
   fill: rgba(31, 32, 65, 0.5);
 }
@@ -100,28 +103,14 @@
 
 
 .dropdown__buttons {
-  display: flex;
   border:none;
+  display: flex;
   justify-content: space-between;
   padding: 0;
   padding-top:20px;
 }
-.dropdown__buttons > * {
-  font-style: normal;
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 15px;
-  text-transform: uppercase;
-  flex:none;
-  height: initial;
-  cursor: pointer;
-}
-.dropdown__button[data-action="clear"]{
-  color: rgba(31, 32, 65, 0.5);
-}
-.dropdown__button[data-action="apply"]{
-  color: #BC9CFF;
-}
+
+
 
 
 /*

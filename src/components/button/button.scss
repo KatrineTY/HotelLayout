@@ -1,68 +1,82 @@
-.button {
-  text-transform: uppercase;
-  color: white;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 15px;
-  text-align: center;
+// .button {
+//   text-transform: uppercase;
+//   color: white;
+//   font-style: normal;
+//   font-weight: bold;
+//   font-size: 12px;
+//   line-height: 15px;
+//   text-align: center;
   
-  border-radius: 22px;
-  border: 2px solid transparent;
+//   border-radius: 22px;
+//   border: 2px solid transparent;
 
-  background: transparent;
-  padding: 8px 18px;
+//   background: transparent;
+//   padding: 8px 18px;
 
-  position: relative;
+//   position: relative;
 
+//   cursor: pointer;
+
+//   margin:10px 0;
+// }
+
+// .button:before {
+//   content: '';
+//   position: absolute;
+//   top: -4px;
+//   right: -4px;
+//   bottom: -4px;
+//   left: -4px;
+//   z-index: -1;
+//   border-radius: inherit;
+//   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+// }
+
+// .button_hollow {
+//   background: white;
+//   color: #BC9CFF;
+// }
+
+// .button_inactive {
+//   opacity: 0.5;
+// }
+
+// .button_inactive.button_hollow {
+//   opacity: 1;
+// }
+
+// .button_inactive.button_hollow:before {
+//   opacity: .5;
+// }
+
+// a.button {
+//   width: 320px;
+//   display: block;
+// }
+
+// .button_arrow {
+//   width: 24px;
+//   height: 24px;
+//   position: absolute;
+//   top: 50%;
+//   right:10px;
+//   transform: translate(0, -50%);
+
+//   cursor: pointer;
+
+//   fill: white;
+// }
+
+.button {
+  color: $color-main50;
   cursor: pointer;
+  font-family: $font-family-main;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 15px;
+  text-transform: uppercase;
 
-  margin:10px 0;
-}
-
-.button:before {
-  content: '';
-  position: absolute;
-  top: -4px;
-  right: -4px;
-  bottom: -4px;
-  left: -4px;
-  z-index: -1;
-  border-radius: inherit;
-  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-}
-
-.button_hollow {
-  background: white;
-  color: #BC9CFF;
-}
-
-.button_inactive {
-  opacity: 0.5;
-}
-
-.button_inactive.button_hollow {
-  opacity: 1;
-}
-
-.button_inactive.button_hollow:before {
-  opacity: .5;
-}
-
-a.button {
-  width: 320px;
-  display: block;
-}
-
-.button_arrow {
-  width: 24px;
-  height: 24px;
-  position: absolute;
-  top: 50%;
-  right:10px;
-  transform: translate(0, -50%);
-
-  cursor: pointer;
-
-  fill: white;
+  &--purple {
+    color: $color-purple;
+  }
 }

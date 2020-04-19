@@ -1,39 +1,45 @@
-require("air-datepicker/dist/css/datepicker.min.css");
+import toggleClass from '../common/_functions';
+
+require('air-datepicker/dist/css/datepicker.min.css');
 require('air-datepicker/dist/js/datepicker.min.js');
 
 
-$('input[id*="datepicker"').datepicker({
+$('.js-datepicker-input').datepicker({
+  classes: 'js-datepicker',
   toggleSelected: false,
-  clearButton: true,
   navTitles: {
-    days: 'MM yyyy'
+    days: 'MM yyyy',
   },
   prevHtml: '<svg><use xlink:href="#arrow-right"></use></svg>',
   nextHtml: '<svg><use xlink:href="#arrow-right"></use></svg>',
-  onHide: function(inst, animationCompleted) {
-    $(inst.el.parentNode).removeClass('dropdown_opened');
+  onHide(inst) {
+    toggleClass(inst.el.parentNode, 'dropdown--opened');
   },
-  onShow: function(inst, animationCompleted) {
-    $(inst.el.parentNode).addClass('dropdown_opened');
+  onShow(inst) {
+    toggleClass(inst.el.parentNode, 'dropdown--opened');
   },
 });
 
-let applyBtn = $('<span class="datepicker--button" data-action="apply">применить</span>');
-$('.datepicker--buttons').append(applyBtn)
-$('input[id*="datepicker"').each(function () {
+
+$('.js-datepicker-input').each(function () {
   $(this).datepicker().data('datepicker').apply = function () {
     this.$el.data('datepicker').hide();
   };
 });
 
-$('input[id*="ranged-datepicker"').datepicker({
-  classes:'-ranged-',
-  range:true,
+
+$('.js-datepicker-input--ranged').datepicker({
+  classes: '-ranged- js-datepicker',
+  range: true,
   multipleDatesSeparator: ' - ',
-  dateFormat: 'd M'
+  dateFormat: 'd M',
 });
 
-
-
-
-
+// TODO: change it...
+// TODO: try to disconnect cells from input
+$('.js-datepicker').each(function () {
+  $(this).append($('<div/>', { class: 'datepicker--buttons' }));
+  const buttonsContainer = this.getElementsByClassName('datepicker--buttons')[0];
+  $(buttonsContainer).append($('<button class="button datepicker--button" data-action="clear">очистить</button>'));
+  $(buttonsContainer).append($('<button class="button  button--purple datepicker--button" data-action="apply">применить</button>'));
+});

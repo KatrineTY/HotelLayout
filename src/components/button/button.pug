@@ -4,7 +4,7 @@ mixin button(text, type, mods)
     if(typeof(mods) !== 'undefined' && mods) {
       var modsList = mods.split(',');
       for (var i = 0; i < modsList.length; i++) {
-        allMods = allMods + ' button_' + modsList[i].trim();
+        allMods = allMods + ' button--' + modsList[i].trim();
       }
     }
     if(type === 'a')

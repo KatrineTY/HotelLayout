@@ -1,17 +1,20 @@
-$font-family-main:          'Montserrat', sans-serif;
-$font-family-secondary:     'Quicksand', 'Open Sans', Arial, Helvetica, sans-serif;
+$font-family-main:              'Montserrat', sans-serif;
+$font-family-secondary:         'Quicksand', 'Open Sans', Arial, Helvetica, sans-serif;
 
-$font-size-main:            14px;
+$font-size-main:                14px;
 
-$color-purple:              #BC9CFF;
-$color-green:               #6FCF97;
-$color-main100:             #1F2041;
-$color-main75:              rgba(31, 32, 65, .75);
-$color-main50:              rgba(31, 32, 65, .5);
-$color-main25:              rgba(31, 32, 65, .25);
-$color-main10:              rgba(31, 32, 65, .1);
-$color-main5:               rgba(31, 32, 65, .05);
+$color-purple:                #BC9CFF;
+$color-green:                 #6FCF97;
+$color-main100:               #1F2041;
+$color-main75:                rgba(31, 32, 65, .75);
+$color-main50:                rgba(31, 32, 65, .5);
+$color-main25:                rgba(31, 32, 65, .25);
+$color-main10:                rgba(31, 32, 65, .1);
+$color-main5:                 rgba(31, 32, 65, .05);
+$color-picked-cell:           #fff;
 
-$gradient-purple:           url('#primary-gradient');
+$gradient-purple-svg:           url('#primary-gradient');
+$gradient-purple-background:    linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+$gradient-green-background:     linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
 
-$border-color-picture:      #fff;
+$border-color-picture:          #fff;

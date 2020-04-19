@@ -4,7 +4,6 @@ include ../components/input/input.pug
 include ../components/column/column.pug
 include ../components/button/button.pug
 include ../components/dropdown/dropdown.pug
-include ../components/datepicker/datepicker.pug
 include ../components/container/container.pug
 include ../components/list/list.pug
 include ../components/comment/comment.pug
@@ -26,21 +25,18 @@ br
     +column-item('masked text field')
       +input('', 'date','ДД.ММ.ГГГГ')
     +column-item('date dropdown','date,S')
-      +dropdown-container('datepicker', '', 'small')
-        +datepicker('datepicker1')
+      +dropdown-container('datepicker', '','', 'small')
     +column-item('date dropdown','date,S')
-      +dropdown-container('datepicker', '', 'small')
-        +datepicker('datepicker2')
+      +dropdown-container('datepicker', '','', 'small')
     +column-item('filter date dropdown')
-      +dropdown-container('datepicker', '', 'middle,ranged')
-        +datepicker('datepicker3') 
+      +dropdown-container('datepicker', '','', 'middle,ranged')
     +column-item('subscription text field')
       +input('', 'email','Email') 
   +column
     +column-item('checkbox buttons')
       +input-checkbox('Можно курить')
       +input-checkbox('Можно с питомцами')
-      +input-checkbox('Можно пригласить гостей \n (до 10 человек)')
+      +input-checkbox('Можно пригласить гостей (до 10 человек)')
     +column-item('radio buttons', 'radio')
       +input-radio('Мужчина', 'gender')
       +input-radio('Женщина', 'gender')
