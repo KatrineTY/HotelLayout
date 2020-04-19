@@ -1,14 +1,6 @@
-mixin list-container(mods)
-  -
-    var allMods = '';
-    if(typeof(mods) !== 'undefined' && mods) {
-      var modsList = mods.split(',');
-      for (var i = 0; i < modsList.length; i++) {
-        allMods = allMods + ' list_' + modsList[i].trim();
-      }
-    }
+mixin list-container
   ul.list(class=allMods)
     block
 
 mixin list-item(text)
-  li!=text
+  li.list__item!=text
