@@ -1,22 +1,16 @@
 .header {
-  width: 100%;
-  height: 70px;
-
   background-color: white;
-
-  display: flex;
-  align-items: center;
+  padding: 13px 0;
 }
 
 .header__inner {
-  position: relative;
-
+  align-items: center;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-}
+  width: 100%;
 
-.header__inner .button_hollow {
-  margin-right: 20px;
-  margin-left: 15px;
+  .button--hollow {
+    margin-left: 15px;
+    margin-right: 20px;
+  }
 }
