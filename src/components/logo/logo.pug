@@ -1,8 +1,7 @@
-mixin logo(withLabel)
-  -
-    if(withLabel)
+mixin logo(label)
+  - if(label)
   .logo
     img(src='../../assets/img/logo.png', alt='logo')
   - else
-  .logo_without-label
+  .logo--no-label
     img(src='../../assets/img/logo.png', alt='logo')

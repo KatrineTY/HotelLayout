@@ -1,14 +1,12 @@
-// to make it centralized 
 .logo {
   display: flex;
 }
 
-.logo_without-label {
+.logo--no-label {
   display: flex;
-  width: 40px;
-  height: 40px;
-  overflow: hidden;
-
   filter: brightness(0);
-  opacity: .25; 
+  height: 40px;
+  opacity: .25;
+  overflow: hidden;
+  width: 40px;
 }
