@@ -1,9 +1,9 @@
-mixin comment(title, text, date, picture)
-  - var id=title.replace(' ','-');
+mixin comment(author, text, date, picture)
+  - var id = `f${(~~(Math.random()*1e8)).toString(16)}`;
   .comment
     .comment__content
       .comment__header
-        .comment__title!=title
+        .comment__author!=author
         .comment__date!=date
       .comment__text!=text
     .comment__picture
