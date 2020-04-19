@@ -1,15 +1,8 @@
 .copyright {
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 17px;
-
-  height: 70px;
-
-  border-top: 1px solid rgba(31, 32, 65, 0.1);
-
-  display: flex;
-  justify-content: space-between;
   align-items: center;
+  border-top: 1px solid $color-main10;
+  display: flex;
+  font-family: Montserrat;
+  justify-content: space-between;
+  padding: 23px 0;
 }

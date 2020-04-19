@@ -4,7 +4,7 @@ mixin container(mods)
     if(typeof(mods) !== 'undefined' && mods) {
       var modsList = mods.split(',');
       for (var i = 0; i < modsList.length; i++) {
-        allMods = allMods + ' container_' + modsList[i].trim();
+        allMods = allMods + ' container--' + modsList[i].trim();
       }
     }
   .container(class=allMods)
