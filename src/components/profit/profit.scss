@@ -1,45 +1,26 @@
 .profits {
-  width: 290px;
+  max-width: 290px;
+  width: 100%;
 }
 
 .profit {
-  position: relative;
-  padding-left:55px;
-  border-bottom:1px solid rgba(31, 32, 65, 0.1);
-
-  padding-bottom:15px;
-  padding: 15px 5px 15px 60px;
-
   background-color: white;
+  border-bottom: 1px solid $color-main10;
+
+  padding: 15px 20px 15px 55px;
+  position: relative;
 }
 
 .profit__title {
-  font-style: normal;
   font-weight: bold;
-  font-size: 14px;
-  line-height: 24px;
-
-  color: rgba(31, 32, 65, 0.75);
-}
-
-.profit__text {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 24px;
-
-  color: rgba(31, 32, 65, 0.75);
 }
 
 .profit__pic {
-  position: absolute;
   content: '';
-
-  left:0;
-  top: 15px;
-
-  width: 48px;
+  fill: $gradient-purple;
   height: 48px;
-
-  fill: url('#primary-gradient');
+  left: 0;
+  position: absolute;
+  top: 15px;
+  width: 48px;
 }

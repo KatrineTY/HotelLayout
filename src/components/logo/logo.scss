@@ -1,12 +1,12 @@
 .logo {
   display: flex;
-}
 
-.logo--no-label {
-  display: flex;
-  filter: brightness(0);
-  height: 40px;
-  opacity: .25;
-  overflow: hidden;
-  width: 40px;
+  &--no-label {
+    display: flex;
+    filter: brightness(0);
+    height: 40px;
+    opacity: .25;
+    overflow: hidden;
+    width: 40px;
+  }
 }
