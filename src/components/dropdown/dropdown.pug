@@ -5,7 +5,7 @@ mixin dropdown-container(type, title, value, mods)
     if(typeof(mods) !== 'undefined' && mods) {
       var modsList = mods.split(',');
       for (var i = 0; i < modsList.length; i++) {
-        allMods = allMods + ' dropdown_' + modsList[i].trim();
+        allMods = allMods + ' dropdown--' + modsList[i].trim();
       }
       if(type === 'datepicker') {
         datepickerClasses = datepickerClasses + ' datepicker-here js-datepicker-input';
@@ -16,8 +16,6 @@ mixin dropdown-container(type, title, value, mods)
     }
 
   .dropdown(class=allMods data-type=type)
-    if (title)
-      h3!=title
     - 
     input.dropdown__input(type='button' class=datepickerClasses value=value)
     svg.dropdown__arrow
@@ -25,7 +23,7 @@ mixin dropdown-container(type, title, value, mods)
     if type !== 'datepicker'
       .dropdown__inner
         block 
-        if(allMods.includes('dropdown_extended'))
+        if(mods.includes('extended'))
           .dropdown__buttons
             +button('очистить','button')(data-action='clear')
             +button('применить','button','purple')(data-action='apply')

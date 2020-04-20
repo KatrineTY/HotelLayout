@@ -1,5 +1,5 @@
 $('.dropdown__input').each(function () {
-  $(this).on('click', e => e.target.classList.toggle("dropdown__input_open"))
+  $(this).on('click', e => e.target.classList.toggle("dropdown__input--opened"))
 })
 
 function changeValue(dropdown) {
@@ -124,7 +124,7 @@ function setOriginMessage(dropdown) {
 
 $('.dropdown__button[data-action="apply"]').on('click', e => {
   changeValue(e.target.parentNode.parentNode.parentNode);
-  e.target.parentNode.parentNode.parentNode.getElementsByClassName('dropdown__input')[0].classList.toggle("dropdown__input_open");
+  e.target.parentNode.parentNode.parentNode.getElementsByClassName('dropdown__input')[0].classList.toggle("dropdown__input--opened");
 })
 $('.dropdown__button[data-action="clear"]').on('click', clearValue)
 

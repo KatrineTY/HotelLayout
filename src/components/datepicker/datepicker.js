@@ -12,12 +12,6 @@ $('.js-datepicker-input').datepicker({
   },
   prevHtml: '<svg><use xlink:href="#arrow-right"></use></svg>',
   nextHtml: '<svg><use xlink:href="#arrow-right"></use></svg>',
-  onHide(inst) {
-    toggleClass(inst.el.parentNode, 'dropdown--opened');
-  },
-  onShow(inst) {
-    toggleClass(inst.el.parentNode, 'dropdown--opened');
-  },
 });
 
 
@@ -27,6 +21,12 @@ $('.js-datepicker-input').each(function () {
   };
 });
 
+$('.js-datepicker-input').on('click', function () {
+  if (this.classList.contains('dropdown__input--opened')) {
+    $(this).datepicker().data('datepicker').hide();
+  }
+});
+
 
 $('.js-datepicker-input--ranged').datepicker({
   classes: '-ranged- js-datepicker',
@@ -34,6 +34,8 @@ $('.js-datepicker-input--ranged').datepicker({
   multipleDatesSeparator: ' - ',
   dateFormat: 'd M',
 });
+
+
 
 // TODO: change it...
 // TODO: try to disconnect cells from input
