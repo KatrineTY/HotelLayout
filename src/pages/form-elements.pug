@@ -50,17 +50,18 @@ br
       +input-stars(4, 5)
       +input-stars(5, 5)
   +column
-    +column-item('buttons', 'radio')
-      +button('click me', 'button')
-      +button('click me', 'button', 'inactive')
-    +column-item('', 'radio,headerless')
-      +button('click me', 'button', 'hollow')
-      +button('click me', 'button', 'inactive,hollow')
-    +column-item('', 'h3')
-      h3 click me
-      h3 click me
-    +column-item
-      +button('перейти к оплате','a')
+    +column-item('buttons')
+      +column-item('','button-filled')
+        +button('click me', 'button','oval,filled')
+        +button('click me', 'button', 'oval,filled,inactive')
+      +column-item('','button-filled')
+        +button('click me', 'button', 'oval,framed')
+        +button('click me', 'button', 'oval,inactive,framed')
+      +column-item('','button-filled')
+        +button('click me', 'button', 'purple')
+        +button('click me', 'button')
+      +column-item('','button-filled')
+        +button('перейти к оплате','a', 'oval,filled,link')
 +container('flex-baselined')
   +column
     +column-item('dropdown')

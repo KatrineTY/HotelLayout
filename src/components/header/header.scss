@@ -8,9 +8,10 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
+}
 
-  .button--hollow {
-    margin-left: 15px;
-    margin-right: 20px;
-  }
+.header__buttons {
+  padding-left: 15px;
+  position: relative;
+  z-index: 1;
 }

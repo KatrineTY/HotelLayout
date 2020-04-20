@@ -9,7 +9,7 @@ mixin button(text, type, mods)
     }
     if(type === 'a')
   a.button(class=allMods)&attributes(attributes)!= text
-    svg.button_arrow
+    svg.button__arrow
       use(xlink:href='#arrow-right')
   - else 
   button.button(class=allMods)&attributes(attributes)!= text

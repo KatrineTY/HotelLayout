@@ -38,8 +38,13 @@
     max-width: 270px;
   }
 
-  .columnn__subtitle {
-    display: block;
-    padding-bottom: 5px;
+  &--button-filled {
+    margin-top: 10px;
   }
+  
+}
+
+.columnn__subtitle {
+  display: block;
+  padding-bottom: 5px;
 }
