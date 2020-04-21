@@ -1,10 +1,93 @@
-$('.dropdown__input').each(function () {
-  $(this).on('click', e => e.target.classList.toggle("dropdown__input--opened"))
-})
+import toggleClass from '../common/_functions';
+
+function chooseEnd(text, count) {
+  let result = '';
+  switch (text) {
+    case 'спальни':
+      if (count === 1) {
+        result = 'спальня';
+      } else if (count < 5) {
+        result = 'спальни';
+      } else {
+        result = 'спален';
+      }
+      break;
+    case 'кровати':
+      if (count == 1) {
+        result = 'кровать';
+      } else if (count < 5) {
+        result = 'кровати';
+      } else {
+        result = 'кроватей';
+      }
+      break;
+    case 'ванные комнаты':
+      if (count == 1) {
+        result = 'ванная';
+      } else {
+        result = 'ванных';
+      }
+      break;
+    default:
+      result = '';
+  }
+  return result;
+}
+
+function getAppartamentsValue(dropdown) {
+  let finalValue = '';
+  $(dropdown.getElementsByClassName('js-dropdown__item')).each(function () {
+    const count = this.getElementsByClassName('js-input-number__input')[0].value;
+    if (count != 0) {
+      let text = this.getElementsByClassName('js-dropdown__title')[0].innerText.toLowerCase();
+      text = chooseEnd(text, count);
+      finalValue += `${count} ${text}, `;
+    }
+  });
+  finalValue = finalValue.trim();
+  finalValue = finalValue.substring(0, finalValue.length - 1);
+
+  const restrictedLength = dropdown.classList.contains('dropdown--M') ? 29 : 39;
+
+
+  if (finalValue.length > restrictedLength) {
+    const split = finalValue.split(',');
+    finalValue = `${split.slice(0, split.length - 1).join(',')}...`;
+  }
+  return finalValue;
+}
+
+function getGuestsValue(dropdown) {
+  let finalValue = 0;
+  $(dropdown.getElementsByClassName('js-dropdown__item')).each(function () {
+    const count = this.getElementsByClassName('js-input-number__input')[0].value;
+    finalValue += parseInt(count, 10);
+  });
+
+  let result = '';
+  if (finalValue === 1) {
+    result = `${finalValue} гость`;
+  } else if (finalValue === 0 || finalValue > 4) {
+    result = `${finalValue} гостей`;
+  } else {
+    result = `${finalValue} гостя`;
+  }
+  return result;
+}
+
+function setOriginMessage(dropdown) {
+  dropdown.querySelector('.js-dropdown__input').value = dropdown.querySelector('.js-dropdown__input').getAttribute('value');
+}
+
+function updateDisableButton(dropdown) {
+  if ($('.js-input-number__input', dropdown).toArray().every((elem) => elem.value === '0')) {
+    dropdown.querySelector('*[data-action="clear"]').classList.add('button--hidden');
+  }
+}
 
 function changeValue(dropdown) {
-  var type = $(dropdown).data('type');
-  var finalValue;
+  const type = $(dropdown).data('type');
+  let finalValue;
 
   switch (type) {
     case 'appartament':
@@ -13,151 +96,62 @@ function changeValue(dropdown) {
     case 'guests':
       finalValue = getGuestsValue(dropdown);
       break;
+    default:
+      finalValue = '';
   }
-
-  dropdown.getElementsByClassName('dropdown__input')[0].value = finalValue;
-
-  if ($('.input-number input', dropdown).toArray().every(function (elem) {
-    return elem.value == 0;
-  })) {
+  dropdown.getElementsByClassName('js-dropdown__input')[0].value = finalValue;
+  if ($('.js-input-number__input', dropdown).toArray().every((elem) => elem.value === '0')) {
     setOriginMessage(dropdown);
   }
 }
 
 function clearValue(e) {
-  var dropdownInner = e.target.parentNode.parentNode;
-  // var dropdownInput = dropdown.getElementsByClassName('dropdown__input')[0];
-  $('.input-number_left', dropdownInner).each(function () {
-    this.classList.add("input-number_left_disabled");
+  const dropdownInner = e.target.parentNode.parentNode;
+  $('.js-input-number__button-decrease', dropdownInner).each(function () {
+    this.classList.add('input-number--disabled');
   });
-  $('input', dropdownInner).each(function () {
+  $('.js-input-number__input', dropdownInner).each(function () {
     this.value = 0;
   });
-  e.target.classList.add('dropdown__button_disabled');
+  e.target.classList.add('button--hidden');
 }
 
-function getAppartamentsValue(dropdown) {
-  var finalValue = '';
-  $(dropdown.getElementsByClassName('dropdown__item')).each(function () {
-    var count = this.getElementsByTagName('input')[0].value;
-    if (count != 0) {
-      var text = this.getElementsByTagName('h3')[0].innerText.toLowerCase();
-      text = chooseEnd(text, count);
-      finalValue += count + ' ' + text + ', ';
+$('.js-dropdown__input').on('click', (e) => toggleClass(e.target, 'dropdown__input--opened'));
+
+$(document).ready(() => {
+  $('.js-input-number__button-decrease').each(function () {
+    if (this.parentNode.querySelector('.js-input-number__input').value === '0') {
+      $(this).addClass('input-number--disabled');
     }
-  })
-  finalValue = finalValue.trim();
-  finalValue = finalValue.substring(0, finalValue.length - 1) + '...';
-
-  var restricted_length;
-  if(dropdown.classList.contains('dropdown_middle')){
-    restricted_length = 29;
-  } else {
-    restricted_length = 39;
-  }
-  if (finalValue.length > restricted_length) {
-    var split = finalValue.split(',');
-    finalValue = split.slice(0, split.length - 1).join(",") + '...';
-  }
-  return finalValue;
-}
-
-function chooseEnd(text, count) {
-  switch (text) {
-    case 'спальни':
-      if (count == 1) {
-        return 'спальня';
-      } else if (count < 5) {
-        return 'спальни';
-      } else {
-        return 'спален';
-      }
-      break;
-    case 'кровати':
-      if (count == 1) {
-        return 'кровать';
-      } else if (count < 5) {
-        return 'кровати';
-      } else {
-        return 'кроватей';
-      }
-      break;
-    case 'ванные комнаты':
-      if (count == 1) {
-        return 'ванная';
-      } else {
-        return 'ванных';
-      }
-      break;
-  }
-
-}
-
-function getGuestsValue(dropdown) {
-  var finalValue = 0;
-  $(dropdown.getElementsByClassName('dropdown__item')).each(function () {
-    var count = this.getElementsByTagName('input')[0].value;
-    finalValue += parseInt(count);
   });
-
-  if (finalValue == 1) {
-    return finalValue + ' гость';
-  } else if (finalValue == 0 || finalValue > 4) {
-    return finalValue + ' гостей';
-  } else {
-    return finalValue + ' гостя';
-  }
-
-}
-
-function updateDisableButton(dropdown) {
-  if ($('.input-number input', dropdown).toArray().every(function (elem) {
-    return elem.value == 0;
-  })) {
-    dropdown.querySelector('.dropdown__button[data-action="clear"]').classList.add('dropdown__button_disabled');
-  }
-}
-
-function setOriginMessage(dropdown) {
-  dropdown.querySelector('.dropdown__input').value = dropdown.querySelector('.dropdown__input').getAttribute('value');  
-}
-
-$('.dropdown__button[data-action="apply"]').on('click', e => {
-  changeValue(e.target.parentNode.parentNode.parentNode);
-  e.target.parentNode.parentNode.parentNode.getElementsByClassName('dropdown__input')[0].classList.toggle("dropdown__input--opened");
-})
-$('.dropdown__button[data-action="clear"]').on('click', clearValue)
-
-$(document).ready(function () {
-  $('.input-number_left').each(function () {
-    if (this.parentNode.querySelector('input[type=number]').value == 0) {
-      $(this).addClass("input-number_left_disabled");
-    }
-  })
-  $('.dropdown_extended').each(function () {
+  $('.dropdown--extended').each(function () {
+    $('*[data-action="clear"]', this).on('click', clearValue);
+    $('*[data-action="apply"]', this).on('click', (e) => {
+      changeValue(e.target.parentNode.parentNode.parentNode);
+      e.target.parentNode.parentNode.parentNode.getElementsByClassName('dropdown__input')[0].classList.toggle('dropdown__input--opened');
+    });
     updateDisableButton(this);
-  })
+  });
 });
 
-$('.input-number_left').each(function () {
-  $(this).on('click', function () {
-    this.parentNode.querySelector('input[type=number]').stepDown()
-    if (this.parentNode.querySelector('input[type=number]').value == 0) {
-      $(this).addClass("input-number_left_disabled");
-    }
+$('.js-input-number__button-decrease').on('click', function () {
+  this.parentNode.querySelector('input[type=number]').stepDown();
+  if (this.parentNode.querySelector('input[type=number]').value === '0') {
+    $(this).addClass('input-number--disabled');
+  }
+  if (!this.parentNode.parentNode.parentNode.parentNode.classList.contains('dropdown--extended')) {
+    changeValue(this.parentNode.parentNode.parentNode.parentNode);
+  } else {
     updateDisableButton(this.parentNode.parentNode.parentNode);
-    if (!this.parentNode.parentNode.parentNode.parentNode.classList.contains('dropdown_extended')) {
-      changeValue(this.parentNode.parentNode.parentNode.parentNode);
-    }
-  })
+  }
 });
 
-$('.input-number_right').each(function () {
+$('.js-input-number__button-increase').each(function () {
   $(this).on('click', function () {
     this.parentNode.querySelector('input[type=number]').stepUp();
-    $(this.parentNode.querySelector('.input-number_left')).removeClass("input-number_left_disabled");
-    $(this.parentNode.parentNode.parentNode.querySelector('.dropdown__button[data-action="clear"]')).removeClass("dropdown__button_disabled");
-    if (!this.parentNode.parentNode.parentNode.parentNode.classList.contains('dropdown_extended')) {
+    $(this.parentNode.querySelector('.js-input-number__button-decrease')).removeClass('input-number--disabled');
+    $(this.parentNode.parentNode.parentNode.querySelector('*[data-action="clear"]')).removeClass('button--hidden');
+    if (!this.parentNode.parentNode.parentNode.parentNode.classList.contains('dropdown--extended')) {
       changeValue(this.parentNode.parentNode.parentNode.parentNode);
     }
   })

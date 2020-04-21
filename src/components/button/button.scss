@@ -56,6 +56,10 @@
     display: block;
     width: 100%;
   }
+
+  &--hidden {
+    visibility: hidden;
+  }
 }
 
 .button__arrow {

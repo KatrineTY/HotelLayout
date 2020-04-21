@@ -63,9 +63,9 @@ mixin input-stars(countOfFilled, countOfStars)
 
 mixin input-number()
   .input-number
-    button(class="input-number_left" data-action='decrease') -
-    input(min='0' value='1' type='number')
-    button(class="input-number_right" data-action='increase') +
+    button(class="input-number_left js-input-number__button-decrease" data-action='decrease') -
+    input(min='0' value='1' type='number' class="js-input-number__input")
+    button(class="input-number_right js-input-number__button-increase" data-action='increase') +
 
 
 

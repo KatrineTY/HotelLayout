@@ -17,7 +17,7 @@ mixin dropdown-container(type, title, value, mods)
 
   .dropdown(class=allMods data-type=type)
     - 
-    input.dropdown__input(type='button' class=datepickerClasses value=value)
+    input.dropdown__input(type='button' class=datepickerClasses value=value class='js-dropdown__input')
     svg.dropdown__arrow
       use(xlink:href='#expansion')
     if type !== 'datepicker'
@@ -30,6 +30,6 @@ mixin dropdown-container(type, title, value, mods)
         
 
 mixin dropdown-item(title)
-  .dropdown__item
-    h3!=title
+  .dropdown__item(class='js-dropdown__item')
+    h3.js-dropdown__title!=title
     +input-number()
