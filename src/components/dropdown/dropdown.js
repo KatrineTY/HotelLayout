@@ -108,7 +108,7 @@ function changeValue(dropdown) {
 function clearValue(e) {
   const dropdownInner = e.target.parentNode.parentNode;
   $('.js-input-number__button-decrease', dropdownInner).each(function () {
-    this.classList.add('input-number--disabled');
+    this.classList.add('input-number__button--disabled');
   });
   $('.js-input-number__input', dropdownInner).each(function () {
     this.value = 0;
@@ -121,7 +121,7 @@ $('.js-dropdown__input').on('click', (e) => toggleClass(e.target, 'dropdown__inp
 $(document).ready(() => {
   $('.js-input-number__button-decrease').each(function () {
     if (this.parentNode.querySelector('.js-input-number__input').value === '0') {
-      $(this).addClass('input-number--disabled');
+      $(this).addClass('input-number__button--disabled');
     }
   });
   $('.dropdown--extended').each(function () {
@@ -137,7 +137,7 @@ $(document).ready(() => {
 $('.js-input-number__button-decrease').on('click', function () {
   this.parentNode.querySelector('input[type=number]').stepDown();
   if (this.parentNode.querySelector('input[type=number]').value === '0') {
-    $(this).addClass('input-number--disabled');
+    $(this).addClass('input-number__button--disabled');
   }
   if (!this.parentNode.parentNode.parentNode.parentNode.classList.contains('dropdown--extended')) {
     changeValue(this.parentNode.parentNode.parentNode.parentNode);
@@ -149,10 +149,10 @@ $('.js-input-number__button-decrease').on('click', function () {
 $('.js-input-number__button-increase').each(function () {
   $(this).on('click', function () {
     this.parentNode.querySelector('input[type=number]').stepUp();
-    $(this.parentNode.querySelector('.js-input-number__button-decrease')).removeClass('input-number--disabled');
+    $(this.parentNode.querySelector('.js-input-number__button-decrease')).removeClass('input-number__button--disabled');
     $(this.parentNode.parentNode.parentNode.querySelector('*[data-action="clear"]')).removeClass('button--hidden');
     if (!this.parentNode.parentNode.parentNode.parentNode.classList.contains('dropdown--extended')) {
       changeValue(this.parentNode.parentNode.parentNode.parentNode);
     }
-  })
+  });
 });

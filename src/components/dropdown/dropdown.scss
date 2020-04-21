@@ -10,7 +10,7 @@
   }
 
   &--M {
-    max-width: 260px;
+    max-width: 270px;
   }
 
   .dropdown__input--opened ~ .dropdown__inner {
@@ -46,6 +46,10 @@
   &--opened ~ .dropdown__arrow {
     fill: $color-main50;
     transform: translate(-50%, -50%) rotate(180deg);
+  }
+
+  &:hover {
+    border-color: $color-main50;
   }
 }
 

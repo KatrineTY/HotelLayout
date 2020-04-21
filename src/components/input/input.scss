@@ -1,330 +1,257 @@
-// TODO: refactor!
 .input {
+  position: relative;
   width: 100%;
 }
 
-.input_arrowed {
-  position: relative;
-  display: inline;  
-}
-
 .input__field {
-  border: 1px solid rgba(31, 32, 65, 0.25);
+  background-color: white;
+  border: 1px solid $color-main25;
   border-radius: 4px;
-  padding:10px 15px;
-
-  font-size: 14px;
-  line-height: 24px;
-  color: rgba(31, 32, 65, 0.25);
-
-  width: 320px;
-  height: 44px;
+  color: $color-main25;
+  padding: 10px 15px;
+  width: 100%;
 }
 
-.input__field[type='email'] {
-  width: 260px;
+.input__field:hover {
+  border-color: $color-main50;
+  color: $color-main50;
 }
 
-.input__field[type='text']:hover {
-  color: rgba(31, 32, 65, 0.5);
-  border-color: rgba(31, 32, 65, 0.5);
-}
-
-
-.input_arrow {
+.input__arrow {
+  cursor: pointer;
+  fill: $gradient-purple-svg;
   height: 24px;
-  width: 24px;
-
   position: absolute;
+  right: 10px;
   top: 50%;
-  right:10px;
   transform: translate(0, -50%);
-
-  cursor: pointer;
-
-  fill: url(#primary-gradient);
+  width: 24px;
 }
 
-// Buttons
+/*
+***** Buttons *****
+*/
+
 .input-button {
+  color: $color-main50;
   display: block;
-
-  position: relative;
-  cursor: pointer;
-
+  line-height: 18px;
+  margin-top: 10px;
   user-select: none;
 
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 18px;
-
-  color: rgba(31, 32, 65, 0.5);
-
-  white-space: pre-wrap;
-  margin-top:10px;
+  &--like,
+  &--star {
+    display: inline-flex;
+  }
 }
 
-.input-button:hover,
-.input-button :checked ~ label {
-  color: rgba(31, 32, 65, 0.75);
-}
-
-.input-button input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
-
-.input-button label {
-  cursor: pointer;
-
-  padding-left: 27px;
-
+.input-button__label {
+  display: block;
   position: relative;
 
-  display: flex;
+  &--checkmark {
+    padding-left: 30px;
+  }
+
+  &--like:hover .input-button__text {
+    color: $color-main75;
+  }
+
+  &--like:hover .input-button__mark {
+    border-color: $color-main75;
+  }
+
+  &--like:hover .input-button__mark use {
+    stroke: $color-main75;
+  }
+
+  &--toggle {
+    color: $color-main75;
+    padding-left: 47px;
+  }
+
+  &--radio {
+    display: flex;
+  }
+
 }
 
-/*
- Checkbox
-*/
-
-.input-button .checkmark-checkbox {
-  background: #FFFFFF;
-
-  border: 1px solid rgba(31, 32, 65, 0.25);
-  border-radius: 4px;
-
-  position: absolute;
-  top: -1px;
-  left: 0;
-  width: 20px;
-  height: 20px;
-}
-
-.input-button:hover .checkmark-checkbox,
-.input-button input:checked ~ .checkmark-checkbox {
-  border-color: #BC9CFF;
-
-}
-
-.checkmark-checkbox use {
-  position: absolute;
+.input-button__input {
+  cursor: pointer;
   display: none;
+
+  &:checked ~ .input-button__text:not(.input-button__text--like) {
+    color: $color-main75;
+  }
+
+  &:checked ~ .input-button__text--like {
+    color: $color-purple;
+  }
+
+  &:checked ~ .input-button__mark {
+    border-color: #bc9cff;
+  }
+
+  &:checked ~ .input-button__mark--checkmark use {
+    display: block;
+  }
+
+  &:checked ~ .input-button__mark--like use {
+    fill: $gradient-purple-svg;
+    stroke: $gradient-purple-svg;
+  }
+
+  &:checked ~ .input-button__mark--star use {
+    fill: $gradient-purple-svg;
+  }
+
+  &:checked ~ .input-button__mark--toggle::before {
+    background: $gradient-purple-background;
+    transform: translate(25%, -50%);
+  }
+
+  &:checked ~ .input-button__mark--radio::before {
+    background: $gradient-purple-background;
+    display: block;
+  }
 }
 
-.input-button input:checked ~ .checkmark-checkbox use {
-  display: block;
+.input-button__text {
+  cursor: pointer;
+
+  &:hover {
+    color: $color-main75;
+  }
+
+  &:hover ~ .input-button__mark {
+    border-color: $color-main75;
+  }
+
+  &--like {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(0, -50%);
+    padding: 0;
+    z-index: 1;
+    font-size: 10px;
+    line-height: 12px;
+    color: $color-main25;
+  }
 }
 
-.input-button .checkmark-checkbox use {
+.input-button__mark {
+  background: #ffffff;
+  border: 1px solid $color-main25;
+  cursor: pointer;
 
-  width: 5px;
-  height: 5px;
-  fill: url('#primary-gradient');
+  &--checkmark {
+    border-radius: 4px;
+    height: 20px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 20px;
+  }
+
+  &--like {
+    border-radius: 10px;
+    height: 20px;
+    left: 0;
+    position: relative;
+    top: 0;
+    width: 40px;
+  }
+
+  &--star {
+    background: transparent;
+    border: none;
+  }
+
+  &--toggle {
+    background: #ffffff;
+    border: 1px solid $color-main25;
+    border-radius: 10px;
+    height: 20px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 40px;
+  }
+
+  &--radio::before,
+  &--toggle::before {
+    background: $color-main25;
+    border-radius: 50%;
+    content: '';
+    display: block;
+    height: 12px;
+    left: 50%;
+    position: absolute;
+    top: 48%;
+    transform: translate(-125%, -50%);
+    transition: transform .2s linear;
+    width: 12px;
+  }
+
+  &--radio {
+    border-radius: 10px;
+    height: 20px;
+    position: relative;
+    width: 20px;
+    margin-right: 10px;
+  }
+
+  &--radio::before {
+    display: none;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &--checkmark use {
+    display: none;
+    fill: $gradient-purple-svg;
+    height: 5px;
+    width: 5px;
+  }
+
+  &--like use {
+    display: block;
+    fill: white;
+    left: 0;
+    position: absolute;
+    stroke: $color-main25;
+    stroke-width: 2px;
+  }
+
+  &--star use {
+    fill: white;
+    stroke: $gradient-purple-svg;
+    stroke-width: 2px;
+  }
 }
 
-.title-checkbox {
-  margin:0;
-  margin-left: 27px;
-  padding-bottom: 5px;
-  
-  font-style: normal;
+.input-button__title {
+  color: $color-main75;
+  cursor: pointer;
   font-weight: bold;
-  font-size: 14px;
-  line-height: 18px;
-  color: rgba(31, 32, 65, 0.75);
-}
+  margin: 0;
+  padding-bottom: 10px;
 
-.title-checkbox ~ label {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 14px;
-}
+  &:hover ~ .input-button__mark {
+    border-color: $color-main75;
+  }
 
+  &::after {
+    content: '\A';
+    white-space: pre;
+  }
 
-
-/*
- Radio button
-*/
-.input-button .checkmark-radio {
-  background: #FFFFFF;
-
-  border: 1px solid rgba(31, 32, 65, 0.25);
-  border-radius: 10px;
-
-  position: absolute;
-  top:0;
-  left: 0;
-  width: 20px;
-  height: 20px
-}
-
-.input-button:hover .checkmark-radio,
-.input-button input:checked ~ .checkmark-radio {
-  border-color: #BC9CFF;
-}
-
-.input-button .checkmark-radio:before {
-  content: "";
-  position: absolute;
-  display: none;
-
-  top:49%;
-  right: 51%;
-  transform: translate(50%, -50%);
-
-  width: 12px;
-  height: 12px;
-  border-radius: 10px;
-  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-}
-
-.input-button input:checked ~ .checkmark-radio:before {
-  display: block;
-}
-
-/*
- Toggle button
-*/
-
-.input-button_toggle {
-  color: rgba(31, 32, 65, 0.75);
-}
-.input-button_toggle label {
-  padding-left: 47px;
-}
-
-.input-button .checkmark-toggle {
-  background: #FFFFFF;
-
-  border: 1px solid rgba(31, 32, 65, 0.25);
-  border-radius: 10px;
-
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 40px;
-  height: 20px;
-}
-
-.input-button:hover .checkmark-toggle,
-.input-button input:checked ~ .checkmark-toggle {
-  border-color: #BC9CFF;
-}
-
-.input-button .checkmark-toggle:before {
-  content: "";
-  position: absolute;
-  display: block;
-
-  top:49%;
-  left: 50%;
-  transform: translate(-125%, -50%);
-
-  width: 12px;
-  height: 12px;
-  border-radius: 10px;
-  background: rgba(31, 32, 65, 0.25);
-
-  transition: transform .2s linear;
-}
-
-.input-button input:checked ~ .checkmark-toggle:before {
-  transform: translate(25%, -50%);
-  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-}
-
-/*
- Like button
-*/
-.input__like {
-  position: relative;
-  display: inline-flex;
-}
-.input-button .checkmark-like {
-  width: 20px;
-  height: 20px;
-}
-
-.input-button .checkmark-like ~ label {
-  position: absolute;
-  top: 49%;
-  left: 0;
-  transform: translate(0, -50%);
-
-  padding:0;
-
-  width:100%;
-  height: 20px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  padding-left: 7px;
-  font-size: 10px;
-  line-height: 12px;
-  color: rgba(31, 32, 65, 0.25);
-}
-
-.input-button input:checked ~ .checkmark-like ~ label {
-  color: #BC9CFF;
-}
-
-.input-button .checkmark-like {
-  background: #FFFFFF;
-
-  border: 1px solid rgba(31, 32, 65, 0.25);
-  border-radius: 10px;
-
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 40px;
-  height: 20px;
-}
-
-.input-button:hover .checkmark-like,
-.input-button input:checked ~ .checkmark-like {
-  border-color: #BC9CFF;
-}
-
-.input-button .checkmark-like use {
-  position: absolute;
-  display: block;
-
-  left:0;
-
-  fill: white;
-  stroke: rgba(31, 32, 65, 0.25);
-  stroke-width: 2px;
-}
-
-.input-button input:checked ~ .checkmark-like use {
-  fill: url('#primary-gradient');
-  stroke: url('#primary-gradient');
-}
-
-/*
- Star button
-*/
-.input-button .label-star {
-  padding: 0;
-}
-
-.input-button .checkmark-star use {
-  fill: white;
-  stroke: url('#primary-gradient');
-  stroke-width: 2px;
-}
-
-.input-button input:checked ~ .checkmark-star use {
-  fill: url('#primary-gradient');
+  ~ .input-button__text {
+    font-size: 12px;
+    line-height: 14px;
+  }
 }
 
 /*
@@ -332,35 +259,28 @@
 */
 
 .input-number {
+  display: inline-flex;
   font-size: 12px;
   line-height: 15px;
-  display: inline-flex;
 }
 
-.input-number input {
+.input-number__input {
   appearance: textfield;
+  border: none;
   text-align: center;
   width: 30px;
-  border:none;
 }
-.input-number button {
-  width: 30px;
-  height: 30px;
 
-  border: 1px solid rgba(31, 32, 65, 0.5);
-  border-radius: 50%;
-
+.input-number__button {
   background: white;
+  border: 1px solid $color-main50;
+  border-radius: 50%;
+  color: $color-main50;
+  height: 30px;
+  width: 30px;
 
-  color: rgba(31, 32, 65, 0.5);
-}
-
-.input-number .input-number--disabled {
-  border-color: rgba(31, 32, 65, 0.25);
-  color: rgba(31, 32, 65, 0.25);
-}
-
-.dropdown__button[data-action="clear"].dropdown__button_disabled {
-  color: white;
-  pointer-events: none;
+  &--disabled {
+    border-color: $color-main25;
+    color: $color-main25;
+  }
 }

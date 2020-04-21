@@ -30,8 +30,16 @@
   padding-bottom: 20px;
   width: 100%;
 
-  &--S {
+  &--XXS {
+    max-width: 90px;
+  }
+
+  &--XS {
     max-width: 150px;
+  }
+
+  &--S {
+    max-width: 230px;
   }
 
   &--M {
@@ -40,6 +48,12 @@
 
   &--button-filled {
     margin-top: 10px;
+  }
+
+  &--flex {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
   }
   
 }
