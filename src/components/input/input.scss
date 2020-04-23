@@ -12,11 +12,6 @@
   width: 100%;
 }
 
-.input__field:hover {
-  border-color: $color-main50;
-  color: $color-main50;
-}
-
 .input__arrow {
   cursor: pointer;
   fill: $gradient-purple-svg;
@@ -46,23 +41,12 @@
 }
 
 .input-button__label {
+  cursor: pointer;
   display: block;
   position: relative;
 
   &--checkmark {
     padding-left: 30px;
-  }
-
-  &--like:hover .input-button__text {
-    color: $color-main75;
-  }
-
-  &--like:hover .input-button__mark {
-    border-color: $color-main75;
-  }
-
-  &--like:hover .input-button__mark use {
-    stroke: $color-main75;
   }
 
   &--toggle {
@@ -72,6 +56,14 @@
 
   &--radio {
     display: flex;
+  }
+
+  &:hover .input-button__mark {
+    border-color: $color-main75; 
+  }
+
+  &:hover .input-button__text:not(.input-button__text--like) {
+    color: $color-main75; 
   }
 
 }
@@ -89,7 +81,7 @@
   }
 
   &:checked ~ .input-button__mark {
-    border-color: #bc9cff;
+    border-color: $color-purple;
   }
 
   &:checked ~ .input-button__mark--checkmark use {
@@ -119,24 +111,16 @@
 .input-button__text {
   cursor: pointer;
 
-  &:hover {
-    color: $color-main75;
-  }
-
-  &:hover ~ .input-button__mark {
-    border-color: $color-main75;
-  }
-
   &--like {
+    color: $color-main25;
+    font-size: 10px;
+    left: 50%;
+    line-height: 12px;
+    padding: 0;
     position: absolute;
     top: 50%;
-    left: 50%;
     transform: translate(0, -50%);
-    padding: 0;
     z-index: 1;
-    font-size: 10px;
-    line-height: 12px;
-    color: $color-main25;
   }
 }
 
@@ -144,6 +128,11 @@
   background: #ffffff;
   border: 1px solid $color-main25;
   cursor: pointer;
+  pointer-events: none;
+
+  use {
+    pointer-events: none;
+  }
 
   &--checkmark {
     border-radius: 4px;
@@ -157,9 +146,7 @@
   &--like {
     border-radius: 10px;
     height: 20px;
-    left: 0;
     position: relative;
-    top: 0;
     width: 40px;
   }
 
@@ -197,9 +184,9 @@
   &--radio {
     border-radius: 10px;
     height: 20px;
+    margin-right: 10px;
     position: relative;
     width: 20px;
-    margin-right: 10px;
   }
 
   &--radio::before {
@@ -238,10 +225,6 @@
   font-weight: bold;
   margin: 0;
   padding-bottom: 10px;
-
-  &:hover ~ .input-button__mark {
-    border-color: $color-main75;
-  }
 
   &::after {
     content: '\A';

@@ -49,22 +49,12 @@ mixin input-like(count, id)
       span.input-button__text.input-button__text--like!=count
       +icon('like').input-button__mark.input-button__mark--like
 
-mixin input-stars(countOfFilled, countOfStars)
-  .input-button.input-button--star
-    - for(var i = 0; i < countOfFilled; i++) { 
-      +input-star(true)
-    - }
-    - for(countOfFilled; countOfFilled < countOfStars; countOfFilled++) {
-      +input-star
-    - }
-
-mixin input-star(checked)
-  label.input-button__label.input-button__label--star
-    if checked
-      input.input-button__input.input-button__input--star(type='checkbox' checked)
-    else 
-      input.input-button__input.input-button__input--star(type='checkbox')
-    +icon('star').input-button__mark.input-button__mark--star
+mixin input-stars(countOfStars)
+  .input-button.input-button--star.js-input-button--star
+    - for(var i = 0; i < countOfStars; i++) 
+        label.input-button__label.input-button__label--star
+          input.input-button__input.input-button__input--star.js-input-button__input(type='checkbox')
+          +icon('star').input-button__mark.input-button__mark--star
 
 mixin input-number()
   .input-number
