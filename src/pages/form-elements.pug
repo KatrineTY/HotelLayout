@@ -9,6 +9,7 @@ include ../components/list/list.pug
 include ../components/comment/comment.pug
 include ../components/profit/profit.pug
 include ../components/paginator/paginator.pug
+include ../components/slider/slider.pug
 
 br
 
@@ -54,6 +55,8 @@ br
         +input-stars(5)
         +input-stars(5)
   +column
+    +column-item('','headless')
+      +slider('range slider')
     +column-item('buttons')
       +column-item('','button-filled')
         +button('click me', 'button','oval,filled')
@@ -67,7 +70,7 @@ br
       +column-item('','button-filled')
         +button('перейти к оплате','a', 'oval,filled,link')
       +column-item('pagination')
-        +paginator()
+        +paginator
 +container('flex-baselined')
   +column
     +column-item('dropdown')
