@@ -1,12 +1,9 @@
 body, input {
+  color: $color-main75;
   font-family: $font-family-main;
+  font-size: $font-size-main;
   font-style: normal;
   font-weight: normal;
-
-  font-size: $font-size-main;
-
-  color: $color-main75;
-  
   line-height: 171%;
 }
 

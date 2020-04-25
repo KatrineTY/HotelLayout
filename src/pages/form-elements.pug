@@ -8,6 +8,7 @@ include ../components/container/container.pug
 include ../components/list/list.pug
 include ../components/comment/comment.pug
 include ../components/profit/profit.pug
+include ../components/paginator/paginator.pug
 
 br
 
@@ -65,6 +66,8 @@ br
         +button('click me', 'button')
       +column-item('','button-filled')
         +button('перейти к оплате','a', 'oval,filled,link')
+      +column-item('pagination')
+        +paginator()
 +container('flex-baselined')
   +column
     +column-item('dropdown')

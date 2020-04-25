@@ -28,7 +28,6 @@
     "eslint-plugin-import": "^2.20.2",
     "file-loader": "^5.1.0",
     "html-webpack-plugin": "^3.2.0",
-    "jquery": "^3.4.1",
     "jquery-ui": "^1.12.1",
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.13.1",
@@ -46,6 +45,8 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
-    "air-datepicker": "^2.2.3"
+    "jquery": "^3.4.1",
+    "air-datepicker": "^2.2.3",
+    "paginationjs": "^2.1.5"
   }
 }

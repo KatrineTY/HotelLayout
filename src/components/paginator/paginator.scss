@@ -1,0 +1,60 @@
+.paginationjs > * {
+  margin-top: 10px;
+}
+
+.paginator__data-list,
+.paginator__pagination-list {
+  display: flex;
+}
+
+.paginator__pagination-list > * {
+  align-items: center;
+  border-radius: 50%;
+  color: $color-main50;
+  display: flex;
+  font-size: 12px;
+  height: 40px;
+  justify-content: center;
+  line-height: 1rem;
+  width: 40px;
+}
+
+.paginationjs-page {
+  cursor: pointer;
+
+  a {
+    color: inherit;
+  }
+
+  &:hover {
+    color: $color-main75;
+  }
+
+  &.active {
+    background: $gradient-purple-background;
+    color: white;
+    cursor: default;
+    font-weight: bold;
+    pointer-events: none;
+  }
+}
+
+.paginationjs-ellipsis {
+  cursor: default;
+}
+
+.paginationjs-prev {
+  .icon {
+    transform: rotate(180deg);
+  }
+
+  &.disabled {
+    display: none;
+  }
+}
+
+.paginationjs-next,
+.paginationjs-prev {
+  background: $gradient-green-background;
+  fill: white;
+}
