@@ -1,0 +1,19 @@
+.form {
+  background-color: white;
+  border: 1px solid $color-form-border;
+  border-radius: 4px;
+  box-shadow: 0 0 25px $color-form-shadow;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  padding: 40px 30px 30px;
+  width: 100%;
+
+  &--datepicker {
+    border: 1px solid $color-main25;
+    box-shadow: 0 10px 20px $color-main50;
+    padding: 0;
+  }
+}

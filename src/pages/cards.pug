@@ -1,0 +1,54 @@
+include ../components/icons/icons.pug
+include ../components/input/input.pug
+include ../components/column/column.pug
+include ../components/button/button.pug
+include ../components/dropdown/dropdown.pug
+include ../components/container/container.pug
+include ../components/form/form.pug
+include ../components/pill/pill.pug
+include ../components/card/card.pug
+
+br
+
++container
+  +column('XL')
+    +form-element('Найдём номера под ваши пожелания')
+      +form-search
+      +column-item('','button-filled')
+        +button('подобрать номер','a', 'oval,filled,link')
+    +form-element('Регистрация')
+      +column-item('', 'multiple')
+        +input-field('text','Имя') 
+        +input-field('text','Фамилия') 
+      +column-item
+        +column-item('', 'flex,S')
+          +input-radio('Мужчина', 'gender')
+          +input-radio('Женщина', 'gender')
+      +column-item('Дата рождения')
+        +input-field('date','ДД.ММ.ГГГГ')
+      +column-item('данные для входа в сервис', 'multiple')
+        +input-field('text','Email') 
+        +input-field('text','Пароль') 
+        +input-toggle('Получать спецпредложения')
+      +column-item('','button-filled')
+        +button('перейти к оплате','a', 'oval,filled,link')
+      +column-item('','flex')
+        span!='Уже есть аккаунт на Toxin'
+        +button('войти', 'button', 'oval,framed')
+  +column('XL')
+    +form-element
+      +pill('888', 'люкс', 9990, 0, 300, 
+       new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()),
+       new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()))
+    +form-element('Войти')
+      +column-item('', 'multiple')
+        +input-field('text','Email') 
+        +input-field('text','Пароль') 
+      +column-item('','button-filled')
+        +button('Войти','a', 'oval,filled,link')
+      +column-item('','flex')
+        span!='Нет аккаунта на Toxin?'
+        +button('войти', 'button', 'oval,framed')
+  +column('L')
+    +form-element('', 'datepicker')
+      +dropdown-container('datepicker', '','', 'M,ranged,inline')(data-inline="true")

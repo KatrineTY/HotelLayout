@@ -1,0 +1,104 @@
+.pill {
+  width: 100%;
+}
+
+.pill__title {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 20px;
+
+  .pill__room-number {
+    @extend %title;
+    font-family: $font-family-secondary;
+    font-weight: bold;
+    line-height: 17px;
+  }
+
+  .pill__room-kind {
+    color: $color-purple;
+    display: inline;
+  }
+
+  .pill__room-cost {
+    color: $color-main50;
+    font-size: 14px;
+    line-height: 129%;
+  }
+}
+
+.pill__inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.pill__info {
+  margin-bottom: 30px;
+  width: 100%;
+
+  > * {
+    align-items: baseline;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  > *:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+
+.pill__services-text,
+.pill__extra-text {
+  max-width: 240px;
+  padding-right: 25px;
+  position: relative;
+  width: 75%;
+}
+
+.pill__info-icon {
+  align-items: center;
+  border: 1px solid $color-main25;
+  border-radius: 50%;
+  color: $color-main25;
+  content: 'i';
+  cursor: help;
+  display: flex;
+  font-style: normal;
+  height: 20px;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  top: 1px;
+  width: 20px;
+
+  &:hover ~ .pill__text-info {
+    display: block;
+  }
+}
+
+.pill__text-info {
+  background-color: white;
+  border: 1px solid $color-main75;
+  border-radius: 4px;
+  bottom: 100%;
+  display: none;
+  font-size: 10px;
+  left: 50%;
+  padding: 5px;
+  position: absolute;
+  width: 250px;
+  z-index: 9999;
+}
+
+.pill__summary {
+  align-items: baseline;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.pill__underline {
+  border: 1px dashed $color-main25;
+  height: 1px;
+  width: 100%;
+}

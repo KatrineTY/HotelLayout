@@ -1,0 +1,24 @@
+mixin form-element(title, mods)
+  - 
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' form--' + modsList[i].trim();
+      }
+    }
+  .form(class=allMods)
+    if title
+      h1!=title
+    block
+
+mixin form-search(from, to)
+  +column-item('прибытие','date,XS')
+    +dropdown-container('datepicker', '','', 'S')(data-date=from)
+  +column-item('выезд','date,XS')
+    +dropdown-container('datepicker', '','', 'S')(data-date=to)
+  +column-item('гости')
+    +dropdown-container('guests','','Сколько гостей','extended')
+      +dropdown-item('взрослые')
+      +dropdown-item('дети')
+      +dropdown-item('младенцы')

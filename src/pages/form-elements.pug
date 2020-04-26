@@ -11,8 +11,6 @@ include ../components/profit/profit.pug
 include ../components/paginator/paginator.pug
 include ../components/slider/slider.pug
 
-br
-
 +container
   +column
     +column-item('text field')
@@ -21,9 +19,9 @@ br
       +input-field('text','Email')
     +column-item('dropdown')
       +dropdown-container('guests','','Сколько гостей','extended')
-        +dropdown-item('спальни')
-        +dropdown-item('кровати')
-        +dropdown-item('ванные комнаты')
+        +dropdown-item('взрослые')
+        +dropdown-item('дети')
+        +dropdown-item('младенцы')
     +column-item('masked text field')
       +input-field('date','ДД.ММ.ГГГГ')
     +column-item('date dropdown','date,XS')
@@ -55,7 +53,7 @@ br
         +input-stars(5)
         +input-stars(5)
   +column
-    +column-item('','headless')
+    +column-item
       +slider('range slider')
     +column-item('buttons')
       +column-item('','button-filled')
@@ -137,8 +135,3 @@ br
       +comment('Мурад Сарафанов','Великолепный матрас на кровати в основной \
       спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. \
       Выкрикивал комплименты повару — никто не жаловался из соседей.','5 дней назад')
-br
-br
-br
-br
-br

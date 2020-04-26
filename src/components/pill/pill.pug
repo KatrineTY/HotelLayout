@@ -1,0 +1,29 @@
+mixin pill(number, kind, cost, servicesCost, extraCost, from, to)
+  .pill.js-pill
+    .pill__title
+      div
+        span.pill__room-number!=`№ ${number} `
+        h3.pill__room-kind!=kind
+      .pill__room-cost.js-pill__room-cost(data-price=cost)
+    .pill__inner
+      +form-search(from, to)
+    .pill__info
+      .pill__cost
+        .pill__cost-text.js-pill__cost-text!= `${cost.toLocaleString().replace(/,/g,' ')}₽ x 0 суток`
+        .pill__cost-cost.js-pill__cost-cost 0₽
+      .pill__services
+        .pill__services-text Сбор за услуги: скидка 2 179₽
+          i.pill__info-icon i
+          .pill__text-info Дополнительная информация по полю "Сбор за услуги"
+        .pill__services-cost!=`${servicesCost.toLocaleString().replace(/,/g,' ')}₽ `
+      .pill__extra
+        .pill__extra-text Сбор за дополнительные услуги
+          i.pill__info-icon i
+          .pill__text-info Дополнительная информация по полю "Сбор за дополнительные услуги"
+        .pill__extra-cost!=`${extraCost.toLocaleString().replace(/,/g,' ')}₽ `
+    .pill__summary
+      h2 Итого
+      .pill__underline
+      h2.pill__summary-cost 
+    +column-item('','button-filled')
+      +button('забронировать','a', 'oval,filled,link')

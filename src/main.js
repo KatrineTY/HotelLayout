@@ -4,5 +4,6 @@ require('./components/dropdown/dropdown.js');
 require('./components/button/button.js');
 require('./components/nav/nav.js');
 require('./components/input/input.js');
-require('./components/paginator/paginator.js');
+// require('./components/paginator/paginator.js');
 require('./components/slider/slider.js');
+require('./components/pill/pill.js');

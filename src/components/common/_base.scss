@@ -14,15 +14,16 @@ body, input {
 }
 
 h1 {
-  font-family: $font-family-secondary;
   @extend %title;
-  font-size: 1.5rem;
+  font-family: $font-family-secondary;
+  font-size: 1.7rem;
   line-height: 30px;
+  padding-bottom: 20px;
 }
 
 h2 {
-  font-family: $font-family-secondary;
   @extend %title;
+  font-family: $font-family-secondary;
   font-size: 1.188rem;
   line-height: 24px;
 }

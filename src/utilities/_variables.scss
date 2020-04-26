@@ -12,9 +12,11 @@ $color-main25:                rgba(31, 32, 65, .25);
 $color-main10:                rgba(31, 32, 65, .1);
 $color-main5:                 rgba(31, 32, 65, .05);
 $color-picked-cell:           #fff;
+$color-form-border:           rgba(0, 0, 0, .12);
+$color-form-shadow:           rgba(0, 0, 0, .2);
 
 $gradient-purple-svg:           url('#primary-gradient');
 $gradient-purple-background:    linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
 $gradient-green-background:     linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
 
-$border-color-picture:          #fff;
+$border-color-picture:        #fff;

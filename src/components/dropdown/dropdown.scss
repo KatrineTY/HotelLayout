@@ -1,6 +1,7 @@
 .dropdown {
   position: relative;
-
+  width: 100%;
+  
   &--ranged .dropdown__input {
     text-transform: lowercase;
   }
@@ -70,7 +71,7 @@
   display: none;
   position: absolute;
   width: 100%;
-  z-index: 1;
+  z-index: 100;
 }
 
 .dropdown__item {

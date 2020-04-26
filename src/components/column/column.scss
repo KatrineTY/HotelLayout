@@ -18,10 +18,6 @@
     max-width: 380px;
   }
 
-  &--XL {
-    max-width: 380px;
-  }
-
   &--XXL {
     max-width: 710px;
   }
@@ -52,9 +48,14 @@
   }
 
   &--flex {
+    align-items: center;
     display: flex;
     justify-content: space-between;
     padding: 0;
+  }
+
+  &--multiple > *:not(:last-child) {
+    margin-bottom: 10px;
   }
   
 }
