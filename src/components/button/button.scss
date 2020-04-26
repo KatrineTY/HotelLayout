@@ -22,33 +22,24 @@
   }
 
   &--oval {
+    background-clip: padding-box, border-box;
+    background-origin: border-box;
+    border: double 3px transparent;
     border-radius: 500px;
-    padding: 11px 20px;
-    position: relative;
-  }
-
-  &--oval::before {
-    background: $gradient-purple-background;
-    border-radius: inherit;
-    bottom: -2px;
-    content: '';
-    left: -2px;
-    position: absolute;
-    right: -2px;
-    top: -2px;
-    z-index: -1;
+    padding: 12px 20px;
   }
 
   &--filled {
+    background-image: $gradient-purple-background, $gradient-purple-background;
     color: white;
   }
 
   &--framed {
-    background: white;
+    background-image: linear-gradient(#fff, #fff), $gradient-purple-background;
     color: $color-purple;
   }
 
-  &--inactive::before {
+  &--inactive {
     opacity: .5;
   }
 
