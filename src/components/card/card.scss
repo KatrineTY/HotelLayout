@@ -1,0 +1,172 @@
+.card {
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 10px 20px $color-main5;
+}
+
+.card__inner {
+  padding: 20px;
+}
+
+.card__photo-container {
+  height: 152px;
+  overflow: hidden;
+
+  .card__photo {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+}
+
+.card__title {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+
+  .card__room-number {
+    @extend %title;
+    font-family: $font-family-secondary;
+    font-weight: bold;
+    line-height: 17px;
+  }
+
+  .card__room-kind {
+    color: $color-purple;
+    display: inline;
+  }
+
+  .card__room-price {
+    color: $color-main50;
+    font-size: 14px;
+    line-height: 129%;
+  }
+}
+
+.card__review {
+  align-items: flex-end;
+  border-top: 1px solid $color-main10;
+  color: $color-main50;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card__slider-button {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  width: 15%;
+  z-index: 1;
+}
+
+.card__slider-arrow {
+  cursor: pointer;
+  fill: white;
+  height: 24px;
+  transform: rotate(90deg);
+  width: 24px;
+}
+
+.card__slider-button--prev {
+  background: $gradient-photo;
+  left: 0;
+}
+
+.card__slider-button--next {
+  background: $gradient-photo;
+  right: 0;
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+
+.slick-dots {
+  bottom: 0;
+  display: flex;
+  justify-content: end;
+  padding: 1rem;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+
+  * {
+    color: transparent;
+    font-size: 0;
+    line-height: 0;
+    padding-left: 5px;
+  }
+
+  > *::before {
+    content: '';
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 5px 5px rgba(31, 32, 65, 0.3);
+    box-sizing: border-box;
+    display: block;
+    height: 7.5px;
+    width: 7.5px;
+  }
+
+  .slick-active::before {
+    background: #ffffff;
+  }
+}
+
+// .slick-dots {
+//   position: absolute;
+//   display: block;
+//   width: 100%;
+// }
+// .slick-dots li {
+//   position: relative;
+//   display: inline-block;
+//   width: 20px;
+//   height: 20px;
+//   margin: 0 5px;
+//   padding: 0;
+//   cursor: pointer;
+// }
+// .slick-dots li button {
+//   font-size: 0;
+//   line-height: 0;
+//   display: block;
+//   cursor: pointer;
+//   color: transparent;
+//   border: 0;
+//   outline: none;
+//   background: transparent;
+// }
+// .slick-dots li button:hover,
+// .slick-dots li button:focus {
+//   outline: none;
+// }
+// .slick-dots li button:hover:before,
+// .slick-dots li button:focus:before {
+//   opacity: 1;
+// }
+// .slick-dots li button:before {
+//   font-family: 'slick';
+//   font-size: 6px;
+//   line-height: 20px;
+
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+
+//   width: 20px;
+//   height: 20px;
+
+//   content: '•';
+//   text-align: center;
+
+//   opacity: 0.25;
+//   color: black;
+
+//   -webkit-font-smoothing: antialiased;
+//   -moz-osx-font-smoothing: grayscale;
+// }
+// .slick-dots li.slick-active button:before {
+//   opacity: 0.75;
+//   color: black;
+// }

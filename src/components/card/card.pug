@@ -1,0 +1,21 @@
+mixin card(pics, number, kind, price, reviewsCount)
+  .card
+    .card__image
+      .card__slider.js-card__slider
+        each pic in pics.split(';')
+          .card__photo-container
+            img.card__photo(src=pic alt="photo alt")
+    .card__inner
+      .card__title
+        div
+          span.card__room-number!=`№ ${number} `
+          if kind
+            h3.card__room-kind!=kind
+        .card__room-price.js-card__room-price(data-price=price)
+          b!=`${price.toLocaleString().replace(/,/g,' ')}₽ `
+          | в сутки
+      .card__review
+        +input-stars(5)
+        .card__reviews-count
+          b!= `${reviewsCount} `
+          | Отзывов

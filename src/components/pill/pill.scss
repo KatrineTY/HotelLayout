@@ -19,7 +19,7 @@
     display: inline;
   }
 
-  .pill__room-cost {
+  .pill__room-price {
     color: $color-main50;
     font-size: 14px;
     line-height: 129%;
@@ -95,6 +95,7 @@
   align-items: baseline;
   display: flex;
   margin-bottom: 20px;
+  white-space: nowrap;
 }
 
 .pill__underline {

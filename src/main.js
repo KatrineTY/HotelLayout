@@ -7,3 +7,4 @@ require('./components/input/input.js');
 // require('./components/paginator/paginator.js');
 require('./components/slider/slider.js');
 require('./components/pill/pill.js');
+require('./components/card/card.js');
