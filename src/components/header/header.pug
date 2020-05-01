@@ -16,13 +16,13 @@ mixin header(logged)
             +nav__item('Service 1','#')
             +nav__item('Service 2','#')
             +nav__item('Service 3','#')
-          +nav__item('Creers','#')
+          +nav__item('Careers','#')
           +nav__item('News','#')
           +nav__item('Documentation','#')
           - if(logged)
           +nav__item('Cosmin Negoita','#','logged-in')
           - else {
           .header__buttons
-            +button('Login','button','oval,framed')
-            +button('Register','button','oval,filled')
+            +button('Login','button','oval,framed,header')
+            +button('Register','button','oval,filled,header')
           - }

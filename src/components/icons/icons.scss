@@ -1,9 +1,10 @@
 .icon {
-  width: 24px;
   height: 24px;
+  width: 24px;
 }
 
 #defs {
-  visibility: hidden;
+  left: -100000px;
   position: absolute;
+  visibility: hidden;
 }

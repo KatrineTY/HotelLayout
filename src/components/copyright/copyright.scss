@@ -1,6 +1,8 @@
 .copyright {
   align-items: center;
+  background: $color-background-main;
   border-top: 1px solid $color-main10;
+  box-shadow: 0 10px 20px $color-main5;
   display: flex;
   font-family: Montserrat;
   justify-content: space-between;

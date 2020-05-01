@@ -23,8 +23,7 @@ mixin nav__item(text, href, mods)
   - if (allMods.includes('multiple')) {
   .nav__container(class='js-nav__container')
     input.nav__item(type='button' class=allMods value=text)
-    svg.nav__arrow
-      use(xlink:href='#expansion')
+    +icon('expansion').nav__arrow
     .nav__list
       block
   - }

@@ -1,6 +1,7 @@
 .header {
-  background-color: white;
-  padding: 13px 0;
+  background: $color-background-main;
+  box-shadow: 0 10px 20px $color-main5;
+  padding: 15px 0;
 }
 
 .header__inner {
@@ -8,10 +9,4 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-}
-
-.header__buttons {
-  padding-left: 15px;
-  position: relative;
-  z-index: 1;
 }

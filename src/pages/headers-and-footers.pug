@@ -1,14 +1,11 @@
-extends ./layout/ui-kit.pug
+
 include ../components/header/header.pug
 include ../components/footer/footer.pug
+include ../components/icons/icons.pug
 
-block content
-  include ../components/icons/icons.pug
-
+.ui-kit
+  +logo(false)
   +header(false)
-  br
   +header(true)
-  br
-  +footer
-  br
   +footer(true)
+  +footer
