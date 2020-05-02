@@ -27,6 +27,13 @@ function changeCost(formattedDate, date, inst) {
     $('[class$=-cost]:not(.js-pill__summary-cost)', pill).each((i, element) => {
       finalCost += parseInt(element.textContent.replace('₽', '').replace(' ', ''), 10);
     });
+    if ($('.js-pill__services-text')[0].textContent.includes('скидка')) {
+      finalCost -= parseInt($('.js-pill__services-text')[0].textContent.match(/скидка .*₽/)[0]
+        .replace('скидка ', '')
+        .replace('₽', '')
+        .replace(' ', ''), 10);
+    }
+
     $('.js-pill__summary-cost', pill)[0].textContent = `${finalCost.toLocaleString().replace(/,/g, ' ')}₽`;
   } else {
     throw new Error('wrong dates');

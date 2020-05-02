@@ -2,13 +2,15 @@
   box-sizing: border-box;
   font-size: 12px;
   line-height: 15px;
-  padding: 20px;
+  padding: 19px 20px;
   width: 320px;
-}
+  font-family: $font-family-main;
 
-.datepicker--nav {
-  border: none;
-  padding: 0;
+  &--nav {
+    border: none;
+    min-height: 0;
+    padding: 0;
+  }
 }
 
 .datepicker--nav-action {
@@ -34,7 +36,11 @@
 
 .datepicker--content {
   color: $color-main50;
-  padding: 30px 0 20px;
+  padding: 33px 0 20px;
+}
+
+.datepicker--days-names {
+  margin: 8px 0 13px;
 }
 
 .datepicker--day-name {

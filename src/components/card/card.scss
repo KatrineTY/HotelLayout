@@ -20,12 +20,15 @@
 }
 
 .card__title {
+  align-items: center;
   display: flex;
   justify-content: space-between;
-  padding-bottom: 10px;
+  padding-bottom: 9px;
 
   .card__room-number {
     @extend %title;
+    align-items: baseline;
+    display: flex;
     font-family: $font-family-secondary;
     font-weight: bold;
     line-height: 17px;
@@ -38,8 +41,12 @@
 
   .card__room-price {
     color: $color-main50;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 129%;
+  }
+
+  .card__room-price b {
+    font-size: 14px;
   }
 }
 
@@ -49,6 +56,7 @@
   color: $color-main50;
   display: flex;
   justify-content: space-between;
+  padding-top: 9px;
 }
 
 .card__slider-button {
@@ -58,7 +66,7 @@
   justify-content: center;
   position: absolute;
   top: 0;
-  width: 15%;
+  width: 16%;
   z-index: 1;
 }
 
@@ -94,7 +102,7 @@
     color: transparent;
     font-size: 0;
     line-height: 0;
-    padding-left: 5px;
+    padding-left: 3px;
   }
 
   > *::before {
@@ -112,61 +120,3 @@
     background: #ffffff;
   }
 }
-
-// .slick-dots {
-//   position: absolute;
-//   display: block;
-//   width: 100%;
-// }
-// .slick-dots li {
-//   position: relative;
-//   display: inline-block;
-//   width: 20px;
-//   height: 20px;
-//   margin: 0 5px;
-//   padding: 0;
-//   cursor: pointer;
-// }
-// .slick-dots li button {
-//   font-size: 0;
-//   line-height: 0;
-//   display: block;
-//   cursor: pointer;
-//   color: transparent;
-//   border: 0;
-//   outline: none;
-//   background: transparent;
-// }
-// .slick-dots li button:hover,
-// .slick-dots li button:focus {
-//   outline: none;
-// }
-// .slick-dots li button:hover:before,
-// .slick-dots li button:focus:before {
-//   opacity: 1;
-// }
-// .slick-dots li button:before {
-//   font-family: 'slick';
-//   font-size: 6px;
-//   line-height: 20px;
-
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-
-//   width: 20px;
-//   height: 20px;
-
-//   content: '•';
-//   text-align: center;
-
-//   opacity: 0.25;
-//   color: black;
-
-//   -webkit-font-smoothing: antialiased;
-//   -moz-osx-font-smoothing: grayscale;
-// }
-// .slick-dots li.slick-active button:before {
-//   opacity: 0.75;
-//   color: black;
-// }

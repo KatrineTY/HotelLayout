@@ -37,7 +37,7 @@
   color: $color-main50;
   display: block;
   line-height: 18px;
-  margin-top: 12px;
+  // margin-top: 9px;
   user-select: none;
 
   &--like,
@@ -53,6 +53,10 @@
   &--star {
     margin-right: 20px;
   }
+
+  &--radio {
+    margin-bottom: 4px;
+  }
 }
 
 .input-button__label {
@@ -61,6 +65,7 @@
   position: relative;
 
   &--checkmark {
+    margin-top: 13px;
     padding-left: 30px;
   }
 

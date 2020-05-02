@@ -35,6 +35,10 @@
   padding-bottom: 21px;
   width: 100%;
 
+  &:last-child {
+    padding-bottom: 0;
+  }
+
   &--XXS {
     max-width: 90px;
   }
@@ -51,8 +55,8 @@
     max-width: 266px;
   }
 
-  &--button-filled {
-    margin-top: 10px;
+  &--M-rounded {
+    max-width: 270px;
   }
 
   &--flex {
@@ -65,7 +69,7 @@
     margin-right: 20px;
   }
 
-  &--multiple > *:not(:last-child) {
+  &--multiple > *:not(:last-child):not(.columnn__subtitle) {
     margin-bottom: 10px;
   }
 }

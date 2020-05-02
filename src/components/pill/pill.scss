@@ -3,12 +3,19 @@
 }
 
 .pill__title {
+  align-items: baseline;
   display: flex;
   justify-content: space-between;
-  padding-bottom: 20px;
+  padding-bottom: 19px;
+
+  * {
+    padding: 0;
+  }
 
   .pill__room-number {
     @extend %title;
+    align-items: baseline;
+    display: flex;
     font-family: $font-family-secondary;
     font-weight: bold;
     line-height: 17px;
@@ -21,8 +28,12 @@
 
   .pill__room-price {
     color: $color-main50;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 129%;
+  }
+
+  .pill__room-price b {
+    font-size: 14px;
   }
 }
 
@@ -30,10 +41,13 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin-bottom: 21px;
 }
 
 .pill__info {
+  line-height: 18px;
   margin-bottom: 30px;
+  margin-top: 5px;
   width: 100%;
 
   > * {
@@ -44,7 +58,7 @@
   }
 
   > *:not(:last-child) {
-    margin-bottom: 10px;
+    margin-bottom: 16px;
   }
 }
 
@@ -69,7 +83,7 @@
   justify-content: center;
   position: absolute;
   right: 0;
-  top: 1px;
+  top: 0;
   width: 20px;
 
   &:hover ~ .pill__text-info {

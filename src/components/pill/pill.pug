@@ -2,9 +2,10 @@ mixin pill(number, kind, price, servicesCost, extraCost, from, to)
   .pill.js-pill
     .pill__title
       div
-        span.pill__room-number!=`№ ${number} `
-        if kind
-          h3.pill__room-kind!=kind
+        span.pill__room-number!='№&nbsp;'
+          h1!=number
+          if kind
+            h3.pill__room-kind!=`&nbsp;&nbsp;${kind}`
       .pill__room-price.js-pill__room-price(data-price=price)
         b!=`${price.toLocaleString().replace(/,/g,' ')}₽ `
         | в сутки
@@ -15,7 +16,7 @@ mixin pill(number, kind, price, servicesCost, extraCost, from, to)
         .pill__cost-text.js-pill__cost-text!= `${price.toLocaleString().replace(/,/g,' ')}₽ x 0 суток`
         .pill__cost-cost.js-pill__cost-cost 0₽
       .pill__services
-        .pill__services-text Сбор за услуги: скидка 2 179₽
+        .pill__services-text.js-pill__services-text Сбор за услуги: скидка 2 179₽
           i.pill__info-icon i
           .pill__text-info Дополнительная информация по полю "Сбор за услуги"
         .pill__services-cost.js-pill__services-cost!=`${servicesCost.toLocaleString().replace(/,/g,' ')}₽ `

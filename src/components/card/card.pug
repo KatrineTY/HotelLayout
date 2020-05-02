@@ -8,9 +8,10 @@ mixin card(pics, number, kind, price, reviewsCount)
     .card__inner
       .card__title
         div
-          span.card__room-number!=`№ ${number} `
-          if kind
-            h3.card__room-kind!=kind
+          span.card__room-number!='№&nbsp;'
+            h2!=number
+            if kind
+              h3.card__room-kind!=`&nbsp;&nbsp;${kind}`
         .card__room-price.js-card__room-price(data-price=price)
           b!=`${price.toLocaleString().replace(/,/g,' ')}₽ `
           | в сутки

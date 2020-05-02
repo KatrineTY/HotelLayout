@@ -8,7 +8,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   margin-bottom: 40px;
-  padding: 40px 30px 30px;
+  padding: 40px 30px 29px 29px;
   width: 100%;
 
   &--datepicker {
@@ -16,4 +16,13 @@
     box-shadow: 0 10px 20px $color-main5;
     padding: 0;
   }
+}
+
+.form-footer {
+  align-items: center;
+  color: $color-main100;  
+  display: flex;
+  justify-content: space-between;
+  margin-top: 9px;
+  width: 100%;
 }
