@@ -12,8 +12,12 @@ $('.js-datepicker-input').datepicker({
   },
   prevHtml: '<svg><use xlink:href="#arrow-right"></use></svg>',
   nextHtml: '<svg><use xlink:href="#arrow-right"></use></svg>',
+  onHide() {
+    if (this) {
+      this.$el[0].classList.remove('dropdown__input--opened');
+    }
+  },
 });
-
 
 $('.js-datepicker-input').each(function () {
   $(this).datepicker().data('datepicker').apply = function () {
@@ -27,7 +31,6 @@ $('.js-datepicker-input').on('click', function () {
   }
 });
 
-
 $('.js-datepicker-input--ranged').datepicker({
   classes: '-ranged- js-datepicker',
   range: true,
@@ -35,10 +38,6 @@ $('.js-datepicker-input--ranged').datepicker({
   dateFormat: 'd M',
 });
 
-
-
-// TODO: change it...
-// TODO: try to disconnect cells from input
 $('.js-datepicker').each(function () {
   $(this).append($('<div/>', { class: 'datepicker--buttons' }));
   const buttonsContainer = this.getElementsByClassName('datepicker--buttons')[0];
