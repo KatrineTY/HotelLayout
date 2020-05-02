@@ -1,17 +1,28 @@
 .ui-kit {
-  background: #E5E5E5;
   padding-top: 30px;
+
+  .logo--no-label > img {
+    object-fit: cover;
+    object-position: left;
+  }
+
+  .logo--no-label ~ * {
+    margin-top: 40px;
+  }
+}
+
+.ui-kit--haf {
+  background: #e5e5e5;
 
   .logo--no-label {
     margin: 0 0 72px 30px;
-  
-    > img {
-      object-fit: cover;
-      object-position: left;
-    }
   }
-  
-  .logo--no-label ~ * {
-    margin-top: 40px;
+}
+
+.ui-kit--fe {
+  background: $color-background-main;
+
+  .logo--no-label {
+    margin: 0 0 65px 30px;
   }
 }

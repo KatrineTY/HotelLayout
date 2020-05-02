@@ -23,13 +23,13 @@ mixin input-checkbox(kind, text, title)
   .input-button
     label.input-button__label(class = 'input-button__label--checkmark')
       if (title)
-        span.input-button__title(class = 'input-button__title--checkmark')!=title
+        .input-button__title(class = 'input-button__title--checkmark')!=title
       input.input-button__input(class = 'input-button__input--checkmark' type='checkbox')
-      span.input-button__text(class = 'input-button__text--checkmark')!=text
+      .input-button__text(class = 'input-button__text--checkmark')!=text
       +icon('checkmark').input-button__mark(class = 'input-button__mark--checkmark')
   
 mixin input-radio(text, name)
-  .input-button
+  .input-button.input-button--radio
     label.input-button__label.input-button__label--radio
       input.input-button__input.input-button__input--radio(type='radio' name=name)
       span.input-button__mark.input-button__mark--radio

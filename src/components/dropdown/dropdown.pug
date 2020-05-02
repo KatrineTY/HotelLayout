@@ -23,17 +23,18 @@ mixin dropdown-container(type, title, value, mods)
   .dropdown(class=allMods data-type=type)
     - if (inline) {
         div(class=datepickerClasses class='js-dropdown__input')&attributes(attributes)
+    - } else if (type === 'datepicker') {
+    input.dropdown__input(type='text' class=datepickerClasses value=value class='js-dropdown__input' placeholder='ДД.ММ.ГГГГ' readonly)&attributes(attributes)
+    +icon('expansion').dropdown__arrow
     - } else {
-    input.dropdown__input(type='button' class=datepickerClasses value=value class='js-dropdown__input')&attributes(attributes)
-    svg.dropdown__arrow
-      use(xlink:href='#expansion')
-    if type !== 'datepicker'
-      .dropdown__inner
-        block 
-        if(mods.includes('extended'))
-          .dropdown__buttons
-            +button('очистить','button')(data-action='clear')
-            +button('применить','button','purple')(data-action='apply')
+    input.dropdown__input(type='button' value=value class='js-dropdown__input' readonly)&attributes(attributes)
+    +icon('expansion').dropdown__arrow
+    .dropdown__inner
+      block 
+      if(mods.includes('extended'))
+        .dropdown__buttons
+          +button('очистить','button')(data-action='clear')
+          +button('применить','button','purple')(data-action='apply')
     - }
         
 

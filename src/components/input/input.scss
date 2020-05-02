@@ -10,6 +10,12 @@
   color: $color-main25;
   padding: 9px 15px;
   width: 100%;
+
+  &:hover,
+  &:focus {
+    border-color: $color-main50;
+    color: $color-main75;
+  }
 }
 
 .input__arrow {
@@ -31,12 +37,21 @@
   color: $color-main50;
   display: block;
   line-height: 18px;
-  margin-top: 10px;
+  margin-top: 12px;
   user-select: none;
 
   &--like,
   &--star {
     display: inline-flex;
+  }
+
+  &--like {
+    margin-right: 10px;
+  }
+
+  &--radio,
+  &--star {
+    margin-right: 20px;
   }
 }
 
@@ -51,7 +66,7 @@
 
   &--toggle {
     color: $color-main75;
-    padding-left: 47px;
+    padding-left: 50px;
   }
 
   &--radio {
@@ -62,7 +77,7 @@
     border-color: $color-main75; 
   }
 
-  &:hover .input-button__text:not(.input-button__text--like) {
+  &:hover .input-button__text--radio {
     color: $color-main75; 
   }
 
@@ -72,7 +87,7 @@
   cursor: pointer;
   display: none;
 
-  &:checked ~ .input-button__text:not(.input-button__text--like) {
+  &:checked ~ .input-button__text--radio {
     color: $color-main75;
   }
 
@@ -165,6 +180,14 @@
     top: 0;
     width: 40px;
   }
+  
+  &--radio {
+    border-radius: 10px;
+    height: 20px;
+    margin-right: 10px;
+    position: relative;
+    width: 20px;
+  }
 
   &--radio::before,
   &--toggle::before {
@@ -176,23 +199,16 @@
     left: 50%;
     position: absolute;
     top: 48%;
-    transform: translate(-125%, -50%);
     transition: transform .2s linear;
     width: 12px;
   }
 
-  &--radio {
-    border-radius: 10px;
-    height: 20px;
-    margin-right: 10px;
-    position: relative;
-    width: 20px;
+  &--toggle::before {
+    transform: translate(-125%, -50%);
   }
 
   &--radio::before {
     display: none;
-    left: 50%;
-    top: 50%;
     transform: translate(-50%, -50%);
   }
 
@@ -224,16 +240,12 @@
   cursor: pointer;
   font-weight: bold;
   margin: 0;
-  padding-bottom: 10px;
-
-  &::after {
-    content: '\A';
-    white-space: pre;
-  }
+  padding-bottom: 6px;
 
   ~ .input-button__text {
     font-size: 12px;
     line-height: 14px;
+    white-space: pre;
   }
 }
 
@@ -250,6 +262,9 @@
 .input-number__input {
   appearance: textfield;
   border: none;
+  color: $color-main100;
+  font-size: .75rem;
+  font-weight: bold;
   text-align: center;
   width: 30px;
 }

@@ -52,9 +52,9 @@ function getAppartamentsValue(dropdown) {
 
   if (finalValue.length > restrictedLength) {
     const split = finalValue.split(',');
-    finalValue = `${split.slice(0, split.length - 1).join(',')}...`;
+    finalValue = `${split.slice(0, split.length - 1).join(',')}`;
   }
-  return finalValue;
+  return `${finalValue}...`;
 }
 
 function getGuestsValue(dropdown) {

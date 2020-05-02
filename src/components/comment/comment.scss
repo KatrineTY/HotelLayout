@@ -5,7 +5,7 @@
 }
 
 .comment__content {
-  margin-left: 55px;
+  margin-left: 57px;
 }
 
 .comment__header {
@@ -16,7 +16,7 @@
   font-weight: bold;
 }
 
-.comment__picture {
+.comment__picture-container {
   align-items: center;
   content: "";
   display: flex;
@@ -24,9 +24,13 @@
   left: 0;
   position: absolute;
   top: 0;
+
+  .input-button--like {
+    margin-right: 0;
+  }
 }
 
-.comment__picture img {
+.comment__picture {
   border: 2px solid $border-color-picture;
   border-radius: 32px;
   box-shadow: 0 10px 20px $color-main10;

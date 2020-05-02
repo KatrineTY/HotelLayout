@@ -10,7 +10,7 @@ mixin column(mods = 'L')
   .column(class=allMods)
     block
 
-mixin column-item(title, mods)
+mixin column-item(title, hint, mods)
   -
     var allMods = '';
     if(typeof(mods) !== 'undefined' && mods) {
@@ -21,5 +21,9 @@ mixin column-item(title, mods)
     }
   .column__item(class=allMods)
     if(title)
-      h3.columnn__subtitle!=title
+      .columnn__subtitle
+        h3!=title
+        if(hint)
+          h3.column__hint!=hint
+
     block

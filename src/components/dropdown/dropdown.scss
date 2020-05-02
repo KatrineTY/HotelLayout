@@ -1,7 +1,7 @@
 .dropdown {
   position: relative;
   width: 100%;
-  
+
   &--ranged .dropdown__input {
     text-transform: lowercase;
   }
@@ -11,7 +11,7 @@
   }
 
   &--M {
-    max-width: 270px;
+    max-width: 267px;
   }
 
   .dropdown__input--opened ~ .dropdown__inner {
@@ -21,13 +21,19 @@
   }
 }
 
-.dropdown:not([data-type='datepicker']) {
+.dropdown:not([data-type='datepicker']):not(.dropdown--checkbox) {
   .dropdown__input {
-    border-radius: 4px 4px 0 0;
+    border-radius: 4px;
+    padding-bottom: 10px;
   }
 
   .dropdown__input--opened {
     border-bottom-color: transparent;
+    border-radius: 4px 4px 0 0;
+  }
+
+  .dropdown__arrow {
+    fill: $color-main75;
   }
 }
 
@@ -36,17 +42,12 @@
   border: 1px solid $color-main25;
   border-radius: 4px;
   cursor: pointer;
-  padding: 10px 15px;
+  padding: 8px 14px 10px;
   text-align: left;
   width: 100%;
 
   &--opened {
     border-color: $color-main50;
-  }
-
-  &--opened ~ .dropdown__arrow {
-    fill: $color-main50;
-    transform: translate(-50%, -50%) rotate(180deg);
   }
 
   &:hover {
@@ -56,13 +57,13 @@
 
 .dropdown__arrow {
   cursor: pointer;
-  fill: $color-main25;
+  fill: $color-main50;
   height: 24px;
   pointer-events: none;
   position: absolute;
   right: 0;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-45%, -58%);
   width: 24px;
 }
 
@@ -78,16 +79,18 @@
   align-items: center;
   display: flex;
   justify-content: space-between;
-  padding: .5em;
-  padding-left: 1em;
+  padding: 4px 8px 3px 14px;
+
+  &:last-child {
+    padding-bottom: 8px;
+  }
 }
 
 .dropdown__buttons {
   border: none;
   display: flex;
   justify-content: space-between;
-  padding: 1em;
-  padding-right: .5em;
+  padding: 18px 7px 12px 12px;
 }
 
 /*
@@ -97,15 +100,17 @@
 .dropdown--checkbox {
   .dropdown__input {
     border: none;
+    color: $color-main100;
     font-size: 12px;
     font-weight: bold;
     line-height: 15px;
-    padding-left: 0;
+    padding: 0;
+    padding-bottom: 6px;
     text-transform: uppercase;
   }
 
-  .dropdown__arrow {
-    fill: $color-main50;
+  .dropdown__input--opened ~ .dropdown__arrow {
+    transform: translate(-45%, -53%) rotate(180deg);
   }
 
   .dropdown__input--opened ~ .dropdown__inner {

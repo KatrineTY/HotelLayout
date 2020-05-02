@@ -6,6 +6,6 @@ mixin comment(author, text, date, picture)
         .comment__author!=author
         .comment__date!=date
       .comment__text!=text
-    .comment__picture
-      img(src='../../assets/img/image.png')
+    .comment__picture-container
+      img.comment__picture(src='../../assets/img/image.png')
       +input-like('12', id)

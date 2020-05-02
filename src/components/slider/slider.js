@@ -4,8 +4,8 @@ require('ion-rangeslider/css/ion.rangeSlider.min.css');
 const $slider = $('.js-slider__input');
 $slider.ionRangeSlider({
   type: 'double',
-  min: 0,
-  max: 15000,
+  min: 600,
+  max: 15400,
   from: 5000,
   to: 10000,
   hide_min_max: true,
@@ -16,5 +16,5 @@ $slider.on('change', function () {
   const $inp = $(this);
   const from = $inp.data('from');
   const to = $inp.data('to');
-  this.parentNode.querySelector('.js-slider__value').innerHTML = `${from}₽ - ${to}₽`;
+  this.parentNode.querySelector('.js-slider__value').innerHTML = `${from.toLocaleString().replace(/,/g, ' ')}₽ - ${to.toLocaleString().replace(/,/g, ' ')}₽`;
 });
