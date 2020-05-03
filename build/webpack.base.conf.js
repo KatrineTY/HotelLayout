@@ -1,3 +1,4 @@
+/* eslint-disable*/
 const path = require('path');
 const fs = require('fs')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -20,13 +21,11 @@ module.exports = {
     paths: PATHS
   },
 
-  entry: {
-    app: PATHS.src
-  },
+  entry: path.resolve(PATHS.src, "index.js"),
   output: {
     filename: `${PATHS.assets}js/[name].[contenthash].js`,
     path: PATHS.dist,
-    publicPath: '/'
+    // publicPath: '/'
   },
   optimization: {
     splitChunks: {
@@ -58,7 +57,7 @@ module.exports = {
       test: /\.(woff(2)?|ttf|eot|svg|otf)(\?v=\d+\.\d+\.\d+)?$/,
       loader: 'file-loader',
       options: {
-        name: '[name].[ext]'
+        name: '[name].[ext]',
       }
     }, {
       test: /\.css$/,
@@ -101,8 +100,7 @@ module.exports = {
       filename: `${PATHS.assets}css/[name].[contenthash].css`,
     }),
     new CopyWebpackPlugin([
-      { from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img/` },
-      { from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts/` },
+      { from: `${PATHS.src}/${PATHS.assets}img`, to: `img/` },
     ]),
     ...PAGES.map(page => new HtmlWebpackPlugin({
       template: `${PAGES_DIR}/${page}`,
