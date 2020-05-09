@@ -1,7 +1,7 @@
 mixin logo(label)
   - if(label)
   .logo
-    img(src='./img/logo.png', alt='logo')
+    img(src=require('../components/logo/img/logo.png').default, alt='logo')
   - else
   .logo--no-label
-    img(src='./img/logo.png', alt='logo')
+    img(src=require('../components/logo/img/logo.png').default, alt='logo')

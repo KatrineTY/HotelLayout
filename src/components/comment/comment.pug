@@ -7,5 +7,5 @@ mixin comment(author, text, date, picture)
         .comment__date!=date
       .comment__text!=text
     .comment__picture-container
-      img.comment__picture(src='./img/comment.png')
+      img.comment__picture(src=require('../components/comment/img/comment.png').default)
       +input-like('12', id)

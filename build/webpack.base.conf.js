@@ -2,7 +2,6 @@
 const path = require('path');
 const fs = require('fs')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 
@@ -25,7 +24,6 @@ module.exports = {
   output: {
     filename: `${PATHS.assets}js/[name].[contenthash].js`,
     path: PATHS.dist,
-    // publicPath: '/'
   },
   optimization: {
     splitChunks: {
@@ -51,13 +49,17 @@ module.exports = {
       test: /\.(png|jpg|gif|svg)$/,
       loader: 'file-loader',
       options: {
-        name: '[name].[ext]'
+        name: '[name].[ext]',
+        outputPath: `${PATHS.assets}img`,
+        publicPath: `${PATHS.assets}img`,
       }
     }, {
       test: /\.(woff(2)?|ttf|eot|svg|otf)(\?v=\d+\.\d+\.\d+)?$/,
       loader: 'file-loader',
       options: {
         name: '[name].[ext]',
+        outputPath: `${PATHS.assets}fonts`,
+        publicPath: `../fonts`,
       }
     }, {
       test: /\.css$/,
@@ -90,6 +92,8 @@ module.exports = {
         }
       ]
     }],
+
+    noParse: /\/jquery\/dist\/jquery/
   },
   plugins: [
     new webpack.ProvidePlugin({
@@ -99,9 +103,6 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: `${PATHS.assets}css/[name].[contenthash].css`,
     }),
-    new CopyWebpackPlugin([
-      { from: `${PATHS.src}/${PATHS.assets}img`, to: `img/` },
-    ]),
     ...PAGES.map(page => new HtmlWebpackPlugin({
       template: `${PAGES_DIR}/${page}`,
       filename: `./${page.replace(/\.pug/, '.html')}`

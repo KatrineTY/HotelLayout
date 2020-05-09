@@ -4,7 +4,7 @@ mixin card(pics, number, kind, price, reviewsCount)
       .card__slider.js-card__slider
         each pic in pics.split(';')
           .card__photo-container
-            img.card__photo(src=pic alt="photo alt")
+            img.card__photo(src=require(`../components/card/img/${pic}`).default alt="photo alt")
     .card__inner
       .card__title
         div
