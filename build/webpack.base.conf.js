@@ -3,6 +3,7 @@ const path = require('path');
 const fs = require('fs')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const webpack = require('webpack');
 
 const PATHS = {
@@ -20,7 +21,11 @@ module.exports = {
     paths: PATHS
   },
 
-  entry: path.resolve(PATHS.src, "index.js"),
+  entry: {
+    cards: path.resolve(PATHS.src, "cards.js"),
+    'form-elements': path.resolve(PATHS.src, "form-elements.js"),
+    'headers-and-footers': path.resolve(PATHS.src, "headers-and-footers.js"),
+  },
   output: {
     filename: `${PATHS.assets}js/[name].[contenthash].js`,
     path: PATHS.dist,
@@ -33,6 +38,14 @@ module.exports = {
           test: /node_modules/,
           chunks: 'all',
           enforce: true
+        },
+        default: {
+          name: 'common',
+          test: /src/,
+          chunks: 'all',
+          minChunks: 2,
+          priority: -20,
+          reuseExistingChunk: true
         }
       }
     }
@@ -96,6 +109,7 @@ module.exports = {
     noParse: /\/jquery\/dist\/jquery/
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery'
@@ -105,7 +119,9 @@ module.exports = {
     }),
     ...PAGES.map(page => new HtmlWebpackPlugin({
       template: `${PAGES_DIR}/${page}`,
-      filename: `./${page.replace(/\.pug/, '.html')}`
-    }))
+      filename: `./${page.replace(/\.pug/, '.html')}`,
+      insert: false,
+      chunks: [page.replace(/\.pug/, ''), 'vendors', 'common'],
+    })),
   ]
 }
