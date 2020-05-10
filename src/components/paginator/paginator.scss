@@ -47,16 +47,16 @@
   .icon {
     transform: rotate(180deg);
   }
-
-  &.disabled {
-    display: none;
-  }
 }
 
 .paginationjs-next,
 .paginationjs-prev {
   background: $gradient-green-background;
   fill: white;
+
+  &.disabled {
+    display: none;
+  }
 }
 
 .paginationjs-nav {
