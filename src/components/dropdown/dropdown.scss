@@ -14,11 +14,17 @@
     max-width: 267px;
   }
 
-  .dropdown__input--opened ~ .dropdown__inner {
+  &--opened .dropdown__inner {
     border: 1px solid $color-main50;
     border-radius: 0 0 4px 4px;
     display: block;
   }
+
+  &--opened .dropdown__input {
+    border-color: $color-main50;
+  }
+
+
 }
 
 .dropdown:not([data-type='datepicker']):not(.dropdown--checkbox) {
@@ -27,7 +33,7 @@
     padding-bottom: 10px;
   }
 
-  .dropdown__input--opened {
+  &.dropdown--opened .dropdown__input {
     border-bottom-color: transparent;
     border-radius: 4px 4px 0 0;
   }
@@ -46,10 +52,6 @@
   text-align: left;
   width: 100%;
 
-  &--opened {
-    border-color: $color-main50;
-  }
-
   &:hover {
     border-color: $color-main50;
   }
@@ -62,8 +64,8 @@
   pointer-events: none;
   position: absolute;
   right: 0;
-  top: 50%;
-  transform: translate(-45%, -58%);
+  bottom: 0;
+  transform: translate(-45%, -50%);
   width: 24px;
 }
 
@@ -72,7 +74,7 @@
   display: none;
   position: absolute;
   width: 100%;
-  z-index: 100;
+  z-index: 1;
 }
 
 .dropdown__item {
@@ -109,11 +111,11 @@
     text-transform: uppercase;
   }
 
-  .dropdown__input--opened ~ .dropdown__arrow {
+  &.dropdown--opened > .dropdown__arrow {
     transform: translate(-45%, -53%) rotate(180deg);
   }
 
-  .dropdown__input--opened ~ .dropdown__inner {
+  &.dropdown--opened > .dropdown__inner {
     border: none;
   }
 }

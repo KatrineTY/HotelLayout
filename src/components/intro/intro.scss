@@ -1,0 +1,15 @@
+.intro {
+  background-image: url('./components/intro/img/background.jpg');
+  background-position: bottom left;
+  height: 830px;
+  padding-bottom: 20px;
+  padding-top: 70px;
+}
+
+.intro__text {
+  bottom: 0;
+  max-width: 290px;
+  position: absolute;
+  right: 0;
+  text-align: right;
+}

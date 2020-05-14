@@ -1,41 +1,39 @@
-import toggleClass from '../common/_functions';
-
 require('air-datepicker/dist/css/datepicker.min.css');
 require('air-datepicker/dist/js/datepicker.min.js');
 
 
-$('.js-datepicker-input').datepicker({
-  classes: 'js-datepicker',
+$('.js-datepicker__input').datepicker({
+  inline: true,
+  classes: '-ranged- js-datepicker',
   toggleSelected: false,
+  range: true,
   navTitles: {
     days: 'MM yyyy',
   },
   prevHtml: '<svg><use xlink:href="#arrow-right"></use></svg>',
   nextHtml: '<svg><use xlink:href="#arrow-right"></use></svg>',
-  onHide() {
-    if (this) {
-      this.$el[0].classList.remove('dropdown__input--opened');
-    }
-  },
 });
 
-$('.js-datepicker-input').each(function () {
+const longFormatter = new Intl.DateTimeFormat('ru', { month: '2-digit', year: 'numeric', day: '2-digit' });
+const shortFormatter = new Intl.DateTimeFormat('ru', { month: 'short', day: 'numeric' });
+
+$('.js-datepicker__input').each(function () {
   $(this).datepicker().data('datepicker').apply = function () {
-    this.$el.data('datepicker').hide();
+    if (this.selectedDates.length === 0) {
+      this.$el[0].parentNode.querySelector('.js-dropdown__input').value = '';
+    } else {
+      const datepickers = this.$el[0].parentNode.getElementsByClassName('js-dropdown__input');
+      if (datepickers.length === 2) {
+        datepickers[0].value = longFormatter.format(this.selectedDates[0]);
+        datepickers[1].value = longFormatter.format(this.selectedDates[1]);
+      } else {
+        datepickers[0].value = `${shortFormatter.format(this.selectedDates[0]).replace('.', '')} - ${shortFormatter.format(this.selectedDates[1]).replace('.', '')}`;
+      }
+      Array.prototype.forEach.call(this.$el[0].parentNode.getElementsByClassName('js-dropdown'), (el) => {
+        el.classList.remove('dropdown--opened');
+      });
+    }
   };
-});
-
-$('.js-datepicker-input').on('click', function () {
-  if (this.classList.contains('dropdown__input--opened')) {
-    $(this).datepicker().data('datepicker').hide();
-  }
-});
-
-$('.js-datepicker-input--ranged').datepicker({
-  classes: '-ranged- js-datepicker',
-  range: true,
-  multipleDatesSeparator: ' - ',
-  dateFormat: 'd M',
 });
 
 $('.js-datepicker').each(function () {

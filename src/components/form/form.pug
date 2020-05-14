@@ -12,11 +12,9 @@ mixin form-element(title, mods)
       h1!=title
     block
 
-mixin form-search(from, to)
-  +column-item('прибытие','','date,XS')
-    +dropdown-container('datepicker', '','', 'S')(data-date=from)
-  +column-item('выезд','','date,XS')
-    +dropdown-container('datepicker', '','', 'S')(data-date=to)
+mixin form-search()
+  +column-item
+   +datepicker('', 'doubled',{from: 'прибытие', to: 'выезд'})
   +column-item('гости')
     +dropdown-container('guests','','Сколько гостей','extended')
       +dropdown-item('взрослые')

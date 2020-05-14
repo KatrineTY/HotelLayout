@@ -1,0 +1,23 @@
+mixin datepicker(inline, doubled, titles={from: '', to: ''}) 
+  - let datepickerClasses = 'datepicker__input js-datepicker__input -ranged-'
+  .datepicker-container
+    - if (!inline) {
+      - if (doubled) {
+      .dropdown(class = 'dropdown--S js-dropdown' data-type='datepicker')
+        h3 #{titles.from}
+        input.dropdown__input(type='text' value=value class='js-dropdown__input' placeholder='ДД.ММ.ГГГГ' readonly ) 
+        +icon('expansion').dropdown__arrow
+      .dropdown(class = 'dropdown--S js-dropdown' data-type='datepicker')
+        h3 #{titles.to}
+        input.dropdown__input(type='text' value=value class='js-dropdown__input' placeholder='ДД.ММ.ГГГГ' readonly)
+        +icon('expansion').dropdown__arrow
+      - } else {
+      .dropdown(data-type='datepicker'  class='js-dropdown')
+        input.dropdown__input(type='text' value=value class='js-dropdown__input' placeholder='ДД.ММ.ГГГГ' readonly)
+        +icon('expansion').dropdown__arrow
+      - }
+    - } else {
+      - datepickerClasses += ' datepicker__input--inline'
+    - }
+
+    div(class=datepickerClasses)

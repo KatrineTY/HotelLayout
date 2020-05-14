@@ -1,8 +1,37 @@
+.datepicker-container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+
+  h3 {
+    padding-bottom: 5px;
+  }
+}
+
+.datepicker__input {
+  display: none;
+  left: 0;
+  position: absolute;
+  top: calc(1em + 14px + 5px + 28px + 7px);
+  z-index: 100;
+
+  &--inline {
+    display: block;
+    position: static;
+  }
+}
+
+.dropdown--opened ~ .datepicker__input {
+  display: block;
+}
+
+
 .datepicker {
   box-sizing: border-box;
   font-size: 12px;
   line-height: 15px;
-  padding: 19px 20px;
+  padding: 20px;
   width: 320px;
   font-family: $font-family-main;
 

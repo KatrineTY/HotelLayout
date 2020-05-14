@@ -116,7 +116,12 @@ function clearValue(e) {
   e.target.classList.add('button--hidden');
 }
 
-$('.js-dropdown__input').on('click', (e) => toggleClass(e.target, 'dropdown__input--opened'));
+$('.js-dropdown__input').on('click', (e) => {
+  $('.dropdown--opened').each((i,elem) => {
+    if(elem !== e.target.parentNode) elem.classList.remove('dropdown--opened');
+  } )
+  toggleClass(e.target.parentNode, 'dropdown--opened')
+});
 
 $(document).ready(() => {
   $('.js-input-number__button-decrease').each(function () {
@@ -128,7 +133,7 @@ $(document).ready(() => {
     $('*[data-action="clear"]', this).on('click', clearValue);
     $('*[data-action="apply"]', this).on('click', (e) => {
       changeValue(e.target.parentNode.parentNode.parentNode);
-      e.target.parentNode.parentNode.parentNode.getElementsByClassName('dropdown__input')[0].classList.toggle('dropdown__input--opened');
+      e.target.parentNode.parentNode.parentNode.querySelector('.dropdown__input').parentNode.classList.toggle('dropdown--opened');
     });
     updateDisableButton(this);
   });

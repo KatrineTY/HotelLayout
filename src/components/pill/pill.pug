@@ -1,4 +1,4 @@
-mixin pill(number, kind, price, servicesCost, extraCost, from, to)
+mixin pill(number, kind, price, servicesCost, extraCost)
   .pill.js-pill
     .pill__title
       div
@@ -10,7 +10,7 @@ mixin pill(number, kind, price, servicesCost, extraCost, from, to)
         b!=`${price.toLocaleString().replace(/,/g,' ')}₽ `
         | в сутки
     .pill__inner
-      +form-search(from, to)
+      +form-search
     .pill__info
       .pill__cost
         .pill__cost-text.js-pill__cost-text!= `${price.toLocaleString().replace(/,/g,' ')}₽ x 0 суток`

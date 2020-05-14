@@ -22,9 +22,11 @@ module.exports = {
   },
 
   entry: {
-    cards: path.resolve(PATHS.src, "cards.js"),
+    'cards': path.resolve(PATHS.src, "cards.js"),
     'form-elements': path.resolve(PATHS.src, "form-elements.js"),
     'headers-and-footers': path.resolve(PATHS.src, "headers-and-footers.js"),
+    'test': path.resolve(PATHS.src, "test.js"),
+    'landing-page': path.resolve(PATHS.src, "landing-page.js"),
   },
   output: {
     filename: `${PATHS.assets}js/[name].[contenthash].js`,
@@ -59,8 +61,17 @@ module.exports = {
       loader: 'babel-loader',
       exclude: '/node_modules/'
     }, {
+      test: /background\.jpg/,
+      loader: 'file-loader',
+      options: {
+        name: '[name].[ext]',
+        outputPath: `${PATHS.assets}img`,
+        publicPath: `../img`,
+      }
+    }, {
       test: /\.(png|jpg|gif|svg)$/,
       loader: 'file-loader',
+      exclude: /background\.jpg$/,
       options: {
         name: '[name].[ext]',
         outputPath: `${PATHS.assets}img`,
@@ -99,10 +110,10 @@ module.exports = {
         }, {
           loader: 'postcss-loader',
           options: { sourceMap: true, config: { path: `./postcss.config.js` } }
-        }, {
+        },  {
           loader: 'sass-loader',
           options: { sourceMap: true }
-        }
+        },
       ]
     }],
 

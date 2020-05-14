@@ -1,0 +1,21 @@
+include ../components/icons/icons.pug
+include ../components/input/input.pug
+include ../components/column/column.pug
+include ../components/button/button.pug
+include ../components/dropdown/dropdown.pug
+include ../components/container/container.pug
+include ../components/form/form.pug
+include ../components/logo/logo.pug
+include ../components/header/header.pug
+include ../components/footer/footer.pug
+include ../components/intro/intro.pug
+include ../components/datepicker/datepicker.pug
+
++header(false)
++intro
+  +column('XL,margin-less')
+    +form-element('Найдём номера под ваши пожелания')
+      +form-search
+      +form-footer
+        +button('подобрать номер','a', 'oval,filled,link')
++footer(true)

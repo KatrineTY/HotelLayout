@@ -8,6 +8,7 @@ include ../components/form/form.pug
 include ../components/pill/pill.pug
 include ../components/card/card.pug
 include ../components/logo/logo.pug
+include ../components/datepicker/datepicker.pug
 
 .ui-kit.ui-kit--c
   +logo(false)
@@ -37,9 +38,7 @@ include ../components/logo/logo.pug
           +button('войти', 'button', 'oval,framed')
     +column('XL')
       +form-element
-        +pill('888', 'люкс', 9990, 0, 300, 
-        new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()),
-        new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()))
+        +pill('888', 'люкс', 9990, 0, 300)
       +form-element('Войти')
         +column-item('','', 'multiple')
           +input-field('text','Email') 
@@ -51,7 +50,7 @@ include ../components/logo/logo.pug
           +button('создать', 'button', 'oval,framed')
     +column('L')
       +form-element('', 'datepicker')
-        +dropdown-container('datepicker', '','', 'M,ranged,inline')(data-inline="true")
+        +datepicker('inline', 'M')
       +column-item('','', 'M-rounded')
         +card('card1.jpg;card2.jpg;card2.jpg;card2.jpg','888', 'люкс', 9990, 145)
       +column-item('','', 'M-rounded')

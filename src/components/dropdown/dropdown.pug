@@ -1,10 +1,5 @@
 mixin dropdown-container(type, title, value, mods)
   -
-    var inline = false;
-    if(mods.includes('inline')){
-      inline = true;
-      mods.replace(',inline','');
-    }
     var allMods = '';
     var datepickerClasses = '';
     if(typeof(mods) !== 'undefined' && mods) {
@@ -12,21 +7,8 @@ mixin dropdown-container(type, title, value, mods)
       for (var i = 0; i < modsList.length; i++) {
         allMods = allMods + ' dropdown--' + modsList[i].trim();
       }
-      if(type === 'datepicker') {
-        datepickerClasses = datepickerClasses + ' datepicker-here js-datepicker-input';
-      }
-      if(mods.includes('ranged')) {
-        datepickerClasses = datepickerClasses + ' -ranged- js-datepicker-input--ranged';
-      }
     }
-
   .dropdown(class=allMods data-type=type)
-    - if (inline) {
-        div(class=datepickerClasses class='js-dropdown__input')&attributes(attributes)
-    - } else if (type === 'datepicker') {
-    input.dropdown__input(type='text' class=datepickerClasses value=value class='js-dropdown__input' placeholder='ДД.ММ.ГГГГ' readonly)&attributes(attributes)
-    +icon('expansion').dropdown__arrow
-    - } else {
     input.dropdown__input(type='button' value=value class='js-dropdown__input' readonly)&attributes(attributes)
     +icon('expansion').dropdown__arrow
     .dropdown__inner
@@ -35,7 +17,6 @@ mixin dropdown-container(type, title, value, mods)
         .dropdown__buttons
           +button('очистить','button')(data-action='clear')
           +button('применить','button','purple')(data-action='apply')
-    - }
         
 
 mixin dropdown-item(title)

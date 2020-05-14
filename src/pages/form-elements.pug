@@ -11,6 +11,7 @@ include ../components/profit/profit.pug
 include ../components/paginator/paginator.pug
 include ../components/slider/slider.pug
 include ../components/logo/logo.pug
+include ../components/datepicker/datepicker.pug
 
 .ui-kit.ui-kit--fe
   +logo(false)
@@ -27,12 +28,10 @@ include ../components/logo/logo.pug
           +dropdown-item('младенцы')
       +column-item('masked text field','Default')
         +input-field('date','ДД.ММ.ГГГГ')
-      +column-item('date dropdown','','date,XS')
-        +dropdown-container('datepicker', '','', 'S')
-      +column-item('date dropdown','','date,XS')
-        +dropdown-container('datepicker', '','', 'S')
+      +column-item('date dropdown','')
+        +datepicker('', 'doubled')
       +column-item('filter date dropdown','', 'M')
-        +dropdown-container('datepicker', '','', 'M,ranged')
+        +datepicker
       +column-item('subscription text field','', 'M')
         +input-field('email','Email') 
     +column('M')
