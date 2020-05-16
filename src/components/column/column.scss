@@ -10,7 +10,7 @@
     margin-left: 0;
   }
 
-  &:last-child {
+  &:last-child:not(.column--centered) {
     margin-right: 0;
   }
 
@@ -33,10 +33,14 @@
   &--margin-less {
     margin: 0;
   }
+
+  &--centered {
+    margin: auto;
+  }
 }
 
 .column__item {
-  padding-bottom: 21px;
+  padding-bottom: 20px;
   width: 100%;
 
   &:last-child {

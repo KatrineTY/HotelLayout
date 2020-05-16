@@ -1,5 +1,14 @@
-mixin intro() 
-  .intro
+mixin intro(text, mods) 
+  -
+    var allMods = '';
+    var datepickerClasses = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' intro--' + modsList[i].trim();
+      }
+    }
+  .intro(class=allMods)
     +container('intro')
-      .intro__text Лучшие номера для вашей работы, отдыха и просто вдохновения
+      .intro__text #{text}
       block

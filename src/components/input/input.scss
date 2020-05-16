@@ -70,8 +70,9 @@
   }
 
   &--toggle {
+    align-items: center;
     color: $color-main75;
-    padding-left: 50px;
+    display: flex;
   }
 
   &--radio {
@@ -180,9 +181,8 @@
     border: 1px solid $color-main25;
     border-radius: 10px;
     height: 20px;
-    left: 0;
-    position: absolute;
-    top: 0;
+    margin-right: 11px;
+    position: relative;
     width: 40px;
   }
   
@@ -203,7 +203,7 @@
     height: 12px;
     left: 50%;
     position: absolute;
-    top: 48%;
+    top: 50%;
     transition: transform .2s linear;
     width: 12px;
   }

@@ -1,0 +1,24 @@
+include ../components/icons/icons.pug
+include ../components/input/input.pug
+include ../components/column/column.pug
+include ../components/button/button.pug
+include ../components/container/container.pug
+include ../components/form/form.pug
+include ../components/logo/logo.pug
+include ../components/header/header.pug
+include ../components/footer/footer.pug
+include ../components/intro/intro.pug
+
++header(false)
++intro('', 'login')
+  +column('XL,margin-less,centered')
+    +form-element('Войти')
+        +column-item('','', 'multiple')
+          +input-field('text','Email') 
+          +input-field('text','Пароль') 
+        +column-item('','','button-filled')
+          +button('Войти','a', 'oval,filled,link')
+        +form-footer
+          span!='Нет аккаунта на Toxin?'
+          +button('создать', 'button', 'oval,framed')
++footer(true)

@@ -1,8 +1,8 @@
 .logo {
+  cursor: pointer;
   display: flex;
 
   &--no-label {
-    display: flex;
     filter: brightness(0);
     height: 48px;
     opacity: .25;

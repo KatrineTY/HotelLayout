@@ -1,9 +1,25 @@
 .intro {
-  background-image: url('./components/intro/img/background.jpg');
-  background-position: bottom left;
-  height: 830px;
-  padding-bottom: 20px;
-  padding-top: 70px;
+  background-position: bottom;
+  background-repeat: no-repeat;
+
+  &--landing {
+    background-image: url('./components/intro/img/background-landing.jpg');
+    height: 830px;
+    padding-bottom: 20px;
+    padding-top: 70px;
+  }
+
+  &--login,
+  &--registration {
+    background-image: url('./components/intro/img/background-log-in.jpg');
+    height: 702px;
+    padding-bottom: 30px;
+    padding-top: 28px;
+   }
+
+   &--login {
+    padding-top: 67px;
+   }
 }
 
 .intro__text {

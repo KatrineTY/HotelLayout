@@ -23,6 +23,6 @@ mixin header(logged)
           +nav__item('Cosmin Negoita','#','logged-in')
           - else {
           .header__buttons
-            +button('Login','button','oval,framed,header')
-            +button('Register','button','oval,filled,header')
+            +button('Login','button','oval,framed,header')(class='js-button--login')
+            +button('Register','button','oval,filled,header')(class='js-button--registration')
           - }

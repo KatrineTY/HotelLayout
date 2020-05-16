@@ -27,6 +27,8 @@ module.exports = {
     'headers-and-footers': path.resolve(PATHS.src, "headers-and-footers.js"),
     'test': path.resolve(PATHS.src, "test.js"),
     'landing-page': path.resolve(PATHS.src, "landing-page.js"),
+    'registration-page': path.resolve(PATHS.src, "registration-page.js"),
+    'login-page': path.resolve(PATHS.src, "login-page.js"),
   },
   output: {
     filename: `${PATHS.assets}js/[name].[contenthash].js`,
@@ -61,7 +63,7 @@ module.exports = {
       loader: 'babel-loader',
       exclude: '/node_modules/'
     }, {
-      test: /background\.jpg/,
+      test: /background-.*\.jpg/,
       loader: 'file-loader',
       options: {
         name: '[name].[ext]',
@@ -71,7 +73,7 @@ module.exports = {
     }, {
       test: /\.(png|jpg|gif|svg)$/,
       loader: 'file-loader',
-      exclude: /background\.jpg$/,
+      exclude: /background-.*\.jpg$/,
       options: {
         name: '[name].[ext]',
         outputPath: `${PATHS.assets}img`,
