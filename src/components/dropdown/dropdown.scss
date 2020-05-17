@@ -30,7 +30,7 @@
 .dropdown:not([data-type='datepicker']):not(.dropdown--checkbox) {
   .dropdown__input {
     border-radius: 4px;
-    padding-bottom: 10px;
+    padding-bottom: 9px;
   }
 
   &.dropdown--opened .dropdown__input {
@@ -58,13 +58,13 @@
 }
 
 .dropdown__arrow {
+  bottom: 0;
   cursor: pointer;
   fill: $color-main50;
   height: 24px;
   pointer-events: none;
   position: absolute;
   right: 0;
-  bottom: 0;
   transform: translate(-45%, -50%);
   width: 24px;
 }
@@ -111,8 +111,12 @@
     text-transform: uppercase;
   }
 
+  .dropdown__arrow {
+    transform: translate(-43%, -17%);
+  }
+
   &.dropdown--opened > .dropdown__arrow {
-    transform: translate(-45%, -53%) rotate(180deg);
+    transform: translate(-43%, 0) rotate(180deg);
   }
 
   &.dropdown--opened > .dropdown__inner {

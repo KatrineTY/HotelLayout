@@ -30,6 +30,7 @@ module.exports = {
     'registration-page': path.resolve(PATHS.src, "registration-page.js"),
     'login-page': path.resolve(PATHS.src, "login-page.js"),
     'room-details-page': path.resolve(PATHS.src, "room-details-page.js"),
+    'search-room-page': path.resolve(PATHS.src, "search-room-page.js"),
   },
   output: {
     filename: `${PATHS.assets}js/[name].[contenthash].js`,

@@ -1,0 +1,49 @@
+include ../components/icons/icons.pug
+include ../components/input/input.pug
+include ../components/column/column.pug
+include ../components/button/button.pug
+include ../components/dropdown/dropdown.pug
+include ../components/container/container.pug
+include ../components/form/form.pug
+include ../components/pill/pill.pug
+include ../components/card/card.pug
+include ../components/logo/logo.pug
+include ../components/datepicker/datepicker.pug
+include ../components/slider/slider.pug
+include ../components/header/header.pug
+include ../components/footer/footer.pug
+
+
++header(false)
++container('search-room')
+  +column('M')
+    +column-item('даты пребывания в отеле','', 'M')
+      +datepicker
+    +column-item('гости')
+      +dropdown-container('guests','','Сколько гостей','extended')
+        +dropdown-item('взрослые')
+        +dropdown-item('дети')
+        +dropdown-item('младенцы')
+    +column-item('','','M')
+      +slider('диапазон цены','Стоимость за сутки пребывания в номере')
+    +column-item('удобства','','S,pb30')
+      +input-checkbox('checkmark', 'Можно курить')
+      +input-checkbox('checkmark', 'Можно с питомцами')
+      +input-checkbox('checkmark', 'Можно пригласить гостей (до 10 человек)')
+    +column-item('доступность','','pb30')
+      +input-checkbox('checkmark', 'Ширина коридоров в номере \nне менее 91 см.','Широкий коридор')
+      +input-checkbox('checkmark', 'На 1 этаже вас встретит специалист \nи проводит до номера.','Помощник для инвалидов')
+    +column-item('удобства номера','','M,pb30')
+      +dropdown-container('appartament','','Какие аппартаменты','M')
+        +dropdown-item('спальни')
+        +dropdown-item('кровати')
+        +dropdown-item('ванные комнаты')
+    +column-item
+      +dropdown-container('checkbox','','дополнительные удобства','M,checkbox')
+        +input-checkbox('checkmark', 'Завтрак')
+        +input-checkbox('checkmark', 'Письменный стол')
+        +input-checkbox('checkmark', 'Стул для кормления')
+        +input-checkbox('checkmark', 'Кроватка')
+        +input-checkbox('checkmark', 'Телевизор')
+        +input-checkbox('checkmark', 'Шампунь')
++footer(true)

@@ -64,6 +64,10 @@ function getGuestsValue(dropdown) {
     finalValue += parseInt(count, 10);
   });
 
+  let children = parseInt($(dropdown.getElementsByClassName('js-dropdown__item')).last()[0]
+    .getElementsByClassName('js-input-number__input')[0].value, 10);
+  finalValue -= children;
+
   let result = '';
   if (finalValue === 1) {
     result = `${finalValue} гость`;
@@ -72,6 +76,14 @@ function getGuestsValue(dropdown) {
   } else {
     result = `${finalValue} гостя`;
   }
+
+  if (children === 1) {
+    result += `, ${children} младенец`;
+  } else if (finalValue > 1) {
+    result = `, ${children} младенцев`;
+  }
+
+
   return result;
 }
 
@@ -117,9 +129,9 @@ function clearValue(e) {
 }
 
 $('.js-dropdown__input').on('click', (e) => {
-  $('.dropdown--opened').each((i,elem) => {
-    if(elem !== e.target.parentNode) elem.classList.remove('dropdown--opened');
-  } )
+  $('.dropdown--opened').each((i, elem) => {
+    if (elem !== e.target.parentNode) elem.classList.remove('dropdown--opened');
+  })
   toggleClass(e.target.parentNode, 'dropdown--opened')
 });
 

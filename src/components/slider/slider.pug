@@ -1,6 +1,7 @@
-mixin slider(title) 
+mixin slider(title, hint) 
   .slider
     .slider__text
       h3!=title
       span.slider__value.js-slider__value 5 000₽ - 10 000₽
     input(type="text" class="js-slider__input slider__input" value="")
+    .slider__hint!= hint

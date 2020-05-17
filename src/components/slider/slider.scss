@@ -12,23 +12,33 @@
   text-transform: uppercase;
 }
 
+.slider__hint {
+  color: $color-main50;
+  font-size: 12px;
+  line-height: 14px;
+  padding-top: 3px;
+}
+
 /*
   Slider
 */
 .slider {
+  padding-bottom: 9px;
+  padding-top: 12px;
+
   .irs-line {
     background: #ffffff;
     border: 1px solid $color-main25;
     border-radius: 3px;
     height: 7px;
-    top: 23px;
+    top: 22px;
   }
 
   .irs-bar {
     background: $gradient-green-background;
     border-radius: 3px;
     height: 7px;
-    top: 23px;
+    top: 22px;
   }
 
   .irs-handle {
@@ -37,7 +47,7 @@
     border-radius: 50%;
     box-sizing: initial;
     height: 12px;
-    top: 19px;
+    top: 18px;
     width: 12px;
   }
 
