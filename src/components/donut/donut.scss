@@ -1,0 +1,63 @@
+.donut {
+  align-items: flex-end;
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 19px;
+}
+
+.donut__chart {
+  font-weight: bold;
+  height: auto;
+  width: 127px;
+}
+
+.donut__text {
+  fill: #bc9cff;
+  transform: translateY(.25em);
+}
+
+.donut__count {
+  font-family: $font-family-secondary;
+  font-size: .49em;
+  text-anchor: middle;
+  transform: translateY(-.6em);
+}
+
+.donut__count-label {
+  font-size: .25em;
+  text-anchor: middle;
+  text-transform: uppercase;
+  transform: translateY(.2em);
+}
+
+.donut__agenda {
+  padding-bottom: 4px;
+  padding-left: 22px;
+}
+
+.donut__agenda-list {
+  list-style: none;
+}
+
+.donut__list-mark {
+  border-radius: 50%;
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+
+  &--orange {
+    background: $gradient-orange-background;
+  }
+
+  &--green {
+    background: $gradient-green-background;
+  }
+
+  &--primary {
+    background: $gradient-purple-background;
+  }
+
+  &--black {
+    background: $gradient-black-background;
+  }
+}

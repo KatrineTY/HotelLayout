@@ -1,11 +1,11 @@
-mixin comment(author, text, date, picture)
+mixin comment(author, text, date, picture, likes)
   - var id = `f${(~~(Math.random()*1e8)).toString(16)}`;
   .comment
-    .comment__content
       .comment__header
-        .comment__author!=author
-        .comment__date!=date
-      .comment__text!=text
-    .comment__picture-container
-      img.comment__picture(src=require('../components/comment/img/comment.png').default)
-      +input-like('12', id)
+        img.comment__picture(src=require(`../components/comment/img/${picture}`).default alt="photo alt")
+        .comment__header-content
+          .comment__author!=author
+          .comment__date!=date
+      .comment__content
+        +input-like(likes, id)
+        .comment__text!=text

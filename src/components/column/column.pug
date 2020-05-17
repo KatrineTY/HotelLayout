@@ -21,9 +21,14 @@ mixin column-item(title, hint, mods)
     }
   .column__item(class=allMods)
     if(title)
-      .columnn__subtitle
-        h3!=title
-        if(hint)
-          h3.column__hint!=hint
-
+      -if(mods && mods.includes('comments'))
+        .columnn__title
+          h2!=title
+          if(hint)
+            .column__hint!=`${hint} отзыва`
+      -else 
+        .columnn__subtitle
+          h3!=title
+          if(hint)
+            .column__hint!=hint
     block

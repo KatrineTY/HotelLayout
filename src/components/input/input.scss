@@ -37,8 +37,7 @@
   color: $color-main50;
   display: block;
   line-height: 18px;
-  // margin-top: 9px;
-  user-select: none;
+    user-select: none;
 
   &--like,
   &--star {
@@ -46,7 +45,9 @@
   }
 
   &--like {
-    margin-right: 10px;
+    margin-left: 3px;
+    margin-right: 14px;
+    margin-top: 2px;;
   }
 
   &--radio,

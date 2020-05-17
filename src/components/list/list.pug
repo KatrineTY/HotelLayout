@@ -1,4 +1,7 @@
-mixin list-container
+mixin list-container(title)
+  if(title)
+    h2.list__title!=title
+
   ul.list(class=allMods)
     block
 

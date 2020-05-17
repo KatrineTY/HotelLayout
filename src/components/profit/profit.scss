@@ -9,6 +9,10 @@
 
   padding: 20px 17px 20px 58px;
   position: relative;
+
+  &:last-child {
+    border: none;
+  }
 }
 
 .profit__title {

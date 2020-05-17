@@ -1,14 +1,18 @@
 .comment {
   background: white;
-  margin: 10px;
+  padding-bottom: 3px;
+  padding-top: 20px;
   position: relative;
 }
 
 .comment__content {
-  margin-left: 57px;
+  align-items: flex-start;
+  display: flex;
 }
 
 .comment__header {
+  align-items: center;
+  display: flex;
   margin-bottom: 10px;
 }
 
@@ -16,22 +20,9 @@
   font-weight: bold;
 }
 
-.comment__picture-container {
-  align-items: center;
-  content: "";
-  display: flex;
-  flex-direction: column;
-  left: 0;
-  position: absolute;
-  top: 0;
-
-  .input-button--like {
-    margin-right: 0;
-  }
-}
-
 .comment__picture {
   border: 2px solid $border-color-picture;
   border-radius: 32px;
   box-shadow: 0 10px 20px $color-main10;
+  margin-right: 10px;
 }

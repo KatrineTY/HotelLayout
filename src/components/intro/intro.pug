@@ -12,3 +12,20 @@ mixin intro(text, mods)
     +container('intro')
       .intro__text #{text}
       block
+
+mixin intro-room()
+  .intro-room
+    block
+
+mixin intro-column(mods)
+  -
+    var allMods = '';
+    var datepickerClasses = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' intro__column--' + modsList[i].trim();
+      }
+    }
+  .intro__column(class=allMods)
+    block

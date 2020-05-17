@@ -1,0 +1,51 @@
+mixin donut(rateCount, rates={excellent: 0, good: 0, satisfactory: 0, unsatisfactory: 0})
+  - let count = rates.excellent + rates.good + rates.satisfactory + rates.unsatisfactory
+  figure.donut
+    svg.donut__chart(width='100%', height='100%', viewBox='0.6 0 35 35', aria-labelledby='beers-title beers-desc', role='img')
+      title#beers-title Диаграмма отзывов
+      desc#beers-desc График показывает оценку отзывов
+      circle(cx='17', cy='17', r='15.91549430918954', fill='#fff', role='presentation')
+      if(rates.good > 0)
+        circle(cx='17', cy='17', r='15.91549430918954', fill='transparent', stroke='url(#green-gradient)', 
+        stroke-width="1", stroke-dasharray=`${rates.good/count*100 - 0.5} ${100 - rates.good/count*100 + 0.5}`, stroke-dashoffset='0')
+          
+      if(rates.satisfactory > 0)
+        circle(cx='17', cy='17', r='15.91549430918954', fill='transparent', stroke='url(#primary-gradient)', 
+        stroke-width="1", stroke-dasharray=`${rates.satisfactory/count*100 - 0.5} ${100 - rates.satisfactory/count*100 + 0.5}`, stroke-dashoffset=`${rates.satisfactory/count*100}`)
+          
+      if(rates.excellent > 0)
+        circle(cx='17', cy='17', r='15.91549430918954', fill='transparent', stroke='url(#orange-gradient)', 
+        stroke-width="1", stroke-dasharray=`${rates.excellent/count*100 - 0.5} ${100 - rates.excellent/count*100 + 0.5}`, stroke-dashoffset=`${(rates.excellent + rates.satisfactory)/count*100}`)
+          
+      if(rates.unsatisfactory > 0)
+        circle(cx='17', cy='17', r='15.91549430918954', fill='transparent', stroke='url(#black-gradient)', 
+        stroke-width="1", stroke-dasharray=`${rates.unsatisfactory/count*100 - 0.5} ${100 - rates.unsatisfactory/count*100 + 0.5}`, stroke-dashoffset=`${(rates.unsatisfactory + rates.satisfactory + rates.excellent)/count*100}`)
+          
+      g.donut__text
+        text.donut__count(x='50%', y='50%')
+          | #{rateCount}
+        text.donut__count-label(x='50%', y='50%')
+          | Голосов
+      lineargradient#green-gradient(x1='0%', x2='0%', y1='100%', y2='0%')
+        stop(offset='0%', stop-color='#6fcf97')
+        stop(offset='100%', stop-color='#66d2ea')
+      lineargradient#orange-gradient(x1='0%', x2='0%', y1='0%', y2='100%')
+        stop(offset='0%', stop-color='#FFE39C')
+        stop(offset='100%', stop-color='#FFBA9C')
+      lineargradient#black-gradient(x1='0%', x2='0%', y1='0%', y2='100%')
+        stop(offset='0%', stop-color='#919191')
+        stop(offset='100%', stop-color='#3D4975')
+    figcaption.donut__agenda
+      ul.donut__agenda-list(aria-hidden='true', role='presentation')
+        li
+          span.donut__list-mark.donut__list-mark--orange
+          |  Великолепно
+        li
+          span.donut__list-mark.donut__list-mark--green
+          |  Хорошо
+        li
+          span.donut__list-mark.donut__list-mark--primary
+          |  Удовлетворитально
+        li
+          span.donut__list-mark.donut__list-mark--black
+          |  Разочарован

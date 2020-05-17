@@ -1,0 +1,55 @@
+include ../components/icons/icons.pug
+include ../components/input/input.pug
+include ../components/column/column.pug
+include ../components/button/button.pug
+include ../components/container/container.pug
+include ../components/form/form.pug
+include ../components/logo/logo.pug
+include ../components/header/header.pug
+include ../components/footer/footer.pug
+include ../components/intro/intro.pug
+include ../components/profit/profit.pug
+include ../components/comment/comment.pug
+include ../components/list/list.pug
+include ../components/datepicker/datepicker.pug
+include ../components/pill/pill.pug
+include ../components/dropdown/dropdown.pug
+include ../components/donut/donut.pug
+
++header(false)
++intro-room
+  +intro-column('M')
+    img(src=require('../components/intro/img/image1.jpg').default alt='room pic')
+  +intro-column('S')
+    img(src=require('../components/intro/img/image2.jpg').default alt='room pic')
+    img(src=require('../components/intro/img/image3.jpg').default alt='room pic')
++container('room')
+  +column('room-M')
+    +column-item('', '', 'room')
+      h2 Сведения о номере
+      +profits  
+        +profit('Комфорт', 'Шумопоглощающие стены', 'smile')
+        +profit('Удобство', 'Окно в каждой из спален', 'building')
+        +profit('Уют', 'Номер оснащён камином', 'fire')
+    +column-item('', '', 'room')
+      h2 Впечатления от номера
+      +donut(260, rates={excellent: 130, good: 65, satisfactory: 65, unsatisfactory: 0})
+    +column-item('Отзывы посетителей номера', 2,'comments')
+      +comment('Мурад Сарафанов','Великолепный матрас на кровати в основной \
+      спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. \
+      Выкрикивал комплименты повару — никто не жаловался из соседей.','5 дней назад','comment-m.png', '12')
+      +comment('Патрисия Стёклышкова','Обслуживание на высоте! Всё аккуратно, чисто. \
+      Завтраки в номер советую заказать, каждый день новое блюдо и десерт как \
+      комплимент ','Неделю назад','comment-f.png', '2')   +column-item('', '', 'room')
+    +column-item('', '', 'room')
+      +list-container('Правила')
+        +list-item('Нельзя с питомцами')
+        +list-item('Без вечеринок и мероприятий')
+        +list-item('Время прибытия — после 13:00, а выезд до 12:00')
+    +column-item('', '', 'room')
+      h2 Отмена
+      p.column__text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+  +column('room-S')
+    +form-element
+      +pill('888', 'люкс', 9990, 0, 300)
++footer(true)

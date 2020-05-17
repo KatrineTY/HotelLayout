@@ -1,5 +1,5 @@
 .list {
-  margin-top: 9px;
+  margin-top: 8px;
 }
 
 .list__item {
@@ -23,4 +23,10 @@
     top: .5em;
     width: 10px;
   }
+}
+
+
+.list__title {
+  padding-bottom: 9px;
+  padding-left: 20px;
 }
