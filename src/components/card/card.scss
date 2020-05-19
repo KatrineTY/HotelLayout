@@ -2,6 +2,7 @@
   background: white;
   border-radius: 4px;
   box-shadow: 0 10px 20px $color-main5;
+  width: 100%;
 }
 
 .card__inner {
@@ -9,7 +10,7 @@
 }
 
 .card__photo-container {
-  height: 152px;
+  height: 151.38px;
   overflow: hidden;
 
   .card__photo {

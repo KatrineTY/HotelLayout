@@ -1,4 +1,5 @@
-mixin paginator()
-  .paginator
-    //- .paginator__data
+mixin paginator(withData = true)
+  .paginator.js-paginator
+    if(withData)
+      .paginator__data
     .paginator__pagination

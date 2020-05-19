@@ -1,10 +1,24 @@
+.paginator {
+  width: 100%;
+}
+
+.paginationjs {
+  margin-right: 15px;
+}
+
 .paginationjs > * {
   margin-top: 10px;
 }
 
-.paginator__data-list,
+.paginator__data-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .paginator__pagination-list {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .paginator__pagination-list > * {
@@ -39,6 +53,10 @@
   }
 }
 
+.paginationjs-pages {
+  margin-top: 20px; 
+}
+
 .paginationjs-ellipsis {
   cursor: default;
 }
@@ -62,4 +80,5 @@
 .paginationjs-nav {
   margin-top: 8px;
   padding-left: 5px;
+  text-align: center;
 }

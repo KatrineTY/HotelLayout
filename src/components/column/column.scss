@@ -46,6 +46,10 @@
   &--centered {
     margin: auto;
   }
+
+  &--paginator {
+    margin-left: 51px;
+  }
 }
 
 .column__item {
@@ -72,8 +76,13 @@
     max-width: 266px;
   }
 
-  &--M-rounded {
-    max-width: 270px;
+  &--card {
+    max-width: 269.5px;
+  }
+
+  &--card:nth-child(9n + 6) {
+    margin-left: 12px;
+    margin-right: 12px;
   }
 
   &--flex {

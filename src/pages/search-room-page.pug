@@ -12,6 +12,7 @@ include ../components/datepicker/datepicker.pug
 include ../components/slider/slider.pug
 include ../components/header/header.pug
 include ../components/footer/footer.pug
+include ../components/paginator/paginator.pug
 
 
 +header(false)
@@ -46,4 +47,7 @@ include ../components/footer/footer.pug
         +input-checkbox('checkmark', 'Кроватка')
         +input-checkbox('checkmark', 'Телевизор')
         +input-checkbox('checkmark', 'Шампунь')
+  +column('paginator')
+    h1 Номера, которые мы для вас подобрали
+    +paginator()
 +footer(true)

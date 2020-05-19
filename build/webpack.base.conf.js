@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const webpack = require('webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const PATHS = {
   src: path.join(__dirname, '../src'),
@@ -25,7 +26,6 @@ module.exports = {
     'cards': path.resolve(PATHS.src, "cards.js"),
     'form-elements': path.resolve(PATHS.src, "form-elements.js"),
     'headers-and-footers': path.resolve(PATHS.src, "headers-and-footers.js"),
-    'test': path.resolve(PATHS.src, "test.js"),
     'landing-page': path.resolve(PATHS.src, "landing-page.js"),
     'registration-page': path.resolve(PATHS.src, "registration-page.js"),
     'login-page': path.resolve(PATHS.src, "login-page.js"),
@@ -138,5 +138,8 @@ module.exports = {
       insert: false,
       chunks: [page.replace(/\.pug/, ''), 'vendors', 'common'],
     })),
+    new CopyWebpackPlugin([
+      { from: `${PATHS.src}/components/card/img`, to: `${PATHS.assets}img/` },
+    ]),
   ]
 }
