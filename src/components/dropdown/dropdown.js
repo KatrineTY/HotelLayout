@@ -97,7 +97,7 @@ function updateDisableButton(dropdown) {
   }
 }
 
-function changeValue(dropdown) {
+export default function changeValue(dropdown) {
   const type = $(dropdown).data('type');
   let finalValue;
 
@@ -173,3 +173,11 @@ $('.js-input-number__button-increase').each(function () {
     }
   });
 });
+
+if (sessionStorage.getItem('guests')) {
+  const values = JSON.parse(sessionStorage.getItem('guests'));
+  const $dropdown = $('.dropdown[data-type="guests"]');
+  $dropdown.find('.js-input-number__input').each((i,item) => item.value = values[i]);
+  changeValue($dropdown[0]);
+  // sessionStorage.removeItem('guests');
+}

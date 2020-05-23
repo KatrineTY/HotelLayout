@@ -1,9 +1,10 @@
 import './main.scss';
 require('./components/libs');
 require('./components/datepicker/datepicker.js');
+require('./components/form/form.js');
 require('./components/dropdown/dropdown.js');
-require('./components/button/button.js');
-require('./components/nav/nav.js');
 require('./components/input/input.js');
-require('./components/header/header.js');
+require('./components/nav/nav.js');
+require('./components/button/button.js');
 require('./components/logo/logo.js');
+require('./components/header/header.js');

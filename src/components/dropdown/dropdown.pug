@@ -15,8 +15,8 @@ mixin dropdown-container(type, title, value, mods)
       block 
       if(mods.includes('extended'))
         .dropdown__buttons
-          +button('очистить','button')(data-action='clear')
-          +button('применить','button','purple')(data-action='apply')
+          +button('','очистить','button')(data-action='clear')
+          +button('','применить','button','purple')(data-action='apply')
         
 
 mixin dropdown-item(title)

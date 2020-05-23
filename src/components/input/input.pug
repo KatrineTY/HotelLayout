@@ -49,8 +49,8 @@ mixin input-like(count, id)
       span.input-button__text.input-button__text--like!=count
       +icon('like').input-button__mark.input-button__mark--like
 
-mixin input-stars(countOfFilled)
-  .input-button.input-button--star.js-input-button--star
+mixin input-stars(countOfFilled, disabled)
+  .input-button.input-button--star.js-input-button--star(class = `${disabled? 'input-button--disabled' : ''}`)
     - for(var i = 0; i < countOfStars; i++) 
         label.input-button__label.input-button__label--star
           input.input-button__input.input-button__input--star.js-input-button__input(type='checkbox' checked)

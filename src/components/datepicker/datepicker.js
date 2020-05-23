@@ -39,6 +39,18 @@ $('.js-datepicker__input').each(function () {
 $('.js-datepicker').each(function () {
   $(this).append($('<div/>', { class: 'datepicker--buttons' }));
   const buttonsContainer = this.getElementsByClassName('datepicker--buttons')[0];
-  $(buttonsContainer).append($('<button class="button datepicker--button" data-action="clear">очистить</button>'));
-  $(buttonsContainer).append($('<button class="button  button--purple datepicker--button" data-action="apply">применить</button>'));
+  $(buttonsContainer).append($('<button class="button js-button datepicker--button" data-action="clear">очистить</button>'));
+  $(buttonsContainer).append($('<button class="button js-button button--purple datepicker--button" data-action="apply">применить</button>'));
 });
+
+
+if (sessionStorage.getItem('dates') && $('.js-datepicker-container').length > 0) {
+  const dates = JSON.parse(sessionStorage.getItem('dates')).map((date) => new Date(date));
+  const datepicker = $('.js-datepicker-container').find('.js-datepicker__input').datepicker().data('datepicker');
+  dates.forEach((item) => {
+    datepicker.selectDate(item);
+  });
+  $('.js-datepicker-container').find('.js-dropdown__input')[0].value = 
+  `${shortFormatter.format(dates[0]).replace('.', '')} - ${shortFormatter.format(dates[1]).replace('.', '')}`;
+  sessionStorage.removeItem('dates');
+}

@@ -54,6 +54,10 @@
     margin-bottom: 4px;
     margin-right: 20px;
   }
+
+  &--disabled {
+    pointer-events: none;
+  }
 }
 
 .input-button__label {

@@ -1,3 +1,5 @@
+import changeValue from '../dropdown/dropdown';
+
 const pill = $('.js-pill');
 
 function changeCost(formattedDate, date, inst) {
@@ -30,3 +32,47 @@ function setDate(index, element) {
 }
 
 $('.js-datepicker__input', pill).each(setDate);
+
+$(document).ready(() => {
+
+
+  if (sessionStorage.getItem('number')) {
+    $('.js-pill__room-number').text(sessionStorage.getItem('number'));
+    sessionStorage.removeItem('number');
+  }
+  if (sessionStorage.getItem('kind')) {
+    $('.js-pill__room-kind').text(sessionStorage.getItem('kind'));
+
+    sessionStorage.removeItem('kind');
+  } else {
+    $('.js-pill__room-kind').text('');
+
+  }
+  if (sessionStorage.getItem('price')) {
+    $('.js-pill__room-price').children()[0].innerText = `${sessionStorage.getItem('price')}₽ `;
+    $('.js-pill__room-price')[0].dataset.price = sessionStorage.getItem('price').replace(' ', '');
+    sessionStorage.removeItem('price');
+  }
+
+  if (sessionStorage.getItem('dates')) {
+    const dates = JSON.parse(sessionStorage.getItem('dates')).map((date) => new Date(date));
+    $('.js-datepicker-container--separated').find('.js-dropdown__input').each(function (index) {
+      this.value = new Intl.DateTimeFormat('ru', { month: '2-digit', year: 'numeric', day: '2-digit' }).format(dates[index]);
+    });
+    const datepicker = $('.js-datepicker-container--separated').find('.js-datepicker__input').datepicker().data('datepicker');
+    dates.forEach((item) => {
+      datepicker.selectDate(item);
+    });
+    sessionStorage.removeItem('dates');
+  } else {
+    const dates = [new Date(), new Date()];
+    $('.js-datepicker-container--separated').find('.js-dropdown__input').each(function (index) {
+      this.value = new Intl.DateTimeFormat('ru', { month: '2-digit', year: 'numeric', day: '2-digit' }).format(dates[index]);
+    });
+    const datepicker = $('.js-datepicker-container--separated').find('.js-datepicker__input').datepicker().data('datepicker');
+    dates.forEach((item) => {
+      datepicker.selectDate(item);
+    });
+  }
+
+})

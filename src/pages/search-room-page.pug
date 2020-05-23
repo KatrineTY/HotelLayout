@@ -18,8 +18,8 @@ include ../components/paginator/paginator.pug
 +header(false)
 +container('search-room')
   +column('M')
-    +column-item('даты пребывания в отеле','', 'M')
-      +datepicker
+    +column-item('','', 'M')
+      +datepicker(false, false, titles = {rangeTitle: 'даты пребывания в отеле'})
     +column-item('гости')
       +dropdown-container('guests','','Сколько гостей','extended')
         +dropdown-item('взрослые')

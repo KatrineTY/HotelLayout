@@ -17,7 +17,7 @@ include ../components/datepicker/datepicker.pug
       +form-element('Найдём номера под ваши пожелания')
         +form-search
         +form-footer
-          +button('подобрать номер','a', 'oval,filled,link')
+          +button('','подобрать номер','a', 'oval,filled,link')
       +form-element('Регистрация аккаунта')
         +column-item('','', 'multiple')
           +input-field('text','Имя') 
@@ -32,10 +32,10 @@ include ../components/datepicker/datepicker.pug
           +input-field('text','Пароль') 
           +input-toggle('Получать спецпредложения')
         +column-item('','','button-filled')
-          +button('перейти к оплате','a', 'oval,filled,link')
+          +button('','перейти к оплате','a', 'oval,filled,link')
         +form-footer
           span!='Уже есть аккаунт на Toxin'
-          +button('войти', 'button', 'oval,framed')
+          +button('','войти', 'button', 'oval,framed')
     +column('XL')
       +form-element
         +pill('888', 'люкс', 9990, 0, 300)
@@ -44,10 +44,10 @@ include ../components/datepicker/datepicker.pug
           +input-field('text','Email') 
           +input-field('text','Пароль') 
         +column-item('','','button-filled')
-          +button('Войти','a', 'oval,filled,link')
+          +button('','Войти','a', 'oval,filled,link')
         +form-footer
           span!='Нет аккаунта на Toxin?'
-          +button('создать', 'button', 'oval,framed')
+          +button('','создать', 'button', 'oval,framed')
     +column('L')
       +form-element('', 'datepicker')
         +datepicker('inline', 'M')

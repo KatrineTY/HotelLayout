@@ -5,18 +5,18 @@ mixin card(pics, number, kind, price, reviewsCount, countOfStars = 0)
         each pic in pics.split(';')
           .card__photo-container
             img.card__photo(src=pic alt="photo alt")
-    .card__inner
+    .card__inner.js-card__inner
       .card__title
         div
           span.card__room-number!='№&nbsp;'
-            h2!=number
+            h2.js-card__room-number!=number
             if kind
-              h3.card__room-kind!=`&nbsp;&nbsp;${kind}`
+              h3.card__room-kind.js-card__room-kind!=`&nbsp;&nbsp;${kind}`
         .card__room-price.js-card__room-price(data-price=price)
           b!=`${price.toLocaleString().replace(/,/g,' ')}₽ `
           | в сутки
       .card__review
-        +input-stars(countOfStars)
+        +input-stars(countOfStars, true)
         .card__reviews-count
           b!= `${reviewsCount} `
           | Отзывов

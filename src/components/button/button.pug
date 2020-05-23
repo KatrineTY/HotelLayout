@@ -1,4 +1,4 @@
-mixin button(text, type, mods)
+mixin button(href, text, type, mods)
   -
     var allMods = '';
     if(typeof(mods) !== 'undefined' && mods) {
@@ -8,9 +8,9 @@ mixin button(text, type, mods)
       }
     }
     if(type === 'a')
-  a.button(class=allMods)&attributes(attributes)!= text
+  a.button.js-button(class=allMods href=href)&attributes(attributes)!= text
     svg.button__arrow
       use(xlink:href='#arrow-right')
   - else 
-  button.button(class=allMods)&attributes(attributes)!= text
+  button.button.js-button(class=allMods href=href)&attributes(attributes)!= text
       

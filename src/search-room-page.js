@@ -8,3 +8,4 @@ require('./components/slider/slider.js');
 require('./components/paginator/paginator.js');
 require('./components/input/input.js');
 require('./components/header/header.js');
+require('./components/logo/logo.js');
