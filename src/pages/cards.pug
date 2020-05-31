@@ -1,14 +1,15 @@
 include ../components/icons/icons.pug
+include ../components/datepicker/datepicker.pug
+include ../components/dropdown/dropdown.pug
+include ../components/button/button.pug
 include ../components/input/input.pug
 include ../components/column/column.pug
-include ../components/button/button.pug
-include ../components/dropdown/dropdown.pug
 include ../components/container/container.pug
 include ../components/form/form.pug
 include ../components/pill/pill.pug
 include ../components/card/card.pug
 include ../components/logo/logo.pug
-include ../components/datepicker/datepicker.pug
+include ../components/nav/nav.pug
 
 .ui-kit.ui-kit--c
   +logo(false)
@@ -17,7 +18,7 @@ include ../components/datepicker/datepicker.pug
       +form-element('Найдём номера под ваши пожелания')
         +form-search
         +form-footer
-          +button('','подобрать номер','a', 'oval,filled,link')
+          +button('','подобрать номер','a', 'oval,filled,link')(class='js-button--login')
       +form-element('Регистрация аккаунта')
         +column-item('','', 'multiple')
           +input-field('text','Имя') 

@@ -1,4 +1,4 @@
-$('.js-button').on('click', () => {
+$('.js-button--form').on('click', () => {
   console.log($('.js-datepicker__input').datepicker().data('datepicker').selectedDates.length)
   if ($('.js-datepicker__input').datepicker().data('datepicker').selectedDates.length !== 0) {
     sessionStorage.setItem('dates',

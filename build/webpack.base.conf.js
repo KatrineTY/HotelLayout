@@ -49,7 +49,7 @@ module.exports = {
           name: 'common',
           test: /src/,
           chunks: 'all',
-          minChunks: 2,
+          minChunks: 3,
           priority: -20,
           reuseExistingChunk: true
         }
