@@ -6,6 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+// const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 
 const PATHS = {
   src: path.join(__dirname, '../src'),
@@ -37,6 +38,7 @@ module.exports = {
     path: PATHS.dist,
   },
   optimization: {
+    runtimeChunk: true,
     splitChunks: {
       cacheGroups: {
         vendor: {
@@ -73,7 +75,7 @@ module.exports = {
         publicPath: `../img`,
       }
     }, {
-      test: /\.(png|jpg|gif|svg)$/,
+      test: /\.(png|jpg|gif)$/,
       loader: 'file-loader',
       exclude: /background-.*\.jpg$/,
       options: {
@@ -82,7 +84,7 @@ module.exports = {
         publicPath: `${PATHS.assets}img`,
       }
     }, {
-      test: /\.(woff(2)?|ttf|eot|svg|otf)(\?v=\d+\.\d+\.\d+)?$/,
+      test: /assets.*\.(woff(2)?|ttf|eot|svg|otf)(\?v=\d+\.\d+\.\d+)?$/,
       loader: 'file-loader',
       options: {
         name: '[name].[ext]',
@@ -114,12 +116,23 @@ module.exports = {
         }, {
           loader: 'postcss-loader',
           options: { sourceMap: true, config: { path: `./postcss.config.js` } }
-        },  {
+        }, {
           loader: 'sass-loader',
           options: { sourceMap: true }
         },
       ]
-    }],
+    },
+    // {
+    //   test: /\.svg$/,
+    //   loader: 'svg-sprite-loader',
+    //   exclude: [/assets/, /node_modules/],
+    //   options: {
+    //     extract: true,
+    //     spriteFilename: `icons.svg`,
+    //     runtimeCompat: true,
+    //   }
+    // }
+    ],
 
     noParse: /\/jquery\/dist\/jquery/
   },
@@ -141,5 +154,8 @@ module.exports = {
     new CopyWebpackPlugin([
       { from: `${PATHS.src}/components/card/img`, to: `${PATHS.assets}img/` },
     ]),
+    new SpriteLoaderPlugin({
+      plainSprite: true
+    }),
   ]
 }
