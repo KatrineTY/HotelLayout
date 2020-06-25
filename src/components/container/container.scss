@@ -3,13 +3,11 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 0 auto;
-  max-width: 1160px;
-  padding: 0 15px;
-  width: 100%;
+  margin: 0 140px;
 
   &--flex-centralized {
     align-items: center;
+    width: 100%;
   }
 
   &--flex-baselined {

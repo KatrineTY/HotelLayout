@@ -137,7 +137,7 @@ module.exports = {
     noParse: /\/jquery\/dist\/jquery/
   },
   plugins: [
-    new CleanWebpackPlugin(),
+    // new CleanWebpackPlugin(),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery'
@@ -154,8 +154,13 @@ module.exports = {
     new CopyWebpackPlugin([
       { from: `${PATHS.src}/components/card/img`, to: `${PATHS.assets}img/` },
     ]),
-    new SpriteLoaderPlugin({
-      plainSprite: true
-    }),
+    // new SpriteLoaderPlugin({
+    //   plainSprite: true
+    // }),
+    new webpack.HashedModuleIdsPlugin({
+      hashFunction: 'md4',
+      hashDigest: 'base64',
+      hashDigestLength: 4
+    })
   ]
 }
