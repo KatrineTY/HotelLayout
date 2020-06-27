@@ -10,3 +10,37 @@
   justify-content: space-between;
   width: 100%;
 }
+
+@media (max-width: 979px) {
+  .header {
+    .nav {
+      position: relative;
+    }
+
+    .nav__links {
+      display: none;
+      width: 250px;
+      position: absolute;
+      top: 100%;
+      right: -15%;
+      background-color: white;
+      padding:10px;
+      z-index: 100;
+
+      &--opened {
+        display: block;
+      }
+
+      > a {
+        display: block;
+        padding: 5px 0;
+      }
+    }
+
+    .nav-toggle {
+      display: block;
+    }
+  }
+  
+
+}

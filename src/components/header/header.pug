@@ -10,19 +10,23 @@ mixin header(logged)
       .header__inner
         +logo(true)
         +nav
-          +nav__item('Home','#','bold')
-          +nav__item('About us','#')
-          +nav__item('Services','#','multiple')
-            +nav__item('Service 1','#')
-            +nav__item('Service 2','#')
-            +nav__item('Service 3','#')
-          +nav__item('Careers','#')
-          +nav__item('News','#')
-          +nav__item('Documentation','#')
+          +nav__links
+            +nav__item('Home','#','bold')
+            +nav__item('About us','#')
+            +nav__item('Services','#','multiple')
+              +nav__item('Service 1','#')
+              +nav__item('Service 2','#')
+              +nav__item('Service 3','#')
+            +nav__item('Careers','#')
+            +nav__item('News','#')
+            +nav__item('Documentation','#')
           - if(logged)
           +nav__item('Cosmin Negoita','#','logged-in')
           - else {
+
           .header__buttons
             +button('','Login','button','oval,framed,header')(class='js-button--login')
             +button('','Register','button','oval,filled,header')(class='js-button--registration')
           - }
+          +nav-toggle
+

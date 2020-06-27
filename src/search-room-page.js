@@ -1,5 +1,6 @@
 require('./main.scss');
 require('./components/libs.js');
+require('./components/icons/icons.js');
 require('./components/datepicker/datepicker.js');
 require('./components/input/input.js');
 require('./components/button/button.js');
@@ -10,3 +11,4 @@ require('./components/logo/logo.js');
 require('./components/slider/slider.js');
 require('./components/header/header.js');
 require('./components/paginator/paginator.js');
+require('./components/nav/nav.js');

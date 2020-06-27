@@ -7,9 +7,16 @@ mixin nav(mods)
         allMods = allMods + ' nav--' + modsList[i].trim();
       }
     }
-  .nav(class=allMods, role='navigation')
+  .nav.js-nav(class=allMods, role='navigation')
     block
 
+mixin nav-toggle()
+  button(class='nav-toggle js-nav-toggle' type='button')
+    span(class="nav-toggle__item") Menu
+
+mixin nav__links()
+  .nav__links.js-nav__links
+    block
 
 mixin nav__item(text, href, mods)
   -
