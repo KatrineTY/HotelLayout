@@ -23,8 +23,6 @@
   &--opened .dropdown__input {
     border-color: $color-main50;
   }
-
-
 }
 
 .dropdown:not([data-type='datepicker']):not(.dropdown--checkbox) {
@@ -74,7 +72,7 @@
   display: none;
   position: absolute;
   width: 100%;
-  z-index: 1;
+  z-index: 100;
 }
 
 .dropdown__item {
@@ -121,5 +119,10 @@
 
   &.dropdown--opened > .dropdown__inner {
     border: none;
+  }
+}
+@media (max-width: 610px) {
+  .dropdown__inner {
+    padding: 0 10px 10px 10px;
   }
 }
