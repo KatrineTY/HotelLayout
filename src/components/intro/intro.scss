@@ -15,11 +15,11 @@
     height: 702px;
     padding-bottom: 30px;
     padding-top: 28px;
-   }
+  }
 
-   &--login {
+  &--login {
     padding-top: 67px;
-   }
+  }
 }
 
 .intro__text {
@@ -32,6 +32,7 @@
 
 .intro-room {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .intro__column {
@@ -39,16 +40,31 @@
   flex-direction: column;
 
   &--S {
+    min-width: 312.25px;
     width: 31.9%;
-    // height: 100%;
   }
 
   &--M {
-    width: 69.9%;
+    width: 68.1%;
   }
 
   img {
     display: block;
-    // height: 100%;
+    max-width: 100%;
+    height: auto;
+    flex: 50%;
+  }
+}
+
+@media (max-width: 979px) {
+  .intro__column {
+    &--M,
+    &--S {
+      width: 100%;
+    }
+
+    &--S {
+      flex-direction: initial;
+    }
   }
 }

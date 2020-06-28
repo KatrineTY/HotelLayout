@@ -31,12 +31,14 @@
   }
 
   &--room-S {
-    width: 32.8%;
+    min-width: 360px;
+    flex: 0 1 32.8%;
   }
 
   &--room-M {
     justify-content: inherit;
-    width: 61.1%;
+    flex: 1 1 61.1%;
+    margin-right:4%;
   }
 
   &--margin-less {
@@ -92,9 +94,10 @@
   }
 
   &--room {
+    min-width: 280px;
     padding-bottom: 14px;
     padding-right: 20px;
-    width: 49%;
+    width: 50%;
   }
 
   &--pb30 {
@@ -107,6 +110,10 @@
 
   &--multiple > *:not(:last-child):not(.columnn__subtitle) {
     margin-bottom: 10px;
+  }
+
+  &--comments {
+    padding-right: 15px;
   }
 }
 

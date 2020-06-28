@@ -21,9 +21,15 @@
 
 .form-footer {
   align-items: center;
-  color: $color-main100;  
+  color: $color-main100;
   display: flex;
   justify-content: space-between;
   margin-top: 9px;
   width: 100%;
+}
+
+@media (max-width: 619px) {
+  .form {
+    margin-top: 10px;
+  }
 }
