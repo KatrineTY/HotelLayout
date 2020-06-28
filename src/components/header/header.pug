@@ -4,29 +4,28 @@ include ../logo/logo.pug
 include ../container/container.pug
 
 
-mixin header(logged)
+mixin header(logged, texts = {headers: ["Home", "About us", "Services", "Careers", "News", "Documentation"], services: ["Service 1", "Service 2", "Service 3"]}, buttons = {login: "Login", register: "Register"})
   header.header
     +container
       .header__inner
         +logo(true)
         +nav
           +nav__links
-            +nav__item('Home','#','bold')
-            +nav__item('About us','#')
-            +nav__item('Services','#','multiple')
-              +nav__item('Service 1','#')
-              +nav__item('Service 2','#')
-              +nav__item('Service 3','#')
-            +nav__item('Careers','#')
-            +nav__item('News','#')
-            +nav__item('Documentation','#')
+            each val in texts.headers
+              - var mul = texts[val.toLowerCase().replace(/ /g,"-")]
+              - if(mul) 
+              +nav__item(val,'#', 'multiple')
+                each valInner in mul
+                  +nav__item(valInner,'#')
+              - else
+              +nav__item(val,'#')
           - if(logged)
           +nav__item('Cosmin Negoita','#','logged-in')
           - else {
 
           .header__buttons
-            +button('','Login','button','oval,framed,header')(class='js-button--login')
-            +button('','Register','button','oval,filled,header')(class='js-button--registration')
+            +button('',buttons.login,'button','oval,framed,header')(class='js-button--login')
+            +button('',buttons.register,'button','oval,filled,header')(class='js-button--registration')
           - }
           +nav-toggle
 

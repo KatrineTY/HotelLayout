@@ -15,7 +15,7 @@ include ../components/paginator/paginator.pug
 include ../components/nav/nav.pug
 
 
-+header(false)
++header(false, texts={headers: ["О нас", "Услуги", "Вакансии", "Новости", "Соглашения"], услуги: ["Услуги1", "Услуги2"], соглашения: ["Соглашения1", "Соглашения2", "Соглашения3"]}, buttons = {login:"Войти", register: "Зарегистрироваться"})
 +container('search-room')
   +column('M')
     +column-item('','', 'M')
@@ -50,4 +50,4 @@ include ../components/nav/nav.pug
   +column('paginator')
     h1 Номера, которые мы для вас подобрали
     +paginator()
-+footer(true)
++footer(true, texts = {copyright: "Copyright © 2018 Toxin отель. Все права зачищены.", description: "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»", columns: {навигация: ["О нас", "Новости", "Служба поддержки", "Услуги"], "о нас": ["О сервисе", "Наша команда", "Вакансии", "Инвесторы"], "служба поддержки": ["Соглашения", "Сообщества", "Связь с нами"]}, subscription: {title:"подписка", text: "Получайте специальные предложения и новости сервиса"}})

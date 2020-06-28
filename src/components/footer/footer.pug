@@ -6,47 +6,32 @@ include ../input/input.pug
 include ../copyright/copyright.pug 
 
           
-mixin footer(isNavigation)
+mixin footer(isNavigation, texts = {copyright: "Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.", description: "Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.", columns: {navigation: ["About us", "News", "Support", "Products"], "about us": ["Who we are", "Our team", "Careers", "Investors"], support: ["Documentation", "Community", "Get in Touch"]}, subscription: {title:"subscribe to our newsletter", text: "Receive our latest news and promotions in your inbox!"}})
   - if(!isNavigation) {
   footer.footer
     .footer__inner.footer__inner--no-navigation
       +logo(true)
-      p.footer__text Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
+      p.footer__text!= texts.description
       +socials
         +social__item('twitter')
         +social__item('facebook')
         +social__item('instagram')
-  
   - }else {
   footer.footer
     +container
       .footer__inner
         .footer__column.footer__column--wide
           +logo(true)
-          p.footer__text Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis. 
-        .footer__column
-          h3.footer__title navigation
-          +nav('vertical')
-            +nav__item('About us','#')
-            +nav__item('News','#')
-            +nav__item('Support','#')
-            +nav__item('Products','#')
-        .footer__column
-          h3.footer__title about us
-          +nav('vertical')
-            +nav__item('Who we are','#')
-            +nav__item('Our team','#')
-            +nav__item('Careers','#')
-            +nav__item('Investors','#')
-        .footer__column
-          h3.footer__title support
-          +nav('vertical')
-            +nav__item('Documentation','#')
-            +nav__item('Community','#')
-            +nav__item('Get in Touch','#')
+          p.footer__text!= texts.description 
+        each data, key in texts.columns
+          .footer__column
+              h3.footer__title!=key
+              +nav('vertical')
+                each row in data
+                  +nav__item(row,'#')
         .footer__column.footer__column--wide
-          h3.footer__title subscribe to our newsletter
-          p.footer__text Receive our latest news and promotions in your inbox!
+          h3.footer__title!=texts.subscription.title
+          p.footer__text!=texts.subscription.text
           +input-field('email','Your email address')
-    +copyright 
+    +copyright(texts.copyright) 
   - } 

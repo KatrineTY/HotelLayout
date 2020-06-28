@@ -10,7 +10,7 @@ include ../components/footer/footer.pug
 include ../components/intro/intro.pug
 include ../components/nav/nav.pug
 
-+header(false)
++header(false, texts={headers: ["О нас", "Услуги", "Вакансии", "Новости", "Соглашения"], услуги: ["Услуги1", "Услуги2"], соглашения: ["Соглашения1", "Соглашения2", "Соглашения3"]}, buttons = {login:"Войти", register: "Зарегистрироваться"})
 +intro('', 'registration')
   +column('XL,margin-less,centered')
     +form-element('Регистрация аккаунта')
@@ -31,4 +31,4 @@ include ../components/nav/nav.pug
       +form-footer
         span!='Уже есть аккаунт на Toxin'
         +button('','войти', 'button', 'oval,framed')
-+footer(true)
++footer(true, texts = {copyright: "Copyright © 2018 Toxin отель. Все права зачищены.", description: "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»", columns: {навигация: ["О нас", "Новости", "Служба поддержки", "Услуги"], "о нас": ["О сервисе", "Наша команда", "Вакансии", "Инвесторы"], "служба поддержки": ["Соглашения", "Сообщества", "Связь с нами"]}, subscription: {title:"подписка", text: "Получайте специальные предложения и новости сервиса"}})
