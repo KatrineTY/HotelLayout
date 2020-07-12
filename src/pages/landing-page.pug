@@ -18,5 +18,5 @@ include ../components/nav/nav.pug
     +form-element('Найдём номера под ваши пожелания')
       +form-search
       +form-footer
-        +button('search-room-page.html','подобрать номер','a', 'oval,filled,link')
+        +button('search-room-page.html','подобрать номер','a', 'oval,filled,link').js-button--form
 +footer(true, texts = {copyright: "Copyright © 2018 Toxin отель. Все права зачищены.", description: "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»", columns: {навигация: ["О нас", "Новости", "Служба поддержки", "Услуги"], "о нас": ["О сервисе", "Наша команда", "Вакансии", "Инвесторы"], "служба поддержки": ["Соглашения", "Сообщества", "Связь с нами"]}, subscription: {title:"подписка", text: "Получайте специальные предложения и новости сервиса"}})
